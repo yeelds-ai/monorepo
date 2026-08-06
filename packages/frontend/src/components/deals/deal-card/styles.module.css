@@ -1,0 +1,33 @@
+@reference "../../../app.css";
+
+.card {
+    @apply relative overflow-hidden rounded-2xl background-raised;
+}
+
+.link {
+    @apply absolute inset-0 z-0;
+}
+
+.content {
+    @apply relative z-10 flex flex-col gap-4 p-4 pointer-events-none;
+}
+
+.identity {
+    @apply flex items-center gap-3;
+}
+
+.identityText {
+    @apply flex min-w-0 flex-col;
+}
+
+.stats {
+    @apply flex items-center gap-3;
+}
+
+.stat {
+    @apply flex items-baseline gap-1;
+}
+
+.divider {
+    @apply w-px self-stretch bg-border-default;
+}

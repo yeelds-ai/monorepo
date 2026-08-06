@@ -1,0 +1,5 @@
+@reference "../../../app.css";
+
+.root {
+    @apply w-full flex flex-col justify-between gap-1 rounded-xl background-default p-3;
+}

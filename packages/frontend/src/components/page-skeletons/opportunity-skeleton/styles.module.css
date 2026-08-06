@@ -1,0 +1,50 @@
+@reference "../../../app.css";
+
+.root {
+    @apply w-full flex flex-col place-self-center gap-7 p-6 max-w-7xl;
+}
+
+.identity {
+    @apply flex flex-col gap-3;
+}
+
+.topRow {
+    @apply flex items-center gap-4;
+}
+
+.logoWrapper {
+    @apply relative shrink-0;
+}
+
+.chainDot {
+    @apply absolute -right-0.5 -bottom-0.5;
+    box-shadow: 0 0 0 2px var(--color-bg-raised);
+}
+
+.nameLine {
+    @apply flex items-center gap-2 flex-wrap;
+}
+
+.chipRow {
+    @apply flex items-center gap-2 flex-wrap;
+}
+
+.content {
+    @apply flex flex-col md:flex-row gap-4 sm:gap-7;
+}
+
+.leftContent {
+    @apply w-full md:w-3/5 flex flex-col gap-4;
+}
+
+.rightContent {
+    @apply w-full md:w-2/5;
+}
+
+.card {
+    @apply h-full w-full rounded-2xl background-raised p-4 flex flex-col gap-3;
+}
+
+.cardHeader {
+    @apply flex items-center gap-2;
+}

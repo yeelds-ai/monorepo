@@ -1,0 +1,21 @@
+@reference "../../../app.css";
+
+.scenarios {
+    @apply flex items-center gap-3;
+}
+
+.scenario {
+    @apply gap-2;
+}
+
+.scenarioTag {
+    @apply flex items-center gap-2;
+}
+
+.scenarioIcon {
+    @apply text-brand-primary;
+}
+
+.scenarioIcon {
+    @apply size-4;
+}

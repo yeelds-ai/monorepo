@@ -1,0 +1,229 @@
+{
+    "metadata": {
+        "title": "Yeelds — DeFi Yield Discovery",
+        "description": "Discover and compare yield opportunities across EVM chains."
+    },
+    "notFound": {
+        "title": "Page not found",
+        "description": "The page you are looking for does not exist or has moved."
+    },
+    "error": {
+        "title": "Something went wrong",
+        "description": "An unexpected error occurred while rendering this page.",
+        "retry": "Try again"
+    },
+    "navigation": {
+        "openMenu": "Open navigation",
+        "closeMenu": "Close navigation",
+        "mainNavigation": "Main navigation",
+        "discover": "Discover",
+        "research": "Research",
+        "explore": "Explore",
+        "opportunities": "Opportunities",
+        "feed": "Feed",
+        "liquidityDeals": "Liquidity deals",
+        "socials": {
+            "x": "X",
+            "telegram": "Telegram"
+        }
+    },
+    "explore": {
+        "title": "Explore",
+        "subtitle": "Track the yield landscape, surface the week's standout vaults, and compare opportunities by category.",
+        "stats": {
+            "totalTvl": "Total TVL",
+            "activeVaults": "Active vaults",
+            "chains": "Chains",
+            "protocols": "Protocols"
+        },
+        "featured": {
+            "topStable": "Top stable yield",
+            "topRiskAdjusted": "Top risk-adjusted yield"
+        },
+        "hotPicks": {
+            "title": "Weekly Yeelds hot picks",
+            "subtitle": "The week's standout vaults, ranked by Yeelds grade and yield across the catalog.",
+            "empty": "No hot picks available right now."
+        },
+        "categories": {
+            "topBlueChip": "Top blue-chip yield",
+            "highestApy": "Highest APY",
+            "deepestLiquidity": "Deepest liquidity"
+        },
+        "news": {
+            "title": "Weekly news",
+            "empty": "No news available right now. Check back soon.",
+            "types": {
+                "article": "Article",
+                "newsletter": "Newsletter"
+            }
+        },
+        "opportunity": {
+            "on": "on",
+            "apy": "APY",
+            "tvl": "TVL"
+        },
+        "grade": {
+            "ungraded": "n/a",
+            "honesty": "Profile shown; the grade is computed with hard caps, not an average of these axes.",
+            "label": "Vault grade {grade} {score} — Yeelds. A relative safety opinion as of {gradedAt} under methodology {methodologyVersion}, not a safety guarantee. A low or absent grade can mean 'too new,' not 'dangerous.'"
+        }
+    },
+    "feed": {
+        "title": "Feed",
+        "subtitle": "Fresh yield updates, articles, and posts from across the DeFi ecosystem.",
+        "empty": "No articles found.",
+        "readTime": "{minutes}min read",
+        "paginationUnit": "articles"
+    },
+    "pagination": {
+        "showing": "Showing {page} of {totalPages} ({total} {unit})",
+        "firstPage": "First page",
+        "previousPage": "Previous page",
+        "nextPage": "Next page",
+        "lastPage": "Last page"
+    },
+    "deals": {
+        "title": "Liquidity deals",
+        "subtitle": "Compare yield opportunities across protocols, chains, and strategies.",
+        "empty": "No deals available right now. Check back soon."
+    },
+    "deal": {
+        "backToDeals": "Back to liquidity deals",
+        "notFound": {
+            "title": "Deal not found",
+            "description": "The deal you are looking for does not exist or has moved."
+        },
+        "overviewTitle": "Overview",
+        "yieldMechanicsTitle": "How yield works",
+        "payoutTitle": "Payout mechanics",
+        "flowTitle": "Flow of funds",
+        "teamTitle": "Project team members",
+        "documentsLabel": "Documents"
+    },
+    "opportunities": {
+        "title": "Opportunities",
+        "subtitle": "Compare thousands of yield opportunities across protocols, chains, and strategies.",
+        "viewToggle": {
+            "ariaLabel": "View as table or grid",
+            "table": "Table",
+            "grid": "Grid"
+        },
+        "filterBar": {
+            "toggle": "Filters",
+            "toggleActive": "Filters ({count})",
+            "deselectAll": "Deselect all",
+            "noResults": "No results",
+            "searchPlaceholder": "Search",
+            "chainAriaLabel": "Filter by chain",
+            "chainLabel": "Chains",
+            "protocolAriaLabel": "Filter by protocol",
+            "protocolLabel": "Protocols",
+            "strategyAriaLabel": "Filter by strategy",
+            "strategy": {
+                "label": "Strategies",
+                "lending": "Lending",
+                "amm_lp": "LP into AMM",
+                "vault": "Vault",
+                "staking": "Staking"
+            },
+            "tvlAriaLabel": "Filter by TVL",
+            "tvl": {
+                "label": "TVL",
+                "100000": "$100K+",
+                "1000000": "$1M+",
+                "10000000": "$10M+",
+                "100000000": "$100M+"
+            },
+            "aprAriaLabel": "Filter by APY range",
+            "apr": {
+                "label": "APY",
+                "0-10": "0-10%",
+                "10-50": "10-50%",
+                "50-100": "50-100%",
+                "100-": "100%+"
+            },
+            "gradeAriaLabel": "Filter by Yeelds vault grade",
+            "grade": {
+                "label": "Grade",
+                "D": "All graded",
+                "B-": "B- & up",
+                "B+": "B+ & up",
+                "A-": "A- & up"
+            },
+            "presetsAriaLabel": "Apply preset",
+            "presets": {
+                "label": "Presets",
+                "stablecoin_vaults": "Stablecoin Vaults",
+                "maximize_eth": "Maximize ETH"
+            },
+            "clear": "Clear ({count})"
+        },
+        "table": {
+            "chain": "Chain",
+            "asset": "Asset",
+            "protocol": "Protocol",
+            "strategy": "Strategy",
+            "tvl": "TVL",
+            "stability": "Stability",
+            "grade": "Grade",
+            "apy": "APY",
+            "dailyEstimate": "Daily est./$1k",
+            "dailyPer1k": "Daily / $1k",
+            "empty": "No yields found matching your filters.",
+            "incentiveRewards": "Incentive rewards",
+            "via": "via {sources}"
+        },
+        "stability": {
+            "stable": "Stable",
+            "mixed": "Mixed",
+            "volatile": "Volatile",
+            "unknown": "--"
+        },
+        "simulation": {
+            "depositEstimate": "${amount} deposit estimate:",
+            "daily": "Daily",
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "changeDeposit": "Change deposit amount",
+            "amountPlaceholder": "Amount ($)",
+            "amountAriaLabel": "Custom deposit amount",
+            "set": "Set",
+            "disclaimer": "Estimates based on current APY. Actual returns may vary."
+        },
+        "paginationUnit": "opportunities"
+    },
+    "opportunity": {
+        "title": "Opportunity {chain}:{address}",
+        "description": "Opportunity details",
+        "notFound": {
+            "title": "Opportunity not found",
+            "description": "The opportunity you are looking for does not exist or has moved."
+        },
+        "backToOpportunities": "Back to opportunities",
+        "exposureCard": {
+            "title": "Exposure",
+            "type": "Type",
+            "typeSingle": "Single asset",
+            "typeMulti": "Multi asset",
+            "category": "Category",
+            "categoryStablecoin": "Stablecoin",
+            "categoryGeneric": "Crypto assets",
+            "underlyingTokens": "Underlying tokens"
+        },
+        "vaultAllocationsCard": {
+            "title": "Vault Allocations",
+            "curator": "Curator",
+            "deposits": "Deposits"
+        },
+        "review": {
+            "title": "Opportunity review",
+            "depositOn": "Deposit on {protocol}"
+        }
+    },
+    "opportunityIdentity": {
+        "viewOnExplorer": "View on block explorer",
+        "apy": "APY {value}",
+        "tvl": "TVL {value}"
+    }
+}

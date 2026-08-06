@@ -1,0 +1,13 @@
+@reference "../../app.css";
+
+.root {
+    @apply w-full max-w-7xl place-self-center flex flex-col gap-6 p-6;
+}
+
+.header {
+    @apply flex flex-col gap-1;
+}
+
+.grid {
+    @apply grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3;
+}

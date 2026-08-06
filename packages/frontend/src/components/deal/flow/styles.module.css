@@ -1,0 +1,25 @@
+@reference "../../../app.css";
+
+.steps {
+    @apply flex list-none flex-col;
+}
+
+.step {
+    @apply flex items-center gap-3 py-3;
+}
+
+.step + .step {
+    @apply border-t stroke-divider;
+}
+
+.stepIndex {
+    @apply flex size-5 shrink-0 items-center justify-center rounded-full border border-brand-primary/20 text-[0.625rem] font-bold text-brand-primary;
+}
+
+.stepContent {
+    @apply flex items-center gap-1;
+}
+
+.arrowIcon {
+    @apply size-4;
+}

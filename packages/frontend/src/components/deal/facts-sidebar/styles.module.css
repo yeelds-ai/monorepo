@@ -1,0 +1,59 @@
+@reference "../../../app.css";
+
+.root {
+    @apply flex flex-col rounded-2xl border-[1.5px] border-brand-primary/20;
+    @apply background-surface shadow-[0px_2px_20px_4px_rgba(255,206,235,0.12)];
+    @apply w-full md:w-2/5 h-fit;
+}
+
+.metric {
+    @apply flex flex-col gap-1 border-b stroke-divider p-4;
+}
+
+.metricValue {
+    @apply flex items-baseline gap-1.5;
+}
+
+.metricNumber {
+    @apply text-[2.75rem] leading-none;
+}
+
+.rows {
+    @apply flex flex-col;
+}
+
+.rowLabel {
+    @apply flex items-center gap-1;
+}
+
+.hintIcon {
+    @apply size-3 text-text-secondary;
+}
+
+.rowValue {
+    @apply flex items-center gap-1.5;
+}
+
+.documents {
+    @apply flex flex-col gap-2 border-t stroke-divider p-4;
+}
+
+.document {
+    @apply flex items-center gap-2 text-primary;
+}
+
+.documentIcon {
+    @apply size-4 shrink-0 text-primary;
+}
+
+.documentLabel {
+    @apply flex-1 truncate;
+}
+
+.cta {
+    @apply flex flex-col items-center gap-2 p-4;
+}
+
+.ctaFootnote {
+    @apply text-center;
+}

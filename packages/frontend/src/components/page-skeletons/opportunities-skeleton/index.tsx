@@ -1,0 +1,47 @@
+"use client";
+
+import { Skeleton } from "@yeelds/ui";
+import { useTranslations } from "next-intl";
+
+import { OpportunitiesTable } from "@/src/components/opportunities/table";
+import { Pagination } from "../../pagination";
+
+import styles from "./styles.module.css";
+
+export function OpportunitiesSkeleton() {
+    const t = useTranslations("opportunities");
+
+    return (
+        <div className={styles.root}>
+            <div className={styles.header}>
+                <div>
+                    <Skeleton height={32} width={192} />
+                    <Skeleton
+                        height={24}
+                        width={288}
+                        className={styles.subtitleBar}
+                    />
+                </div>
+                <Skeleton height={24} width={64} />
+            </div>
+
+            <div className={styles.filterBar}>
+                <Skeleton height={34} width={120} />
+                <Skeleton height={34} width={120} />
+                <Skeleton height={34} width={120} />
+            </div>
+
+            <div className={styles.content}>
+                <OpportunitiesTable opportunities={[]} loading />
+            </div>
+
+            <Pagination
+                page={1}
+                totalPages={1}
+                total={0}
+                unit={t("paginationUnit")}
+                onPageChange={() => {}}
+            />
+        </div>
+    );
+}

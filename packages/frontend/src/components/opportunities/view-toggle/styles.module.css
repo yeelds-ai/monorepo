@@ -1,0 +1,35 @@
+@reference "../../../app.css";
+
+.root {
+    @apply flex items-center;
+}
+
+.item {
+    @apply flex items-center;
+}
+
+.divider {
+    @apply mx-1.5 h-4 w-px bg-border-default;
+}
+
+.button {
+    @apply flex items-center gap-1 transition-colors cursor-pointer;
+    @apply text-secondary hover:text-brand-primary;
+}
+
+.button.active {
+    @apply text-brand-primary;
+}
+
+.icon {
+    @apply size-3.5;
+}
+
+.label {
+    @apply transition-colors;
+}
+
+.button:hover :global(.root).label,
+.button.active :global(.root).label {
+    @apply text-brand-primary;
+}

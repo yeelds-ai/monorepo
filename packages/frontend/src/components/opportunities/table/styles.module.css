@@ -1,0 +1,81 @@
+@reference "../../../app.css";
+
+.empty {
+    @apply py-16 text-center;
+}
+
+.wrapper {
+    @apply overflow-x-scroll sm:overflow-x-auto;
+}
+
+.card {
+    @apply inline-block min-w-full overflow-hidden;
+}
+
+.table {
+    @apply w-full min-w-[80rem] text-sm table-fixed;
+}
+
+.header {
+    @apply sticky top-0 px-8 py-3 text-left;
+}
+
+.cell {
+    @apply overflow-hidden px-8 py-3.5 align-middle;
+}
+
+.cell.loading {
+    @apply h-[3.938rem];
+}
+
+.protocolName {
+    @apply flex min-w-0 items-center gap-3;
+}
+
+.protocolNameText {
+    @apply block truncate;
+}
+
+.logo {
+    @apply size-6 shrink-0 rounded-full;
+}
+
+.strategyChipText {
+    @apply block truncate;
+}
+
+.tvlCell {
+    @apply tabular-nums;
+}
+
+.row {
+    @apply relative border-t stroke-divider cursor-pointer transition-colors hover:background-raised;
+}
+
+.link {
+    @apply absolute inset-0 z-0;
+}
+
+.linkCell {
+    @apply overflow-visible;
+}
+
+.row:last-child {
+    @apply border-b stroke-divider;
+}
+
+.row.loading {
+    @apply pointer-events-none;
+}
+
+.loadingBarRow {
+    @apply h-0;
+}
+
+.loadingBarCell {
+    @apply border-none p-0;
+}
+
+.loadingBar {
+    @apply w-full;
+}

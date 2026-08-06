@@ -1,0 +1,17 @@
+@reference "../../../app.css";
+
+.root {
+    @apply flex flex-col gap-3;
+}
+
+.tags {
+    @apply flex flex-wrap items-center gap-2;
+}
+
+.tag {
+    @apply flex items-center gap-1.5;
+}
+
+.tagIcon {
+    @apply size-4 text-primary;
+}

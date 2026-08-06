@@ -1,0 +1,18 @@
+@reference "../../theme.css";
+
+.root {
+    @apply inline-flex shrink-0 items-center justify-center;
+    @apply overflow-hidden rounded-full object-cover;
+}
+
+.fallback {
+    @apply background-default;
+}
+
+.initial {
+    @apply select-none font-bold text-secondary;
+}
+
+.loading {
+    @apply background-default animate-pulse;
+}

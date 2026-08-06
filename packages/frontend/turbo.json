@@ -1,0 +1,13 @@
+{
+    "extends": ["//"],
+    "tasks": {
+        "build": {
+            "env": [
+                "NEXT_PUBLIC_ENVIRONMENT",
+                "NEXT_PUBLIC_UMAMI_WEBSITE_ID",
+                "YEELDS_API_TOKEN"
+            ],
+            "outputs": [".next/**", "!.next/cache/**"]
+        }
+    }
+}

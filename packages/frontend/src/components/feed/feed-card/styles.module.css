@@ -1,0 +1,43 @@
+@reference "../../../app.css";
+
+.card {
+    @apply flex flex-col gap-3 rounded-2xl p-5;
+    @apply background-raised;
+}
+
+.header {
+    @apply flex items-center gap-3;
+}
+
+.avatar {
+    @apply flex size-8 shrink-0 items-center justify-center rounded-full;
+}
+
+.publicationMeta {
+    @apply flex min-w-0 flex-col;
+}
+
+.truncate {
+    @apply truncate;
+}
+
+.title {
+    @apply line-clamp-2;
+}
+
+.excerpt {
+    @apply line-clamp-3;
+}
+
+.footer {
+    @apply mt-auto flex items-center gap-4;
+}
+
+.footerItem {
+    @apply flex items-center gap-1.5;
+}
+
+.footerIcon {
+    @apply size-4 shrink-0;
+    @apply text-secondary;
+}

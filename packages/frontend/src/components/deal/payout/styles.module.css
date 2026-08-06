@@ -1,0 +1,17 @@
+@reference "../../../app.css";
+
+.items {
+    @apply grid grid-cols-1 gap-2 sm:grid-cols-3;
+}
+
+.itemValue {
+    @apply flex items-center gap-2;
+}
+
+.itemIcon {
+    @apply size-4 text-brand-primary;
+}
+
+.notes {
+    @apply flex flex-col gap-2;
+}

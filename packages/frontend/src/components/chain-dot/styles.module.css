@@ -1,0 +1,14 @@
+@reference "../../app.css";
+
+.root {
+    @apply inline-flex shrink-0 items-center justify-center;
+    @apply background-default overflow-hidden rounded-full;
+}
+
+.icon {
+    @apply size-full;
+}
+
+.initial {
+    @apply text-secondary font-bold select-none;
+}

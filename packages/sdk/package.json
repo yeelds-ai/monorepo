@@ -1,0 +1,38 @@
+{
+    "name": "@yeelds/sdk",
+    "type": "module",
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Typed client for the Yeelds backend API.",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -b && vite build",
+        "lint": "eslint . && prettier --check .",
+        "format": "eslint --fix . && prettier --write ."
+    },
+    "devDependencies": {
+        "@eslint/js": "catalog:",
+        "@trivago/prettier-plugin-sort-imports": "catalog:",
+        "@types/node": "catalog:",
+        "eslint": "catalog:",
+        "eslint-config-prettier": "catalog:",
+        "prettier": "catalog:",
+        "typescript": "catalog:",
+        "typescript-eslint": "catalog:",
+        "vite": "catalog:"
+    }
+}

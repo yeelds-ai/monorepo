@@ -1,0 +1,37 @@
+@reference "../../../app.css";
+
+.root {
+    @apply pb-1;
+}
+
+.members {
+    @apply flex list-none flex-col;
+}
+
+.member {
+    @apply flex items-center gap-3 py-3;
+}
+
+.member + .member {
+    @apply border-t stroke-divider;
+}
+
+.avatar {
+    @apply flex size-6 shrink-0 items-center justify-center rounded-full;
+}
+
+.memberContent {
+    @apply flex min-w-0 flex-1 flex-col gap-0.5;
+}
+
+.memberHeader {
+    @apply flex items-baseline gap-2;
+}
+
+.xLink {
+    @apply flex size-6 shrink-0 items-center justify-center rounded-lg bg-brand-secondary text-brand-primary;
+}
+
+.xIcon {
+    @apply size-4;
+}

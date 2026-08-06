@@ -1,0 +1,10 @@
+{
+    "css.customData": [".vscode/tailwind.json"],
+    "js/ts.tsdk.path": "node_modules/typescript/lib",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
+}

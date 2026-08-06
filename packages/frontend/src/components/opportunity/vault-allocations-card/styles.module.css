@@ -1,0 +1,21 @@
+@reference "../../../app.css";
+
+.curatorLink {
+    @apply flex items-center gap-1 text-primary underline underline-offset-2 leading-0;
+}
+
+:global(.card).root {
+    @apply px-0 pb-1.5;
+}
+
+.root :global(.header) {
+    @apply px-4;
+}
+
+.tags {
+    @apply flex items-center gap-2 py-2 px-4;
+}
+
+:global(.root).curatorTag {
+    @apply flex items-center gap-2;
+}

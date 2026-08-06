@@ -1,0 +1,13 @@
+@reference "../../../app.css";
+
+.root {
+    @apply flex flex-col gap-2 rounded-2xl background-raised p-4;
+}
+
+.header {
+    @apply flex items-center gap-2;
+}
+
+.content {
+    @apply flex flex-col gap-2;
+}

@@ -1,0 +1,11 @@
+@reference "../../app.css";
+
+.retry {
+    @apply rounded-xl px-4 py-2;
+    @apply bg-brand-primary;
+    @apply transition-opacity hover:opacity-90;
+}
+
+.retryLabel {
+    @apply text-on-brand-primary;
+}

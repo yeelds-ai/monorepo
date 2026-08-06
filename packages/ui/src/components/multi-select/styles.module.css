@@ -1,0 +1,105 @@
+@reference "../../theme.css";
+
+.root {
+    @apply relative inline-block;
+}
+
+.trigger {
+    @apply relative flex cursor-pointer items-center gap-1.5;
+    @apply rounded-xl border px-3 py-1.5 transition-colors;
+    @apply background-overlay stroke-divider text-secondary;
+    @apply hover:stroke-focus;
+}
+
+.trigger.active {
+    @apply text-primary;
+}
+
+.trigger.open {
+    @apply border-border-focus;
+}
+
+.trigger.open .triggerIcon,
+.trigger.open .triggerLabel {
+    @apply text-primary;
+}
+
+.triggerIcon {
+    @apply size-5 shrink-0;
+    @apply text-secondary transition-colors;
+}
+
+.triggerLabels {
+    @apply flex items-baseline gap-1;
+}
+
+.triggerLabel {
+    @apply whitespace-nowrap text-secondary transition-colors;
+}
+
+.selectedWithCountLabel {
+    @apply flex items-baseline gap-0.5;
+}
+
+.popover {
+    @apply flex flex-col overflow-hidden p-0 min-w-[12.5rem];
+}
+
+.deselectAll {
+    @apply stroke-divider flex w-full cursor-pointer items-center border-b px-3 py-1.5 transition-colors;
+}
+
+.search {
+    @apply stroke-divider text-primary w-full border-b bg-transparent px-4 py-2 text-sm outline-none;
+    @apply placeholder:text-secondary;
+}
+
+.empty {
+    @apply flex items-center justify-center px-4 py-2;
+}
+
+.option {
+    @apply stroke-divider flex cursor-pointer items-center gap-3 border-b p-2.5 transition-colors;
+    @apply last:border-b-0;
+}
+
+.option.disabled {
+    @apply pointer-events-none opacity-40;
+}
+
+.checkbox {
+    @apply stroke-divider relative flex size-4 shrink-0 items-center justify-center rounded border bg-transparent transition-colors;
+}
+
+.checkbox.checked {
+    @apply stroke-focus;
+}
+
+.checkIcon {
+    @apply text-brand-primary size-2.5 opacity-0 transition-opacity duration-150;
+}
+
+.checkIcon.checked {
+    @apply opacity-100;
+}
+
+.optionLabel {
+    @apply flex-1 truncate;
+}
+
+.loading {
+    @apply background-default animate-pulse;
+}
+
+.skeletonOption {
+    @apply stroke-divider flex items-center gap-3 border-b px-4 py-2.5;
+    @apply last:border-b-0;
+}
+
+.skeletonCheckbox {
+    @apply size-4 shrink-0 rounded;
+}
+
+.skeletonLabel {
+    @apply h-3.5 rounded;
+}

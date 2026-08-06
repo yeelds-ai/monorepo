@@ -1,0 +1,42 @@
+{
+    "name": "frontend",
+    "type": "module",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint . && prettier --check .",
+        "format": "eslint --fix . && prettier --write ."
+    },
+    "dependencies": {
+        "@tanstack/react-query": "catalog:",
+        "@yeelds/registry": "workspace:*",
+        "@yeelds/sdk": "workspace:*",
+        "@yeelds/ui": "workspace:*",
+        "next": "16.2.12",
+        "next-intl": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "server-only": "^0.0.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "catalog:",
+        "@tailwindcss/postcss": "catalog:",
+        "@tanstack/eslint-plugin-query": "catalog:",
+        "@trivago/prettier-plugin-sort-imports": "catalog:",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
+        "babel-plugin-react-compiler": "^1.0.0",
+        "classnames": "catalog:",
+        "eslint": "catalog:",
+        "eslint-config-next": "catalog:",
+        "eslint-config-prettier": "catalog:",
+        "prettier": "catalog:",
+        "tailwindcss": "catalog:",
+        "typescript": "catalog:",
+        "typescript-eslint": "catalog:"
+    }
+}

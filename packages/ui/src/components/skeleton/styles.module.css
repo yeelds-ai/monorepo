@@ -1,0 +1,41 @@
+@reference "../../theme.css";
+
+.root {
+    @apply block shrink-0 animate-pulse rounded-md background-default;
+}
+
+.circular {
+    @apply rounded-full;
+}
+
+.size10 {
+    @apply text-10 h-[1em];
+}
+
+.size12 {
+    @apply text-12 h-[1em];
+}
+
+.size14 {
+    @apply text-14 h-[1em];
+}
+
+.size16 {
+    @apply text-16 h-[1em];
+}
+
+.size18 {
+    @apply text-18 h-[1em];
+}
+
+.size20 {
+    @apply text-20 h-[1em];
+}
+
+.size24 {
+    @apply text-24 h-[1em];
+}
+
+.size28 {
+    @apply text-28 h-[1em];
+}

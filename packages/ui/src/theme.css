@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+    --font-brand: var(--font-clash-display), system-ui, sans-serif;
+    --font-sans: var(--font-manrope), system-ui, sans-serif;
+
+    --text-10: 0.625rem;
+    --text-12: 0.75rem;
+    --text-14: 0.875rem;
+    --text-16: 1rem;
+    --text-18: 1.125rem;
+    --text-20: 1.25rem;
+    --text-24: 1.5rem;
+    --text-28: 1.75rem;
+
+    /* Brand */
+    --color-brand-primary: #ffceeb;
+    --color-brand-secondary: rgb(255 206 235 / 0.08);
+    --color-on-brand-primary: #130d11;
+
+    /* Surface ramp, darkest → lightest */
+    --color-bg-surface: #130d11;
+    --color-bg-overlay: #191216;
+    --color-bg-raised: #1b1519;
+    --color-bg-default: #261f23;
+
+    /* Borders */
+    --color-border-default: #282828;
+    --color-border-focus: #686366;
+
+    /* Text */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #b1afb1;
+    --color-text-disabled: rgb(255 255 255 / 0.2);
+
+    /* Status ramp — also the polarity ladder every grade chip runs on */
+    --color-status-excellent: #2fcb60;
+    --color-status-good: #6dcb2f;
+    --color-status-mixed: #cbc12f;
+    --color-status-caution: #df6f13;
+    --color-status-negative: #d02626;
+
+    /* Grade chip fills, paired with their content color. One green → amber →
+       orange → red ladder so an "A" reads the same in every context. */
+    --color-grade-a: #00513c;
+    --color-on-grade-a: #58fdc8;
+    --color-grade-b: #14532d;
+    --color-on-grade-b: #86efac;
+    --color-grade-c: #713f12;
+    --color-on-grade-c: #fcd34d;
+    --color-grade-d: #7c2d12;
+    --color-on-grade-d: #fdba74;
+    --color-grade-f: #93000a;
+    --color-on-grade-f: #ffb4ab;
+
+    /* Error */
+    --color-error: #ffb4ab;
+    --color-error-container: #93000a;
+}
+
+@utility background-surface {
+    @apply bg-bg-surface text-text-primary;
+}
+
+@utility background-overlay {
+    @apply bg-bg-overlay;
+}
+
+@utility background-raised {
+    @apply bg-bg-raised;
+}
+
+@utility background-default {
+    @apply bg-bg-default;
+}
+
+@utility text-primary {
+    @apply text-text-primary;
+}
+
+@utility text-secondary {
+    @apply text-text-secondary;
+}
+
+@utility stroke-divider {
+    @apply border-border-default;
+}
+
+@utility stroke-focus {
+    @apply border-border-focus;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-brand);
+}

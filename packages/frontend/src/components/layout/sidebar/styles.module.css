@@ -1,0 +1,115 @@
+@reference "../../../app.css";
+
+.root {
+    @apply sticky top-0 hidden h-screen overflow-y-auto background-default;
+    @apply md:flex md:w-60 md:shrink-0 md:flex-col;
+}
+
+.inner {
+    @apply flex h-full flex-col;
+}
+
+.brand {
+    @apply px-5 pt-6 pb-5;
+}
+
+.logo {
+    @apply h-9 w-auto;
+}
+
+.nav {
+    @apply flex flex-1 flex-col gap-6 overflow-y-auto px-3 py-2;
+}
+
+.section {
+    @apply flex flex-col gap-1;
+}
+
+.sectionTitle {
+    @apply mb-2 px-3 tracking-[0.18em];
+}
+
+.sectionItems {
+    @apply flex flex-col;
+}
+
+.item {
+    @apply flex w-full items-center gap-2 rounded-lg px-3.5 py-2;
+    @apply transition-colors hover:background-default;
+}
+
+.item.active {
+    @apply bg-brand-secondary hover:bg-brand-secondary;
+}
+
+:global(.root).activeLabel {
+    @apply text-brand-primary;
+}
+
+.itemIcon {
+    @apply size-4 shrink-0 text-secondary;
+}
+
+.item.active .itemIcon {
+    @apply text-brand-primary;
+}
+
+.footer {
+    @apply px-4 pt-4 pb-6;
+}
+
+.socials {
+    @apply flex items-center gap-1;
+}
+
+.social {
+    @apply flex size-9 items-center justify-center rounded-xl;
+    @apply text-secondary transition-colors hover:background-default;
+}
+
+.socialDisabled {
+    @apply flex size-9 items-center justify-center rounded-xl;
+    @apply text-secondary opacity-40;
+}
+
+.socialIcon {
+    @apply size-[18px];
+}
+
+.topbar {
+    @apply flex items-center gap-3 px-4 pt-3 md:hidden;
+    @apply background-default;
+}
+
+.topbarLogo {
+    @apply h-7 w-auto;
+}
+
+.hamburger {
+    @apply rounded-xl p-2;
+    @apply background-overlay text-primary transition-colors;
+}
+
+.hamburgerIcon {
+    @apply size-5;
+}
+
+.drawer {
+    @apply fixed inset-0 z-40 md:hidden;
+}
+
+.scrim {
+    @apply absolute inset-0 bg-black/30 backdrop-blur-sm;
+}
+
+.drawerPanel {
+    @apply relative h-full w-64 overflow-y-auto shadow-2xl background-raised;
+}
+
+.close {
+    @apply absolute top-4 right-4 p-1 transition-colors;
+}
+
+.closeIcon {
+    @apply size-5 text-primary;
+}

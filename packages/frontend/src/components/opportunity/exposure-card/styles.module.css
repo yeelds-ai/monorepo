@@ -1,0 +1,9 @@
+@reference "../../../app.css";
+
+:global(.card).root {
+    @apply px-0 pb-1.5;
+}
+
+.root :global(.header) {
+    @apply px-4;
+}

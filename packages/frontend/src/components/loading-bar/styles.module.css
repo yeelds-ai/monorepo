@@ -1,0 +1,9 @@
+@reference "../../app.css";
+
+.root {
+    @apply h-0.5 w-full overflow-hidden bg-transparent;
+}
+
+.progress {
+    @apply h-full bg-brand-primary transition-[width] duration-100 ease-out;
+}

@@ -1,0 +1,24 @@
+@reference "../../theme.css";
+
+.root {
+    @apply box-border relative flex-none w-full self-stretch;
+    @apply flex flex-row items-center justify-center gap-1;
+    @apply h-12 rounded-2xl p-4;
+    @apply cursor-pointer transition-opacity hover:opacity-90;
+}
+
+.primary {
+    @apply bg-brand-primary text-on-brand-primary;
+}
+
+.disabled {
+    @apply cursor-not-allowed opacity-50 hover:opacity-50;
+}
+
+.label {
+    @apply text-on-brand-primary;
+}
+
+.icon {
+    @apply size-4 shrink-0;
+}

@@ -1,0 +1,13 @@
+@reference "../../../app.css";
+
+.row {
+    @apply flex items-center justify-between gap-3 px-4 py-2;
+}
+
+.row + .row {
+    @apply border-t stroke-divider;
+}
+
+.rowValue {
+    @apply text-right;
+}

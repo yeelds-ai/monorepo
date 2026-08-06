@@ -1,0 +1,58 @@
+@reference "../../app.css";
+
+.root {
+    @apply flex flex-col gap-3;
+}
+
+.topRow {
+    @apply flex items-center gap-3;
+}
+
+.root.lg .topRow {
+    @apply gap-4;
+}
+
+.logoWrapper {
+    @apply relative shrink-0;
+}
+
+.chainDot {
+    @apply absolute -right-0.5 -bottom-0.5 flex rounded-full;
+    box-shadow: 0 0 0 2px var(--color-bg-raised);
+}
+
+.identityText {
+    @apply flex flex-col min-w-0 flex-1;
+}
+
+.strategyLine {
+    @apply flex items-center gap-1 truncate;
+}
+
+.assetIcon {
+    @apply shrink-0;
+}
+
+.nameLine {
+    @apply flex items-center gap-2 flex-wrap;
+}
+
+.explorerLink {
+    @apply flex text-primary;
+}
+
+.explorerIcon {
+    @apply size-4;
+}
+
+.chipRow {
+    @apply flex items-center gap-2 flex-wrap;
+}
+
+.tag {
+    @apply h-8;
+}
+
+.chainChip {
+    @apply flex items-center gap-1.5;
+}

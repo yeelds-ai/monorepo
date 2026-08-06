@@ -1,0 +1,13 @@
+@reference "../../../../app.css";
+
+.root {
+    @apply flex items-center gap-2 flex-wrap justify-end;
+}
+
+.asset {
+    @apply flex items-center gap-1.5;
+}
+
+.icon {
+    @apply rounded-full;
+}

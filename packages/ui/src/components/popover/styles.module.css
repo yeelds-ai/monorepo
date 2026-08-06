@@ -1,0 +1,14 @@
+@reference "../../theme.css";
+
+.root {
+    @apply stroke-focus w-fit rounded-lg border p-3;
+    @apply z-50;
+}
+
+.root.primary {
+    @apply background-raised;
+}
+
+.root.secondary {
+    @apply background-default;
+}

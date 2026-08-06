@@ -1,0 +1,9 @@
+@reference "../../../app.css";
+
+.paragraphs {
+    @apply flex flex-col gap-2;
+}
+
+.facts {
+    @apply w-full grid grid-cols-3 gap-3;
+}

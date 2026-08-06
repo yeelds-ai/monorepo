@@ -1,0 +1,73 @@
+@reference "../../theme.css";
+
+.root {
+    @apply m-0;
+}
+
+.size10 {
+    @apply text-10 leading-4;
+}
+
+.size12 {
+    @apply text-12 leading-4;
+}
+
+.size14 {
+    @apply text-14 leading-5;
+}
+
+.size16 {
+    @apply text-16 leading-6;
+}
+
+.size18 {
+    @apply text-18 leading-7;
+}
+
+.size20 {
+    @apply text-20 leading-7;
+}
+
+.size24 {
+    @apply text-24 leading-8;
+}
+
+.size28 {
+    @apply text-28 leading-9;
+}
+
+.brand {
+    @apply font-brand font-semibold;
+}
+
+.system {
+    @apply font-sans;
+}
+
+.medium {
+    @apply font-medium;
+}
+
+.bold {
+    @apply font-bold;
+}
+
+.primary {
+    @apply text-primary;
+}
+
+.secondary {
+    @apply text-secondary;
+}
+
+.colorBrand {
+    @apply text-brand-primary;
+}
+
+.uppercase {
+    @apply uppercase;
+}
+
+.capitalize {
+    @apply capitalize;
+}

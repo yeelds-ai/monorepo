@@ -1,0 +1,13 @@
+@reference "../../theme.css";
+
+.root {
+    @apply rounded-2xl background-raised p-4;
+}
+
+.header {
+    @apply flex items-center gap-2;
+}
+
+.icon {
+    @apply size-4.5;
+}

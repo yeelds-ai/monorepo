@@ -1,0 +1,13 @@
+@reference "../../app.css";
+
+.root {
+    @apply w-full max-w-7xl place-self-center flex flex-col gap-6 p-6;
+}
+
+.content {
+    @apply flex flex-col md:flex-row gap-6;
+}
+
+.main {
+    @apply w-full md:w-3/5 flex flex-col gap-4;
+}
