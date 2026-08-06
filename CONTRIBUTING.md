@@ -5,7 +5,7 @@ project, which is built with Next.js and uses `pnpm` as the package manager.
 
 ## Setup
 
-Requires Node `>=22 <=24` and pnpm `11`.
+Requires Node `>=22 <26` and pnpm `11`.
 
 ```bash
 pnpm install
