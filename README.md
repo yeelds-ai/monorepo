@@ -1,7 +1,7 @@
 <br />
 
 <p align="center">
-    <img src=".github/static/logo.svg" alt="Yeelds logo" width="60%" />
+    <img src=".github/static/logo.svg" alt="Yeelds logo" height="128px" width="60%"/>
 </p>
 
 <p align="center">
