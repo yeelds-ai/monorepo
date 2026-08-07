@@ -1,14 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { type ErrorInfo, catchError } from "next/error";
 
 import { ErrorState } from "@/src/components/error-state";
 
-interface ErrorPageProps {
-    reset: () => void;
-}
-
-export default function ErrorPage({ reset }: ErrorPageProps) {
+function ErrorFallback(_props: object, { retry }: ErrorInfo) {
     const t = useTranslations("error");
 
     return (
@@ -16,7 +13,9 @@ export default function ErrorPage({ reset }: ErrorPageProps) {
             title={t("title")}
             description={t("description")}
             retryLabel={t("retry")}
-            onRetry={reset}
+            onRetry={() => retry()}
         />
     );
 }
+
+export default catchError(ErrorFallback);

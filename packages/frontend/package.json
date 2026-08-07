@@ -15,7 +15,7 @@
         "@yeelds/registry": "workspace:*",
         "@yeelds/sdk": "workspace:*",
         "@yeelds/ui": "workspace:*",
-        "next": "16.2.12",
+        "next": "16.3.0",
         "next-intl": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",

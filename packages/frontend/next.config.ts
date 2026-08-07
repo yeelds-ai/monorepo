@@ -24,6 +24,9 @@ const CSP_HEADER = `
 
 const nextConfig: NextConfig = {
     reactCompiler: true,
+    experimental: {
+        turbopackRustReactCompiler: true,
+    },
     images: {
         remotePatterns: [
             {
