@@ -12,7 +12,7 @@
 }
 
 .trigger.active {
-    @apply text-primary;
+    @apply text-primary stroke-focus;
 }
 
 .trigger.open {
@@ -35,6 +35,10 @@
 
 .triggerLabel {
     @apply whitespace-nowrap text-secondary transition-colors;
+}
+
+.triggerLabel.active {
+    @apply text-primary;
 }
 
 .selectedWithCountLabel {
@@ -68,7 +72,7 @@
 }
 
 .checkbox {
-    @apply stroke-divider relative flex size-4 shrink-0 items-center justify-center rounded border bg-transparent transition-colors;
+    @apply stroke-focus relative flex size-4 shrink-0 items-center justify-center rounded border bg-transparent transition-colors;
 }
 
 .checkbox.checked {

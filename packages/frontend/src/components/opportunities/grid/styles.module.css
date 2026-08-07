@@ -13,7 +13,7 @@
 }
 
 .card {
-    @apply relative overflow-hidden rounded-2xl background-raised;
+    @apply relative overflow-hidden rounded-2xl background-raised transition-colors hover:background-default;
 }
 
 .link {

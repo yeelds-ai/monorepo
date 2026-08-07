@@ -3,7 +3,6 @@
 import classNames from "classnames";
 import type { FunctionComponent, SVGProps } from "react";
 
-import { CircledPlusIcon } from "../../assets";
 import { Typography } from "../typography";
 
 import styles from "./styles.module.css";
@@ -18,7 +17,7 @@ export interface MultiSelectTriggerProps {
 }
 
 export function MultiSelectTrigger({
-    icon: Icon = CircledPlusIcon,
+    icon: Icon,
     label,
     selectedLabels,
     open,
@@ -39,12 +38,14 @@ export function MultiSelectTrigger({
                 [styles.open]: open,
             })}
         >
-            <Icon className={styles.triggerIcon} />
+            {Icon && <Icon className={styles.triggerIcon} />}
             <div className={styles.triggerLabels}>
                 <Typography
                     size={14}
                     weight="medium"
-                    className={styles.triggerLabel}
+                    className={classNames(styles.triggerLabel, {
+                        [styles.active]: active,
+                    })}
                 >
                     {label}
                 </Typography>
