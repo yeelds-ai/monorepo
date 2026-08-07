@@ -1,0 +1,22 @@
+@reference "../../theme.css";
+
+.root {
+    @apply relative w-full px-2;
+}
+
+.track {
+    @apply relative h-1 w-full rounded-full;
+    @apply bg-border-default;
+}
+
+.range {
+    @apply absolute inset-y-0 rounded-full;
+    @apply bg-brand-primary;
+}
+
+.thumb {
+    @apply absolute top-1/2 size-4 -translate-x-1/2 -translate-y-1/2;
+    @apply cursor-pointer touch-none rounded-full border-2;
+    @apply border-brand-primary bg-bg-surface;
+    @apply focus-visible:outline-none focus-visible:stroke-focus;
+}

@@ -4,5 +4,6 @@ export * from "./components/multi-select";
 export * from "./components/popover";
 export * from "./components/remote-logo";
 export * from "./components/skeleton";
+export * from "./components/slider";
 export * from "./components/tag";
 export * from "./components/typography";

@@ -127,21 +127,17 @@
                 "vault": "Vault",
                 "staking": "Staking"
             },
+            "rangeMinLabel": "Min.",
+            "rangeMaxLabel": "Max.",
             "tvlAriaLabel": "Filter by TVL",
             "tvl": {
                 "label": "TVL",
-                "100000": "$100K+",
-                "1000000": "$1M+",
-                "10000000": "$10M+",
-                "100000000": "$100M+"
+                "title": "TVL range, USD"
             },
             "aprAriaLabel": "Filter by APY range",
             "apr": {
                 "label": "APY",
-                "0-10": "0-10%",
-                "10-50": "10-50%",
-                "50-100": "50-100%",
-                "100-": "100%+"
+                "title": "APY range, %"
             },
             "gradeAriaLabel": "Filter by Yeelds vault grade",
             "grade": {
