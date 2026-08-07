@@ -11,3 +11,31 @@ export function formatApy(apy: number | null): string {
     if (apy > 10_000) return ">10,000%";
     return `${apy.toFixed(2)}%`;
 }
+
+const USD_SUFFIX_MULTIPLIERS: Record<string, number> = {
+    k: 1_000,
+    m: 1_000_000,
+    b: 1_000_000_000,
+};
+
+export function parseUsd(input: string): number | null {
+    const trimmed = input.trim().replace(/[$,\s]/g, "");
+    if (!trimmed) return null;
+
+    const match = /^(-?\d*\.?\d+)([kmb])?$/i.exec(trimmed);
+    if (!match) return null;
+
+    const [, digits, suffix] = match;
+    const multiplier = suffix
+        ? USD_SUFFIX_MULTIPLIERS[suffix.toLowerCase()]
+        : 1;
+    return Number(digits) * multiplier;
+}
+
+export function parseApy(input: string): number | null {
+    const trimmed = input.trim().replace(/[%\s]/g, "");
+    if (!trimmed) return null;
+
+    const value = Number(trimmed);
+    return Number.isFinite(value) ? value : null;
+}

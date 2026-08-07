@@ -1,0 +1,56 @@
+@reference "../../../../app.css";
+
+.trigger {
+    @apply relative flex cursor-pointer items-center gap-1.5;
+    @apply rounded-xl border px-3 py-1.5 transition-colors;
+    @apply background-overlay stroke-divider text-secondary;
+    @apply hover:stroke-focus;
+}
+
+.trigger.active {
+    @apply text-primary stroke-focus;
+}
+
+.trigger.open {
+    @apply border-border-focus;
+}
+
+.triggerLabel {
+    @apply whitespace-nowrap text-secondary transition-colors;
+}
+
+.triggerLabel.active {
+    @apply text-primary;
+}
+
+.popover {
+    @apply flex min-w-60 flex-col gap-4;
+}
+
+.slider {
+    @apply mt-1;
+}
+
+.inputs {
+    @apply grid grid-cols-[1fr_auto_1fr] items-center gap-x-2 gap-y-1;
+}
+
+.input {
+    @apply row-start-1 w-24 text-center text-lg;
+}
+
+.caption {
+    @apply row-start-2 text-center;
+}
+
+.low {
+    @apply col-start-1;
+}
+
+.high {
+    @apply col-start-3;
+}
+
+.dash {
+    @apply col-start-2 row-start-1 h-px w-3 shrink-0 bg-border-default;
+}

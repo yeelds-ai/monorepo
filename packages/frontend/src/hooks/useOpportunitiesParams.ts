@@ -11,7 +11,14 @@ import { startTransition, useOptimistic } from "react";
 
 import { usePathname, useRouter } from "@/src/i18n/routing";
 
-const NON_FILTER_PARAMS = new Set(["page", "pageSize", "sort", "direction"]);
+const FILTER_GROUPS: (keyof OpportunitiesParams)[][] = [
+    ["chains"],
+    ["protocols"],
+    ["strategies"],
+    ["tvlFrom", "tvlTo"],
+    ["apyFrom", "apyTo"],
+    ["minScore"],
+];
 
 export interface UseOpportunitiesParamsReturnValue {
     query: OpportunitiesParams;
@@ -131,10 +138,8 @@ export function useOpportunitiesParams(): UseOpportunitiesParamsReturnValue {
         navigate(new URLSearchParams(), {});
     }
 
-    const activeFilterCount = (
-        Object.keys(query) as (keyof OpportunitiesParams)[]
-    ).filter(
-        (key) => !NON_FILTER_PARAMS.has(key) && query[key] !== undefined,
+    const activeFilterCount = FILTER_GROUPS.filter((keys) =>
+        keys.some((key) => query[key] !== undefined),
     ).length;
 
     return { query, setParam, setParams, clearFilters, activeFilterCount };

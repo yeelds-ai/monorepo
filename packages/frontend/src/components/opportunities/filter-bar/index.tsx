@@ -1,7 +1,12 @@
 "use client";
 
 import type { Strategy } from "@yeelds/sdk";
-import { MultiSelect, type SelectOption, Typography } from "@yeelds/ui";
+import {
+    MultiSelect,
+    type SelectOption,
+    type SliderValue,
+    Typography,
+} from "@yeelds/ui";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
@@ -9,13 +14,25 @@ import { useMemo, useState } from "react";
 import { FilterListIcon } from "@/src/assets";
 import { useOpportunitiesFilters } from "@/src/hooks/useFilters";
 import { useOpportunitiesParams } from "@/src/hooks/useOpportunitiesParams";
+import { formatApy, formatUsd, parseApy, parseUsd } from "@/src/utils/format";
+import { RangeFilter } from "./range-filter";
 
 import styles from "./styles.module.css";
+
+const TVL_MIN = 0;
+const TVL_MAX = 1_000_000_000;
+const TVL_STEP = 10_000;
+const TVL_MIN_DISTANCE = 1_000_000;
+
+const APY_MIN = 0;
+const APY_MAX = 100;
+const APY_STEP = 0.5;
+const APY_MIN_DISTANCE = 1;
 
 export function FilterBar() {
     const t = useTranslations("opportunities.filterBar");
     const { loading, filters } = useOpportunitiesFilters();
-    const { query, setParam, clearFilters, activeFilterCount } =
+    const { query, setParam, setParams, clearFilters, activeFilterCount } =
         useOpportunitiesParams();
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -101,6 +118,14 @@ export function FilterBar() {
         );
     }
 
+    function handleOnTvlChange(value: SliderValue | undefined) {
+        setParams({ tvlFrom: value?.[0], tvlTo: value?.[1] });
+    }
+
+    function handleOnApyChange(value: SliderValue | undefined) {
+        setParams({ apyFrom: value?.[0], apyTo: value?.[1] });
+    }
+
     return (
         <div className={styles.root}>
             <button
@@ -153,6 +178,44 @@ export function FilterBar() {
                     loading={loading}
                     messages={messages}
                     onChange={handleOnStrategiesChange}
+                />
+                <RangeFilter
+                    label={t("tvl.label")}
+                    ariaLabel={t("tvlAriaLabel")}
+                    title={t("tvl.title")}
+                    minCaption={t("rangeMinLabel")}
+                    maxCaption={t("rangeMaxLabel")}
+                    min={TVL_MIN}
+                    max={TVL_MAX}
+                    step={TVL_STEP}
+                    minDistance={TVL_MIN_DISTANCE}
+                    value={
+                        query.tvlFrom !== undefined || query.tvlTo !== undefined
+                            ? [query.tvlFrom ?? TVL_MIN, query.tvlTo ?? TVL_MAX]
+                            : undefined
+                    }
+                    format={formatUsd}
+                    parse={parseUsd}
+                    onChange={handleOnTvlChange}
+                />
+                <RangeFilter
+                    label={t("apr.label")}
+                    ariaLabel={t("aprAriaLabel")}
+                    title={t("apr.title")}
+                    minCaption={t("rangeMinLabel")}
+                    maxCaption={t("rangeMaxLabel")}
+                    min={APY_MIN}
+                    max={APY_MAX}
+                    step={APY_STEP}
+                    minDistance={APY_MIN_DISTANCE}
+                    value={
+                        query.apyFrom !== undefined || query.apyTo !== undefined
+                            ? [query.apyFrom ?? APY_MIN, query.apyTo ?? APY_MAX]
+                            : undefined
+                    }
+                    format={formatApy}
+                    parse={parseApy}
+                    onChange={handleOnApyChange}
                 />
 
                 {activeFilterCount > 0 && (
