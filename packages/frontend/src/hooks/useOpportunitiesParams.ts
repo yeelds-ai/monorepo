@@ -1,12 +1,17 @@
 "use client";
 
-import type { OpportunitiesParams, Strategy } from "@yeelds/sdk";
+import type {
+    OpportunitiesParams,
+    SortDirection,
+    SortField,
+    Strategy,
+} from "@yeelds/sdk";
 import { useSearchParams } from "next/navigation";
 import { startTransition, useOptimistic } from "react";
 
 import { usePathname, useRouter } from "@/src/i18n/routing";
 
-const NON_FILTER_PARAMS = new Set(["page", "pageSize"]);
+const NON_FILTER_PARAMS = new Set(["page", "pageSize", "sort", "direction"]);
 
 export interface UseOpportunitiesParamsReturnValue {
     query: OpportunitiesParams;
@@ -29,6 +34,9 @@ function parseQuery(searchParams: URLSearchParams): OpportunitiesParams {
     const tvlTo = searchParams.get("tvlTo");
     const apyFrom = searchParams.get("apyFrom");
     const apyTo = searchParams.get("apyTo");
+    const minScore = searchParams.get("minScore");
+    const sort = searchParams.get("sort");
+    const direction = searchParams.get("direction");
 
     return {
         chains: chains ? chains.split(",") : undefined,
@@ -42,6 +50,9 @@ function parseQuery(searchParams: URLSearchParams): OpportunitiesParams {
         tvlTo: tvlTo ? Number(tvlTo) : undefined,
         apyFrom: apyFrom ? Number(apyFrom) : undefined,
         apyTo: apyTo ? Number(apyTo) : undefined,
+        minScore: minScore ? Number(minScore) : undefined,
+        sort: sort ? (sort as SortField) : undefined,
+        direction: direction ? (direction as SortDirection) : undefined,
     };
 }
 

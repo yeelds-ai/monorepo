@@ -1,5 +1,9 @@
+import type { SortDirection, SortField } from "@yeelds/sdk";
 import { Typography } from "@yeelds/ui";
+import classNames from "classnames";
 import { useTranslations } from "next-intl";
+
+import { ArrowDown, ArrowUp } from "@/src/assets";
 
 import styles from "./styles.module.css";
 
@@ -13,6 +17,12 @@ export const HEADER_KEYS = [
     "apy",
     "dailyEstimate",
 ] as const;
+
+const SORT_FIELDS: Partial<Record<(typeof HEADER_KEYS)[number], SortField>> = {
+    tvl: "tvl",
+    grade: "score",
+    apy: "apy",
+};
 
 const COL_WIDTH_RATIOS: Record<(typeof HEADER_KEYS)[number], number> = {
     chain: 6,
@@ -38,19 +48,101 @@ export const COL_WIDTHS: Record<(typeof HEADER_KEYS)[number], string> =
         ]),
     ) as Record<(typeof HEADER_KEYS)[number], string>;
 
-export function OpportunitiesTableHeader() {
+interface OpportunitiesTableHeaderProps {
+    sort?: SortField;
+    direction?: SortDirection;
+    onSortChange: (sort?: SortField, direction?: SortDirection) => void;
+}
+
+export function OpportunitiesTableHeader({
+    sort,
+    direction,
+    onSortChange,
+}: OpportunitiesTableHeaderProps) {
     const t = useTranslations("opportunities.table");
+
+    function getHandleOnHeaderClick(field: SortField) {
+        return () => {
+            if (sort !== field) return onSortChange(field, "desc");
+            if (direction === "desc") return onSortChange(field, "asc");
+            onSortChange(undefined, undefined);
+        };
+    }
 
     return (
         <thead>
             <tr>
-                {HEADER_KEYS.map((key) => (
-                    <th key={key} className={styles.header}>
-                        <Typography size={14} weight="bold" variant="secondary">
-                            {t(key)}
-                        </Typography>
-                    </th>
-                ))}
+                {HEADER_KEYS.map((key) => {
+                    const field = SORT_FIELDS[key];
+                    if (!field)
+                        return (
+                            <th key={key} className={styles.header}>
+                                <Typography
+                                    size={14}
+                                    weight="bold"
+                                    variant="secondary"
+                                >
+                                    {t(key)}
+                                </Typography>
+                            </th>
+                        );
+
+                    const active = sort === field;
+
+                    return (
+                        <th
+                            key={key}
+                            className={styles.header}
+                            aria-sort={
+                                active
+                                    ? direction === "asc"
+                                        ? "ascending"
+                                        : "descending"
+                                    : "none"
+                            }
+                        >
+                            <button
+                                onClick={getHandleOnHeaderClick(field)}
+                                className={classNames(
+                                    "sortableHeader",
+                                    styles.sortableHeader,
+                                )}
+                            >
+                                <Typography
+                                    size={14}
+                                    weight="bold"
+                                    variant="secondary"
+                                >
+                                    {t(key)}
+                                </Typography>
+                                <span className={styles.sortIcons}>
+                                    <ArrowUp
+                                        className={classNames(
+                                            "sortIcon",
+                                            styles.sortIcon,
+                                            {
+                                                [styles.active]:
+                                                    active &&
+                                                    direction === "asc",
+                                            },
+                                        )}
+                                    />
+                                    <ArrowDown
+                                        className={classNames(
+                                            "sortIcon",
+                                            styles.sortIcon,
+                                            {
+                                                [styles.active]:
+                                                    active &&
+                                                    direction === "desc",
+                                            },
+                                        )}
+                                    />
+                                </span>
+                            </button>
+                        </th>
+                    );
+                })}
             </tr>
         </thead>
     );

@@ -1,3 +1,4 @@
+import type { SortDirection, SortField } from "@yeelds/sdk";
 import { Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
@@ -14,12 +15,18 @@ interface OpportunitiesTableProps {
     opportunities: EnrichedOpportunity[];
     loading?: boolean;
     placeholderLoading?: boolean;
+    sort?: SortField;
+    direction?: SortDirection;
+    onSortChange?: (sort?: SortField, direction?: SortDirection) => void;
 }
 
 export function OpportunitiesTable({
     opportunities,
     loading = false,
     placeholderLoading = false,
+    sort,
+    direction,
+    onSortChange = () => {},
 }: OpportunitiesTableProps) {
     const t = useTranslations("opportunities.table");
 
@@ -43,7 +50,11 @@ export function OpportunitiesTable({
                             <col key={key} style={{ width: COL_WIDTHS[key] }} />
                         ))}
                     </colgroup>
-                    <OpportunitiesTableHeader />
+                    <OpportunitiesTableHeader
+                        sort={sort}
+                        direction={direction}
+                        onSortChange={onSortChange}
+                    />
                     <tbody>
                         <tr aria-hidden="true" className={styles.loadingBarRow}>
                             <td

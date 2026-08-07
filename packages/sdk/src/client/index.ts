@@ -3,10 +3,11 @@ import type { OpportunitiesFiltersResponse } from "../types/filters";
 import type {
     OpportunityResponse,
     PaginatedOpportunitiesResponse,
+    SortDirection,
+    SortField,
     Strategy,
 } from "../types/opportunity";
 import type { Stats } from "../types/stats";
-import type { Address } from "../types/token";
 
 export interface FeedParams {
     page?: number;
@@ -24,11 +25,14 @@ export interface OpportunitiesParams {
     tvlTo?: number;
     apyFrom?: number;
     apyTo?: number;
+    minScore?: number;
+    sort?: SortField;
+    direction?: SortDirection;
 }
 
 export interface OpportunityParams {
     chain: string;
-    address: Address;
+    address: string;
 }
 
 export class YeeldsApiClient {

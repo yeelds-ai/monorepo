@@ -1,7 +1,12 @@
+import type { OpportunityGrade } from "./grade";
 import type { Protocol } from "./protocol";
-import type { Address, Token, U256 } from "./token";
+import type { Token } from "./token";
 
 export type Strategy = "vault";
+
+export type SortField = "apy" | "tvl" | "score";
+
+export type SortDirection = "asc" | "desc";
 
 export interface OnChainContract {
     ageDays?: number | null;
@@ -21,7 +26,7 @@ export interface OnChainData {
 
 export interface OpportunityAsset {
     token: Token;
-    amount: U256;
+    amount: string;
     amountUsd?: number | null;
 }
 
@@ -32,7 +37,7 @@ export interface OpportunityReward {
 
 export interface Opportunity {
     chain: string;
-    address: Address;
+    address: string;
     name: string;
     protocol: Protocol;
     strategy: Strategy;
@@ -41,6 +46,7 @@ export interface Opportunity {
     rewards: OpportunityReward[];
     tvlUsd?: number | null;
     onChain?: OnChainData | null;
+    grade?: OpportunityGrade | null;
 }
 
 export type OpportunityResponse = Opportunity | null;

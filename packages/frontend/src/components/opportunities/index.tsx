@@ -1,5 +1,6 @@
 "use client";
 
+import type { SortDirection, SortField } from "@yeelds/sdk";
 import { Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -18,7 +19,7 @@ export const DEFAULT_PAGE_LIMIT = 20;
 
 export function Opportunities() {
     const t = useTranslations("opportunities");
-    const { query, setParam } = useOpportunitiesParams();
+    const { query, setParam, setParams } = useOpportunitiesParams();
     const [view, setView] = useState<YieldsView>("table");
     const {
         opportunities,
@@ -38,6 +39,10 @@ export function Opportunities() {
 
     function handleOnPageChange(page: number) {
         setParam("page", page <= 1 ? undefined : page);
+    }
+
+    function handleOnSortChange(sort?: SortField, direction?: SortDirection) {
+        setParams({ sort, direction });
     }
 
     return (
@@ -76,6 +81,9 @@ export function Opportunities() {
                         opportunities={opportunities}
                         loading={loading}
                         placeholderLoading={placeholderData && fetching}
+                        sort={query.sort}
+                        direction={query.direction}
+                        onSortChange={handleOnSortChange}
                     />
                 )}
             </div>

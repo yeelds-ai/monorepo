@@ -1,9 +1,5 @@
-export type Address = string;
-
-export type U256 = string;
-
 export type StablecoinPegMechanism =
-    "fiat-backed" | "crypto-backed" | "algorithmic" | "unknown";
+    "fiat-backed" | "crypto-backed" | "rwa-backed" | "algorithmic" | "unknown";
 
 export type StablecoinPegType =
     | "usd"
@@ -14,9 +10,11 @@ export type StablecoinPegType =
     | "cad"
     | "jpy"
     | "cny"
+    | "cnh"
     | "krw"
     | "sgd"
     | "myr"
+    | "idr"
     | "php"
     | "try"
     | "uah"
@@ -27,11 +25,15 @@ export type StablecoinPegType =
     | "clp"
     | "pen"
     | "real"
+    | "brl"
     | "kes"
     | "zar"
     | "ngn"
     | "ghs"
     | "xof"
+    | "kgs"
+    | "gold"
+    | "silver"
     | "var"
     | "unknown";
 
@@ -45,7 +47,7 @@ export interface TokenStablecoin {
 
 export interface Token {
     chain: string;
-    address: Address;
+    address: string;
     symbol: string;
     decimals: number;
     stablecoin?: TokenStablecoin | null;
