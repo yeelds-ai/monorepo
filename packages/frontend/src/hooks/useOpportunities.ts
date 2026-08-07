@@ -43,7 +43,7 @@ export function useOpportunities({
         loading: isPending,
         fetching: isFetching,
         placeholderData,
-        opportunities: data?.opportunities.map(enrichOpportunity) ?? [],
+        opportunities: data?.opportunities?.map(enrichOpportunity) ?? [],
         totalOpportunities: data?.totalItems ?? 0,
     };
 }
