@@ -1,7 +1,7 @@
 import { Button, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
-import { ClipboardCheckIcon } from "@/src/assets/clipboard-check";
+import { ClipboardCheckIcon } from "@/src/assets/clipboard-check-icon";
 import { ExternalLinkIcon } from "@/src/assets/external-link-icon";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 

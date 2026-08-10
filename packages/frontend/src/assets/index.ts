@@ -9,7 +9,7 @@ export * from "./chevron-double-left-icon";
 export * from "./chevron-double-right-icon";
 export * from "./chevron-left-icon";
 export * from "./chevron-right-icon";
-export * from "./clipboard-check";
+export * from "./clipboard-check-icon";
 export * from "./clock-icon";
 export * from "./close-icon";
 export * from "./date-time-icon";
