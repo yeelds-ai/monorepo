@@ -26,9 +26,11 @@ export function OpportunitiesSkeleton() {
             </div>
 
             <div className={styles.filterBar}>
-                <Skeleton height={34} width={120} />
-                <Skeleton height={34} width={120} />
-                <Skeleton height={34} width={120} />
+                <Skeleton height={32} width={114} />
+                <Skeleton height={32} width={114} />
+                <Skeleton height={32} width={114} />
+                <Skeleton height={32} width={50} />
+                <Skeleton height={32} width={50} />
             </div>
 
             <div className={styles.content}>

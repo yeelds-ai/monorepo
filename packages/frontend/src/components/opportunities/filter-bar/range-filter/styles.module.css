@@ -2,7 +2,7 @@
 
 .trigger {
     @apply relative flex cursor-pointer items-center gap-1.5;
-    @apply rounded-xl border px-3 py-1.5 transition-colors;
+    @apply rounded-xl border h-8 px-3 py-1.5 transition-colors;
     @apply background-overlay stroke-divider text-secondary;
     @apply hover:stroke-focus;
 }
