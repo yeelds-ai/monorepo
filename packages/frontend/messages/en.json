@@ -157,8 +157,8 @@
         "lastPage": "Last page"
     },
     "metadata": {
-        "title": "Yeelds — DeFi Yield Discovery",
-        "description": "Discover and compare yield opportunities across EVM chains."
+        "title": "Yeelds — DeFi yields graded",
+        "description": "Discover and compare yield opportunities across different chains. Vaults graded based on the collateral, curator, governance and NAV."
     },
     "notFound": {
         "title": "Page not found",
