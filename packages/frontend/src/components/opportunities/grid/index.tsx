@@ -1,8 +1,7 @@
 import type { Opportunity } from "@yeelds/sdk";
-import { Typography } from "@yeelds/ui";
-import { useTranslations } from "next-intl";
 
 import { LoadingBar } from "@/src/components/loading-bar";
+import { EmptyOpportunities } from "../empty";
 import { OpportunityCard } from "./opportunity-card";
 
 import styles from "./styles.module.css";
@@ -16,18 +15,7 @@ export function OpportunitiesGrid({
     opportunities,
     placeholderLoading = false,
 }: OpportunitiesGridProps) {
-    const t = useTranslations("opportunities.table");
-
-    if (opportunities.length === 0)
-        return (
-            <div className={styles.wrapper}>
-                <div className={styles.empty}>
-                    <Typography size={14} weight="medium" variant="secondary">
-                        {t("empty")}
-                    </Typography>
-                </div>
-            </div>
-        );
+    if (opportunities.length === 0) return <EmptyOpportunities />;
 
     return (
         <div className={styles.wrapper}>

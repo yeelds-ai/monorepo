@@ -1,10 +1,9 @@
 import type { SortDirection, SortField } from "@yeelds/sdk";
-import { Typography } from "@yeelds/ui";
-import { useTranslations } from "next-intl";
 
 import { LoadingBar } from "@/src/components/loading-bar";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { DEFAULT_PAGE_LIMIT } from "..";
+import { EmptyOpportunities } from "../empty";
 import { COL_WIDTHS, HEADER_KEYS, OpportunitiesTableHeader } from "./header";
 import { OpportunityRow } from "./opportunity-row";
 import { SkeletonOpportunityRow } from "./skeleton-row";
@@ -28,18 +27,7 @@ export function OpportunitiesTable({
     direction,
     onSortChange = () => {},
 }: OpportunitiesTableProps) {
-    const t = useTranslations("opportunities.table");
-
-    if (!loading && opportunities.length === 0)
-        return (
-            <div className={styles.wrapper}>
-                <div className={styles.empty}>
-                    <Typography size={14} weight="medium" variant="secondary">
-                        {t("empty")}
-                    </Typography>
-                </div>
-            </div>
-        );
+    if (!loading && opportunities.length === 0) return <EmptyOpportunities />;
 
     return (
         <div className={styles.wrapper}>

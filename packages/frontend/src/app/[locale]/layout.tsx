@@ -116,7 +116,7 @@ export default async function RootLayout({
                     data-domains="www.yeelds.ai"
                 />
             </head>
-            <body className="background-default flex min-h-full flex-col font-sans">
+            <body className="background-default flex h-full flex-col font-sans">
                 <NextIntlClientProvider>
                     <ClientProviders>
                         <Layout>{children}</Layout>

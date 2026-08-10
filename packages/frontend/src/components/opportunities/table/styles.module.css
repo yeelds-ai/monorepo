@@ -1,9 +1,5 @@
 @reference "../../../app.css";
 
-.empty {
-    @apply py-16 text-center;
-}
-
 .wrapper {
     @apply overflow-x-scroll sm:overflow-x-auto;
 }

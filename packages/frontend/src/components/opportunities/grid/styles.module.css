@@ -1,9 +1,5 @@
 @reference "../../../app.css";
 
-.empty {
-    @apply py-16 text-center;
-}
-
 .wrapper {
     @apply px-6 pb-4 sm:px-8;
 }

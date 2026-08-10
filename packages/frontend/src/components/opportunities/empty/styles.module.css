@@ -1,0 +1,83 @@
+@reference "../../../app.css";
+
+.root {
+    @apply flex flex-col items-center gap-6 pt-10 sm:pt-48;
+}
+
+.illustration {
+    @apply relative flex w-full items-center justify-center;
+}
+
+.pill {
+    @apply p-4 flex min-h-14 w-fit items-center gap-3 rounded-2xl px-4;
+    @apply border stroke-divider background-surface;
+}
+
+.pillMain {
+    @apply z-10;
+}
+
+.pillSide {
+    @apply w-48 absolute top-1/2 left-1/2 z-0 opacity-40;
+}
+
+.pillLeft {
+    transform: translate(calc(-50% - 8rem), -50%);
+}
+
+.pillRight {
+    transform: translate(calc(-50% + 8rem), -50%);
+}
+
+.avatar {
+    @apply relative shrink-0;
+}
+
+.avatarCircle {
+    @apply block size-10 rounded-full bg-border-default;
+}
+
+.avatarDot {
+    @apply absolute -right-0.5 -bottom-0.5 size-4 rounded-full bg-border-default;
+    box-shadow: 0 0 0 2px var(--color-bg-raised);
+}
+
+.avatarCircleSm {
+    @apply size-7;
+}
+
+.avatarDotSm {
+    @apply size-3;
+}
+
+.pillText {
+    @apply flex min-w-0 flex-1 flex-col gap-0.5;
+}
+
+.textBars {
+    @apply flex min-w-0 flex-1 flex-col gap-1.5;
+}
+
+.textBar {
+    @apply h-3 rounded-sm bg-border-default;
+}
+
+.textBarShort {
+    @apply w-8;
+}
+
+.textBarLong {
+    @apply w-24;
+}
+
+.textBarEnd {
+    @apply ml-auto;
+}
+
+.tag {
+    @apply h-8 shrink-0;
+}
+
+.copy {
+    @apply flex flex-col items-center gap-1 text-center;
+}
