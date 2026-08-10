@@ -33,6 +33,7 @@ export function Slider({
     onChangeEnd,
 }: SliderProps) {
     const trackRef = useRef<HTMLDivElement>(null);
+    const activePointersRef = useRef<Set<number>>(new Set());
     const [low, high] = value;
 
     const positionToValue = useCallback(
@@ -53,15 +54,28 @@ export function Slider({
 
     function handleOnPointerDown(event: PointerEvent<HTMLDivElement>) {
         event.currentTarget.setPointerCapture(event.pointerId);
+        activePointersRef.current.add(event.pointerId);
     }
 
-    function handleOnPointerUp(event: PointerEvent<HTMLDivElement>) {
-        if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
+    function endDrag(event: PointerEvent<HTMLDivElement>) {
+        if (!activePointersRef.current.delete(event.pointerId)) return;
         onChangeEnd?.(value);
     }
 
+    function handleOnPointerUp(event: PointerEvent<HTMLDivElement>) {
+        endDrag(event);
+    }
+
+    function handleOnPointerCancel(event: PointerEvent<HTMLDivElement>) {
+        endDrag(event);
+    }
+
+    function handleOnLostPointerCapture(event: PointerEvent<HTMLDivElement>) {
+        endDrag(event);
+    }
+
     function handleOnLowPointerMove(event: PointerEvent<HTMLDivElement>) {
-        if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
+        if (!activePointersRef.current.has(event.pointerId)) return;
         const next = Math.min(
             positionToValue(event.clientX),
             high - minDistance,
@@ -70,7 +84,7 @@ export function Slider({
     }
 
     function handleOnHighPointerMove(event: PointerEvent<HTMLDivElement>) {
-        if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
+        if (!activePointersRef.current.has(event.pointerId)) return;
         const next = Math.max(
             positionToValue(event.clientX),
             low + minDistance,
@@ -100,6 +114,8 @@ export function Slider({
                     onPointerDown={handleOnPointerDown}
                     onPointerMove={handleOnLowPointerMove}
                     onPointerUp={handleOnPointerUp}
+                    onPointerCancel={handleOnPointerCancel}
+                    onLostPointerCapture={handleOnLostPointerCapture}
                     style={{ left: `${lowPercent}%` }}
                     className={classNames("thumb", styles.thumb)}
                 />
@@ -112,6 +128,8 @@ export function Slider({
                     onPointerDown={handleOnPointerDown}
                     onPointerMove={handleOnHighPointerMove}
                     onPointerUp={handleOnPointerUp}
+                    onPointerCancel={handleOnPointerCancel}
+                    onLostPointerCapture={handleOnLostPointerCapture}
                     style={{ left: `${highPercent}%` }}
                     className={classNames("thumb", styles.thumb)}
                 />

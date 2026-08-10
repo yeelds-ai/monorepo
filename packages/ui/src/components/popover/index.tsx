@@ -13,7 +13,7 @@ import {
 } from "@floating-ui/react";
 import classNames from "classnames";
 import { AnimatePresence, easeInOut, motion } from "motion/react";
-import { type ReactNode, forwardRef, useState } from "react";
+import { type ReactNode, forwardRef, useCallback, useState } from "react";
 
 import styles from "./styles.module.css";
 
@@ -74,18 +74,21 @@ export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
         const dismiss = useDismiss(context);
         const { getFloatingProps } = useInteractions([dismiss]);
 
+        const mergedRef = useCallback(
+            (element: HTMLDivElement | null) => {
+                if (typeof ref === "function") ref(element);
+                else if (ref) ref.current = element;
+                setPopper(element);
+            },
+            [ref],
+        );
+
         return (
             <AnimatePresence>
                 {open && (
                     <FloatingPortal root={root}>
                         <motion.div
-                            ref={(element) => {
-                                if (ref) {
-                                    if (typeof ref === "function") ref(element);
-                                    else ref.current = element;
-                                }
-                                setPopper(element);
-                            }}
+                            ref={mergedRef}
                             {...getFloatingProps()}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
