@@ -3,6 +3,7 @@
 import classNames from "classnames";
 import type { FunctionComponent, SVGProps } from "react";
 
+import { ChevronDownIcon } from "../../assets";
 import { Typography } from "../typography";
 
 import styles from "./styles.module.css";
@@ -27,6 +28,7 @@ export function MultiSelectTrigger({
     const firstSelected = selectedLabels[0];
     const extraCount = Math.max(selectedLabels.length - 1, 0);
     const active = selectedLabels.length > 0;
+    const showSelectedLabels = firstSelected || extraCount > 0;
 
     return (
         <button
@@ -49,19 +51,26 @@ export function MultiSelectTrigger({
                 >
                     {label}
                 </Typography>
-                <div className={styles.selectedWithCountLabel}>
-                    {firstSelected && (
-                        <Typography size={12} weight="bold" color="brand">
-                            {firstSelected}
-                        </Typography>
-                    )}
-                    {extraCount > 0 && (
-                        <Typography size={12} weight="bold" variant="secondary">
-                            +{extraCount}
-                        </Typography>
-                    )}
-                </div>
+                {showSelectedLabels && (
+                    <div className={styles.selectedWithCountLabel}>
+                        {firstSelected && (
+                            <Typography size={12} weight="bold" color="brand">
+                                {firstSelected}
+                            </Typography>
+                        )}
+                        {extraCount > 0 && (
+                            <Typography
+                                size={12}
+                                weight="bold"
+                                variant="secondary"
+                            >
+                                +{extraCount}
+                            </Typography>
+                        )}
+                    </div>
+                )}
             </div>
+            <ChevronDownIcon className={styles.chevronIcon} />
         </button>
     );
 }

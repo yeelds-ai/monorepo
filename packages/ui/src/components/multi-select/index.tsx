@@ -40,6 +40,7 @@ const OPTION_ROW_HEIGHT = 36;
 const MAX_VISIBLE_OPTIONS = 6;
 const SEARCH_DEBOUNCE_MS = 200;
 const SKELETON_LABEL_WIDTHS = ["70%", "45%", "60%", "50%", "65%"];
+const SHOW_DESELECT_ALL_THRESHOLD = 5;
 
 export interface MultiSelectProps<
     V extends ValueType,
@@ -148,6 +149,9 @@ export function MultiSelect<V extends ValueType, O extends SelectOption<V>>({
         OPTION_ROW_HEIGHT;
 
     const selectedLabels = values.map((option) => option.label);
+    const showDeselectAll =
+        values.length === options.length &&
+        options.length >= SHOW_DESELECT_ALL_THRESHOLD;
 
     return (
         <div
@@ -176,7 +180,7 @@ export function MultiSelect<V extends ValueType, O extends SelectOption<V>>({
                     <SkeletonOptions />
                 ) : (
                     <>
-                        {values.length > 1 && (
+                        {showDeselectAll && (
                             <button
                                 type="button"
                                 onClick={handleOnDeselectAll}
