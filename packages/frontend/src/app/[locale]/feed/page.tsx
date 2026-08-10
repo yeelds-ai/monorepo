@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { buildPageMetadata } from "@/src/commons/metadata";
 import { Feed } from "@/src/components/feed";
 import type { Locale } from "@/src/i18n/routing";
 
@@ -15,12 +14,11 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations("feed");
 
-    return buildPageMetadata({
-        locale,
-        path: "/feed",
+    return {
         title: t("title"),
         description: t("subtitle"),
-    });
+        alternates: { canonical: `/${locale}/feed` },
+    };
 }
 
 export default async function FeedPage({ params }: FeedPageProps) {

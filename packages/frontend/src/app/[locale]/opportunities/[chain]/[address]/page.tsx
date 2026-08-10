@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { buildPageMetadata } from "@/src/commons/metadata";
 import { Opportunity } from "@/src/components/opportunity";
 import type { Locale } from "@/src/i18n/routing";
 
@@ -15,12 +14,13 @@ export async function generateMetadata({
     const { locale, chain, address } = await params;
     const t = await getTranslations("opportunity");
 
-    return buildPageMetadata({
-        locale,
-        path: `/opportunities/${chain}/${address}`,
+    return {
         title: t("title", { chain, address }),
         description: t("description"),
-    });
+        alternates: {
+            canonical: `/${locale}/opportunities/${chain}/${address}`,
+        },
+    };
 }
 
 export default async function OpportunityPage({

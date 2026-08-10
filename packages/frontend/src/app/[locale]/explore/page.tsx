@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { buildPageMetadata } from "@/src/commons/metadata";
 import { MessagePage } from "@/src/components/message-page";
 import type { Locale } from "@/src/i18n/routing";
 
@@ -15,12 +14,11 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations("explore");
 
-    return buildPageMetadata({
-        locale,
-        path: "/explore",
-        title: t("metaTitle"),
+    return {
+        title: t("title"),
         description: t("subtitle"),
-    });
+        alternates: { canonical: `/${locale}/explore` },
+    };
 }
 
 export default async function ExplorePage({ params }: ExplorePageProps) {
