@@ -1,5 +1,5 @@
 import { SUPPORTED_CHAINS } from "@yeelds/registry";
-import { Tag, Typography } from "@yeelds/ui";
+import { GradeTag, Tag, Typography } from "@yeelds/ui";
 import classNames from "classnames";
 
 import { Link } from "@/src/i18n/routing";
@@ -65,7 +65,7 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
                 {/* TODO: implement stability badge */}-
             </td>
             <td className={styles.cell}>
-                {/* TODO: implement grade badge */}-
+                <GradeTag grade={opportunity.grade?.letter} />
             </td>
             <td className={styles.cell}>
                 <Typography size={18} weight="bold">

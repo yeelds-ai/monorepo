@@ -1,12 +1,12 @@
 import { SUPPORTED_CHAINS } from "@yeelds/registry";
-import type { Opportunity } from "@yeelds/sdk";
-import { Tag, Typography } from "@yeelds/ui";
+import { GradeTag, Tag, Typography } from "@yeelds/ui";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
 
 import { ExternalLinkIcon } from "@/src/assets";
 import { ChainDot } from "@/src/components/chain-dot";
 import { ProtocolLogo } from "@/src/components/protocol-logo";
+import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { formatApy, formatUsd } from "@/src/utils/format";
 
 import styles from "./styles.module.css";
@@ -22,7 +22,7 @@ const ICON_SIZES: Record<
 };
 
 interface OpportunityIdentityProps {
-    opportunity: Opportunity;
+    opportunity: EnrichedOpportunity;
     size?: OpportunityIdentitySize;
     className?: string;
 }
@@ -100,6 +100,13 @@ export function OpportunityIdentity({
                         </span>
                     )}
                 </div>
+                {size === "sm" && (
+                    <GradeTag
+                        size="sm"
+                        grade={opportunity.grade?.letter}
+                        className={styles.gradeTag}
+                    />
+                )}
             </div>
             {size === "lg" && (
                 <span className={styles.chipRow}>

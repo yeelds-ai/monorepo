@@ -45,6 +45,10 @@
     @apply size-4;
 }
 
+.gradeTag {
+    @apply self-start;
+}
+
 .chipRow {
     @apply flex items-center gap-2 flex-wrap;
 }

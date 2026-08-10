@@ -1,5 +1,6 @@
 export * from "./components/button";
 export * from "./components/card";
+export * from "./components/grade-tag";
 export * from "./components/input";
 export * from "./components/multi-select";
 export * from "./components/popover";

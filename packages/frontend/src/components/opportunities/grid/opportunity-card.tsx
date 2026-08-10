@@ -1,15 +1,15 @@
-import type { Opportunity } from "@yeelds/sdk";
 import { Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
 import { OpportunityIdentity } from "@/src/components/opportunity-identity";
 import { Link } from "@/src/i18n/routing";
+import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { formatApy, formatUsd } from "@/src/utils/format";
 
 import styles from "./styles.module.css";
 
 interface OpportunityCardProps {
-    opportunity: Opportunity;
+    opportunity: EnrichedOpportunity;
 }
 
 export function OpportunityCard({ opportunity }: OpportunityCardProps) {

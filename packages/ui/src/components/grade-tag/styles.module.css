@@ -1,0 +1,57 @@
+@reference "../../theme.css";
+
+.root {
+    @apply flex items-center justify-center gap-2 border;
+}
+
+.sm {
+    @apply rounded-lg h-7 p-1.5;
+}
+
+.base {
+    @apply rounded-[0.625rem] h-8 max-w-10.5 px-3 py-1.5;
+}
+
+.a {
+    @apply grade-excellent;
+}
+
+.b {
+    @apply grade-good;
+}
+
+.c {
+    @apply grade-mixed;
+}
+
+.d {
+    @apply grade-caution;
+}
+
+.e {
+    @apply grade-negative;
+}
+
+.na {
+    @apply stroke-divider;
+}
+
+.textA {
+    @apply text-status-excellent;
+}
+
+.textB {
+    @apply text-status-good;
+}
+
+.textC {
+    @apply text-status-mixed;
+}
+
+.textD {
+    @apply text-status-caution;
+}
+
+.textE {
+    @apply text-status-negative;
+}

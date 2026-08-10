@@ -1,5 +1,5 @@
 import { SUPPORTED_PROTOCOLS } from "@yeelds/registry";
-import type { Opportunity } from "@yeelds/sdk";
+import { type Opportunity, gradeFromScore } from "@yeelds/sdk";
 
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 
@@ -24,5 +24,11 @@ export function enrichOpportunity(
                   }
                 : undefined,
         },
+        grade: opportunity.grade
+            ? {
+                  ...opportunity.grade,
+                  letter: gradeFromScore(opportunity.grade.score),
+              }
+            : opportunity.grade,
     };
 }

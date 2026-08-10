@@ -17,7 +17,7 @@ const preview: Preview = {
             storySort: {
                 order: [
                     "Data display",
-                    ["Typography", "Tag", "Card", "Remote logo"],
+                    ["Typography", "Tag", "Grade tag", "Card", "Remote logo"],
                     "Input",
                     ["Button", "Multi select"],
                     "Surfaces",

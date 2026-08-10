@@ -90,6 +90,26 @@
     @apply border-border-focus;
 }
 
+@utility grade-excellent {
+    @apply text-status-excellent border-status-excellent/20 bg-status-excellent/4;
+}
+
+@utility grade-good {
+    @apply text-status-good border-status-good/20 bg-status-good/4;
+}
+
+@utility grade-mixed {
+    @apply text-status-mixed border-status-mixed/20 bg-status-mixed/4;
+}
+
+@utility grade-caution {
+    @apply text-status-caution border-status-caution/20 bg-status-caution/4;
+}
+
+@utility grade-negative {
+    @apply text-status-negative border-status-negative/20 bg-status-negative/4;
+}
+
 h1,
 h2,
 h3,

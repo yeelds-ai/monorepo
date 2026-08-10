@@ -1,13 +1,12 @@
-import type { Opportunity } from "@yeelds/sdk";
-
 import { LoadingBar } from "@/src/components/loading-bar";
+import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { EmptyOpportunities } from "../empty";
 import { OpportunityCard } from "./opportunity-card";
 
 import styles from "./styles.module.css";
 
 interface OpportunitiesGridProps {
-    opportunities: Opportunity[];
+    opportunities: EnrichedOpportunity[];
     placeholderLoading?: boolean;
 }
 
