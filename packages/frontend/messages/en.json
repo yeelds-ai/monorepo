@@ -37,6 +37,7 @@
     },
     "opportunities": {
         "title": "Opportunities",
+        "metaTitle": "Yield Opportunities — Compare APY Across Protocols",
         "subtitle": "Compare thousands of yield opportunities across protocols, chains, and strategies.",
         "viewToggle": {
             "ariaLabel": "View as table or grid",
