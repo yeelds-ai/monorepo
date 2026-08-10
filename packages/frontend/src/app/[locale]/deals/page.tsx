@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { buildPageMetadata } from "@/src/commons/metadata";
 import { Deals } from "@/src/components/deals";
 import type { Locale } from "@/src/i18n/routing";
 
@@ -16,11 +17,12 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations("deals");
 
-    return {
+    return buildPageMetadata({
+        locale,
+        path: "/deals",
         title: t("title"),
         description: t("subtitle"),
-        alternates: { canonical: `/${locale}/deals` },
-    };
+    });
 }
 
 export default async function DealsPage({ params }: DealsPageProps) {

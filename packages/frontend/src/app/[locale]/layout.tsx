@@ -9,6 +9,7 @@ import type { ReactNode } from "react";
 
 import { SITE_URL } from "@/src/commons";
 import { UMAMI_WEBSITE_ID } from "@/src/commons/env";
+import { SITE_NAME, TITLE_TEMPLATE } from "@/src/commons/metadata";
 import { ClientProviders } from "@/src/components/client-providers";
 import { Layout } from "@/src/components/layout";
 import { routing } from "@/src/i18n/routing";
@@ -61,13 +62,13 @@ export async function generateMetadata({
         metadataBase: new URL(SITE_URL),
         title: {
             default: title,
-            template: "%s | Yeelds",
+            template: TITLE_TEMPLATE,
         },
         description,
         openGraph: {
             type: "website",
             locale: "en_US",
-            siteName: "Yeelds",
+            siteName: SITE_NAME,
             title,
             description,
             url: `/${locale}`,

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import { buildPageMetadata } from "@/src/commons/metadata";
 import { Deal } from "@/src/components/deal";
 import { getAllDealSlugs, getDealDetail } from "@/src/data/deals";
 import type { Locale } from "@/src/i18n/routing";
@@ -25,14 +26,20 @@ export async function generateMetadata({
 
     if (!deal) {
         const t = await getTranslations("deal");
-        return { title: t("notFound.title") };
+        return buildPageMetadata({
+            locale,
+            path: `/deals/${slug}`,
+            title: t("notFound.title"),
+            description: t("notFound.description"),
+        });
     }
 
-    return {
+    return buildPageMetadata({
+        locale,
+        path: `/deals/${slug}`,
         title: deal.hero.title,
         description: deal.hero.subtitle,
-        alternates: { canonical: `/${locale}/deals/${slug}` },
-    };
+    });
 }
 
 export default async function DealPage({ params }: DealPageProps) {
