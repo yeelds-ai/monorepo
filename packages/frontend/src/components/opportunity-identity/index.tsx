@@ -84,26 +84,24 @@ export function OpportunityIdentity({
                             {opportunity.protocol.name}
                         </Typography>
                     )}
-                    {size !== "lg" && (
-                        <span className={styles.strategyLine}>
-                            <Typography
-                                as="span"
-                                size={12}
-                                capitalize
-                                truncate
-                                weight="bold"
-                                variant="secondary"
-                            >
-                                {opportunity.strategy}{" "}
-                                {opportunity.name && (
-                                    <>
-                                        <span aria-hidden="true">•</span>{" "}
-                                        {opportunity.name}
-                                    </>
-                                )}
-                            </Typography>
-                        </span>
-                    )}
+                    <span className={styles.strategyLine}>
+                        <Typography
+                            as="span"
+                            size={12}
+                            capitalize
+                            truncate
+                            weight="bold"
+                            variant="secondary"
+                        >
+                            {opportunity.strategy}{" "}
+                            {opportunity.name && (
+                                <>
+                                    <span aria-hidden="true">•</span>{" "}
+                                    {opportunity.name}
+                                </>
+                            )}
+                        </Typography>
+                    </span>
                 </div>
                 {size === "sm" && (
                     <GradeTag

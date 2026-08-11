@@ -29,6 +29,7 @@ export function ReviewCard({ opportunity }: ReviewCardProps) {
                 href={protocolRegistry.buildDepositUrl(opportunity)}
                 target="_blank"
                 rel="noopener noreferrer"
+                disabled={opportunity.protocol.data.depositDisabled}
                 className={styles.depositButton}
             >
                 {t("review.depositOn", { protocol: opportunity.protocol.name })}
