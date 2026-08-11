@@ -48,6 +48,7 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
                         <Typography
                             size={14}
                             weight="bold"
+                            truncate
                             className={styles.statValue}
                         >
                             {opportunity.tvlUsd
@@ -86,6 +87,7 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
                         <Typography
                             size={14}
                             weight="bold"
+                            truncate
                             className={styles.statValue}
                         >
                             {/* TODO: implement daily estimate */}-

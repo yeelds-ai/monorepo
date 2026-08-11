@@ -47,7 +47,7 @@
 }
 
 .documentLabel {
-    @apply flex-1 truncate;
+    @apply flex-1;
 }
 
 .cta {

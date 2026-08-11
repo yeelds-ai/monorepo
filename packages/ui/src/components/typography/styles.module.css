@@ -71,3 +71,7 @@
 .capitalize {
     @apply capitalize;
 }
+
+.truncate {
+    @apply block truncate;
+}

@@ -96,6 +96,7 @@ export function DealFactsSidebar({
                                 as="span"
                                 size={14}
                                 weight="bold"
+                                truncate
                                 className={styles.documentLabel}
                             >
                                 {document.label}

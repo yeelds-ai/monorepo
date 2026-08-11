@@ -40,20 +40,16 @@
     @apply h-[3.938rem];
 }
 
+.strategy {
+    @apply flex items-center gap-3;
+}
+
 .protocolName {
     @apply flex min-w-0 items-center gap-3;
 }
 
-.protocolNameText {
-    @apply block truncate;
-}
-
 .logo {
     @apply size-6 shrink-0 rounded-full;
-}
-
-.strategyChipText {
-    @apply block truncate;
 }
 
 .tvlCell {

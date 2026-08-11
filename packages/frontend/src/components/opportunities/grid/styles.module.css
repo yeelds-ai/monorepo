@@ -41,5 +41,5 @@
 }
 
 .statValue {
-    @apply truncate tabular-nums;
+    @apply tabular-nums;
 }

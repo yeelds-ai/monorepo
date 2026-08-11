@@ -23,6 +23,7 @@ type TypographyBaseProps = (BrandTypographyProps | SystemTypographyProps) & {
     className?: string;
     uppercase?: boolean;
     capitalize?: boolean;
+    truncate?: boolean;
     children: ReactNode;
 };
 
@@ -38,6 +39,7 @@ export function Typography(props: TypographyProps) {
         className,
         uppercase,
         capitalize,
+        truncate,
         children,
         weight: weightProp,
         ...rest
@@ -62,6 +64,7 @@ export function Typography(props: TypographyProps) {
                     [styles.colorBrand]: color === "brand",
                     [styles.uppercase]: uppercase,
                     [styles.capitalize]: capitalize,
+                    [styles.truncate]: truncate,
                 },
             )}
         >

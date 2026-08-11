@@ -33,18 +33,10 @@ export function FeedCard({ item }: FeedCardProps) {
                     </Typography>
                 </div>
                 <div className={styles.publicationMeta}>
-                    <Typography
-                        size={14}
-                        weight="bold"
-                        className={styles.truncate}
-                    >
+                    <Typography size={14} weight="bold" truncate>
                         {item.publication}
                     </Typography>
-                    <Typography
-                        size={12}
-                        variant="secondary"
-                        className={styles.truncate}
-                    >
+                    <Typography size={12} variant="secondary" truncate>
                         {item.author}
                     </Typography>
                 </div>

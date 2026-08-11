@@ -1,7 +1,7 @@
 @reference "../../theme.css";
 
 .root {
-    @apply flex items-center w-fit overflow-hidden rounded-lg border-[1.5px];
+    @apply flex items-center min-w-fit w-fit overflow-hidden rounded-lg border-[1.5px];
     @apply stroke-divider;
 }
 
