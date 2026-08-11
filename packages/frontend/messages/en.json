@@ -16,6 +16,7 @@
     },
     "explore": {
         "title": "Explore",
+        "metaTitle": "Explore DeFi Yields — Vaults, Grades & Weekly Hot Picks",
         "subtitle": "Track the yield landscape, surface the week's standout vaults, and compare opportunities by category.",
         "stats": {
             "chains": "Chains",
@@ -126,6 +127,7 @@
     },
     "feed": {
         "title": "Feed",
+        "metaTitle": "Yeelds Feed — DeFi Yield News, Articles & Insights",
         "subtitle": "Fresh yield updates, articles, and posts from across the DeFi ecosystem.",
         "empty": "No articles found.",
         "readTime": "{minutes}min read",
@@ -133,6 +135,7 @@
     },
     "deals": {
         "title": "Liquidity deals",
+        "metaTitle": "Liquidity Deals — Vetted DeFi Yield Campaigns",
         "subtitle": "Compare yield opportunities across protocols, chains, and strategies.",
         "empty": "No deals available right now. Check back soon."
     },
