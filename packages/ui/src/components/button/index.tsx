@@ -61,12 +61,15 @@ const Component = (props: ButtonProps, ref: RefType<typeof props>) => {
                   "a",
                   {
                       href: disabled ? undefined : rest.href,
-                      onClick: handleOnClick,
+                      onClick: onClick ? handleOnClick : undefined,
                       "aria-disabled": disabled,
                       tabIndex: disabled ? -1 : undefined,
                   },
               ]
-            : ["button", { onClick: handleOnClick, disabled }];
+            : [
+                  "button",
+                  { onClick: onClick ? handleOnClick : undefined, disabled },
+              ];
 
     return (
         <Root
