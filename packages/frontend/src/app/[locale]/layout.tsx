@@ -113,7 +113,7 @@ export default async function RootLayout({
                     defer
                     src="https://umami.metrom.xyz/s.js"
                     data-website-id={UMAMI_WEBSITE_ID}
-                    data-domains="www.yeelds.ai"
+                    data-domains="dev.yeelds.ai,www.yeelds.ai"
                 />
             </head>
             <body className="background-default flex h-full flex-col font-sans">
