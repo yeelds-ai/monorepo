@@ -9,15 +9,15 @@
 }
 
 .card {
-    @apply relative overflow-hidden rounded-2xl background-raised transition-colors hover:background-default;
-}
-
-.link {
-    @apply absolute inset-0 z-0;
+    @apply overflow-hidden rounded-2xl cursor-pointer background-raised transition-colors hover:background-default;
 }
 
 .content {
-    @apply flex flex-col gap-3 relative z-10 p-4 pointer-events-none;
+    @apply flex flex-col gap-3 p-4;
+}
+
+.identityLink {
+    @apply block;
 }
 
 .apyRow {

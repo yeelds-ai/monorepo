@@ -75,3 +75,7 @@
 .truncate {
     @apply block truncate;
 }
+
+.tooltipContent {
+    @apply max-w-xs text-14 leading-5 font-bold text-primary wrap-break-word;
+}

@@ -1,8 +1,8 @@
 import { SUPPORTED_CHAINS } from "@yeelds/registry";
 import { GradeTag, Tag, Typography } from "@yeelds/ui";
-import classNames from "classnames";
+import { type MouseEvent } from "react";
 
-import { Link } from "@/src/i18n/routing";
+import { Link, useRouter } from "@/src/i18n/routing";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { formatApy, formatUsd } from "@/src/utils/format";
 
@@ -13,48 +13,53 @@ interface OpportunityRowProps {
 }
 
 export function OpportunityRow({ opportunity }: OpportunityRowProps) {
+    const router = useRouter();
     const chain = SUPPORTED_CHAINS[opportunity.chain];
     const href = `/opportunities/${opportunity.chain}/${opportunity.address}`;
     const protocolRegistry = opportunity.protocol.registry;
 
+    function handleOnRowClick(event: MouseEvent<HTMLTableRowElement>) {
+        if ((event.target as HTMLElement).closest("a")) return;
+        router.push(href);
+    }
+
     return (
-        <tr className={styles.row}>
-            <td className={classNames(styles.cell, styles.linkCell)}>
+        <tr className={styles.row} onClick={handleOnRowClick}>
+            <td className={styles.cell}>
+                {chain && <chain.icon className={styles.logo} />}
+            </td>
+            <td className={styles.cell}>
                 <Link
                     href={href}
                     prefetch
                     aria-label={`${opportunity.protocol.name} ${opportunity.strategy}`}
-                    className={styles.link}
-                />
-                {chain && <chain.icon className={styles.logo} />}
-            </td>
-            <td className={styles.cell}>
-                <span className={styles.protocolName}>
+                    className={styles.protocolName}
+                >
                     {protocolRegistry && (
                         <protocolRegistry.icon className={styles.logo} />
                     )}
-                    <Typography
-                        as="span"
-                        size={18}
-                        weight="bold"
-                        className={styles.protocolNameText}
-                    >
+                    <Typography as="span" size={18} weight="bold" truncate>
                         {opportunity.protocol.name}
                     </Typography>
-                </span>
+                </Link>
             </td>
             <td className={styles.cell}>
-                <Tag>
-                    <Typography
-                        size={16}
-                        weight="medium"
-                        capitalize
-                        variant="secondary"
-                        className={styles.strategyChipText}
-                    >
-                        {opportunity.strategy}
+                <div className={styles.strategy}>
+                    <Tag>
+                        <Typography
+                            size={16}
+                            weight="medium"
+                            capitalize
+                            variant="secondary"
+                            truncate
+                        >
+                            {opportunity.strategy}
+                        </Typography>
+                    </Tag>
+                    <Typography size={18} weight="bold" truncate>
+                        {opportunity.name}
                     </Typography>
-                </Tag>
+                </div>
             </td>
             <td className={styles.cell}>
                 <Typography size={18} weight="bold" className={styles.tvlCell}>

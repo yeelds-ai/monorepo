@@ -25,10 +25,10 @@ const SORT_FIELDS: Partial<Record<(typeof HEADER_KEYS)[number], SortField>> = {
 };
 
 const COL_WIDTH_RATIOS: Record<(typeof HEADER_KEYS)[number], number> = {
-    chain: 6,
-    protocol: 15,
-    strategy: 20,
-    tvl: 10,
+    chain: 5,
+    protocol: 9,
+    strategy: 22,
+    tvl: 8,
     stability: 8,
     grade: 8,
     apy: 8,

@@ -57,15 +57,7 @@
 }
 
 .row {
-    @apply relative border-t stroke-divider cursor-pointer transition-colors hover:background-raised;
-}
-
-.link {
-    @apply absolute inset-0 z-0;
-}
-
-.linkCell {
-    @apply overflow-visible;
+    @apply border-t stroke-divider cursor-pointer transition-colors hover:background-raised;
 }
 
 .row:last-child {

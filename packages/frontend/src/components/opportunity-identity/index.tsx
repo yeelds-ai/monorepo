@@ -90,12 +90,17 @@ export function OpportunityIdentity({
                                 as="span"
                                 size={12}
                                 capitalize
+                                truncate
                                 weight="bold"
                                 variant="secondary"
                             >
                                 {opportunity.strategy}{" "}
-                                <span aria-hidden="true">•</span>{" "}
-                                {/* TODO: implement missing details */}
+                                {opportunity.name && (
+                                    <>
+                                        <span aria-hidden="true">•</span>{" "}
+                                        {opportunity.name}
+                                    </>
+                                )}
                             </Typography>
                         </span>
                     )}
