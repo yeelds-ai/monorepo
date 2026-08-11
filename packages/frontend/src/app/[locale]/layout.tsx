@@ -59,10 +59,7 @@ export async function generateMetadata({
 
     return {
         metadataBase: new URL(SITE_URL),
-        title: {
-            default: title,
-            template: "%s | Yeelds",
-        },
+        title,
         description,
         openGraph: {
             type: "website",

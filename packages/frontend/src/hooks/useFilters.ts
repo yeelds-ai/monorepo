@@ -9,12 +9,6 @@ export interface UseFiltersReturnValue {
     filters: OpportunitiesFiltersResponse;
 }
 
-const EMPTY_FILTERS: OpportunitiesFiltersResponse = {
-    chains: [],
-    protocols: [],
-    strategies: [],
-};
-
 export function useOpportunitiesFilters({
     enabled = true,
 }: HookBaseParams = {}): UseFiltersReturnValue {
@@ -33,6 +27,10 @@ export function useOpportunitiesFilters({
 
     return {
         loading: isPending,
-        filters: data ?? EMPTY_FILTERS,
+        filters: {
+            chains: data?.chains ?? [],
+            protocols: data?.protocols ?? [],
+            strategies: data?.strategies ?? [],
+        },
     };
 }

@@ -61,7 +61,7 @@ const Component = (props: ButtonProps, ref: RefType<typeof props>) => {
                   "a",
                   {
                       href: disabled ? undefined : rest.href,
-                      onClick: onClick ? handleOnClick : undefined,
+                      onClick: onClick && !disabled ? handleOnClick : undefined,
                       "aria-disabled": disabled,
                       tabIndex: disabled ? -1 : undefined,
                   },
@@ -73,8 +73,8 @@ const Component = (props: ButtonProps, ref: RefType<typeof props>) => {
 
     return (
         <Root
-            {...rootProps}
             {...rest}
+            {...rootProps}
             ref={ref}
             className={classNames(
                 "root",
