@@ -46,11 +46,27 @@ const Component = (props: ButtonProps, ref: RefType<typeof props>) => {
         ...rest
     } = props;
 
+    function handleOnClick(event: MouseEvent) {
+        if (disabled) {
+            event.preventDefault();
+            return;
+        }
+        onClick?.(event);
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [Root, rootProps]: [ElementType, any] =
         "href" in rest
-            ? ["a", { href: rest.href, onClick }]
-            : ["button", { onClick, disabled }];
+            ? [
+                  "a",
+                  {
+                      href: disabled ? undefined : rest.href,
+                      onClick: handleOnClick,
+                      "aria-disabled": disabled,
+                      tabIndex: disabled ? -1 : undefined,
+                  },
+              ]
+            : ["button", { onClick: handleOnClick, disabled }];
 
     return (
         <Root
