@@ -9,7 +9,7 @@ const SECURITY_HEADERS = [
 
 const CSP_HEADER = `
     default-src 'self';
-    connect-src 'self' https://api.dev.yeelds.ai https://api.yeelds.ai https://raw.githubusercontent.com/metrom-xyz/token-icons/refs/heads/main/mainnet-icons.json;
+    connect-src 'self' https://api.dev.yeelds.ai https://api.yeelds.ai https://raw.githubusercontent.com/metrom-xyz/token-icons/refs/heads/main/mainnet-icons.json https://umami.metrom.xyz/api/c;
     frame-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://umami.metrom.xyz;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
