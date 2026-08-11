@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { MessagePage } from "@/src/components/message-page";
 import type { Locale } from "@/src/i18n/routing";
@@ -21,10 +21,7 @@ export async function generateMetadata({
     };
 }
 
-export default async function ExplorePage({ params }: ExplorePageProps) {
-    const { locale } = await params;
-    setRequestLocale(locale);
-
+export default async function ExplorePage() {
     const t = await getTranslations("explore");
 
     return <MessagePage title={t("title")} description={t("subtitle")} />;

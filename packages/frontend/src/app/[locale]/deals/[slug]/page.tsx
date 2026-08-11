@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { Deal } from "@/src/components/deal";
@@ -36,8 +36,7 @@ export async function generateMetadata({
 }
 
 export default async function DealPage({ params }: DealPageProps) {
-    const { locale, slug } = await params;
-    setRequestLocale(locale);
+    const { slug } = await params;
 
     const deal = getDealDetail(slug);
     if (!deal) notFound();

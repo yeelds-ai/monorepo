@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { Opportunities } from "@/src/components/opportunities";
 import type { Locale } from "@/src/i18n/routing";
@@ -21,9 +21,6 @@ export async function generateMetadata({
     };
 }
 
-export default async function YieldsPage({ params }: YieldsPageProps) {
-    const { locale } = await params;
-    setRequestLocale(locale);
-
+export default function YieldsPage() {
     return <Opportunities />;
 }

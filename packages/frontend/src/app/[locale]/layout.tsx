@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
@@ -84,8 +84,6 @@ export async function generateMetadata({
         alternates: {
             canonical: `/${locale}`,
         },
-        // Icons come from the app/ file conventions (favicon.ico + icon.svg);
-        // Next emits the <link> tags, so no manual `icons` entry.
     };
 }
 
@@ -100,8 +98,6 @@ export default async function RootLayout({
 }: RootLayoutProps) {
     const { locale } = await params;
     if (!hasLocale(routing.locales, locale)) notFound();
-
-    setRequestLocale(locale);
 
     return (
         <html

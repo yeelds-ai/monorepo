@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { Deals } from "@/src/components/deals";
 import type { Locale } from "@/src/i18n/routing";
@@ -23,9 +23,6 @@ export async function generateMetadata({
     };
 }
 
-export default async function DealsPage({ params }: DealsPageProps) {
-    const { locale } = await params;
-    setRequestLocale(locale);
-
+export default function DealsPage() {
     return <Deals />;
 }

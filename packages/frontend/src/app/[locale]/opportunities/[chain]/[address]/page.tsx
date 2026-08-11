@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { Opportunity } from "@/src/components/opportunity";
 import type { Locale } from "@/src/i18n/routing";
@@ -26,8 +26,7 @@ export async function generateMetadata({
 export default async function OpportunityPage({
     params,
 }: OpportunityPageProps) {
-    const { locale, chain, address } = await params;
-    setRequestLocale(locale);
+    const { chain, address } = await params;
 
     return <Opportunity chain={chain} address={address} />;
 }
