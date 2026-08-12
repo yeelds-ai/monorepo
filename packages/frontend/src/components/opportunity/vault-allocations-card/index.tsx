@@ -1,4 +1,5 @@
 import type { Opportunity } from "@yeelds/sdk";
+import { isMorphoSourceData } from "@yeelds/sdk";
 import { Card, Tag, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
@@ -17,7 +18,9 @@ export function VaultAllocationsCard({
     opportunity,
 }: VaultAllocationsCardProps) {
     const t = useTranslations("opportunity.vaultAllocationsCard");
-    const curator = opportunity.protocol.data.curator;
+    const curator = isMorphoSourceData(opportunity.protocol.data)
+        ? opportunity.protocol.data.curator
+        : undefined;
 
     return (
         <Card icon={PieChartIcon} title={t("title")} className={styles.root}>

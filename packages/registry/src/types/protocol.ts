@@ -10,5 +10,5 @@ export interface ProtocolData {
     name: string;
     icon: FunctionComponent<SVGIcon>;
     url: string;
-    buildDepositUrl: (opportunity: Opportunity) => string;
+    buildDepositUrl: (opportunity: Opportunity) => string | null;
 }

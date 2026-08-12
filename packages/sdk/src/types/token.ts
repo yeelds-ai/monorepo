@@ -45,10 +45,20 @@ export interface TokenStablecoin {
     priceUsd?: number | null;
 }
 
+export type ExposureClass =
+    | "idle"
+    | "fiat-stable"
+    | "blue-chip"
+    | "market-risk"
+    | "counterparty"
+    | "leverage"
+    | "unknown";
+
 export interface Token {
     chain: string;
     address: string;
     symbol: string;
     decimals: number;
+    classes?: ExposureClass[] | null;
     stablecoin?: TokenStablecoin | null;
 }

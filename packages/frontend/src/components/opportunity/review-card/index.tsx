@@ -1,3 +1,4 @@
+import { isMorphoSourceData } from "@yeelds/sdk";
 import { Button, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
@@ -16,6 +17,12 @@ export function ReviewCard({ opportunity }: ReviewCardProps) {
     const protocolRegistry = opportunity.protocol.registry;
     if (!protocolRegistry) return null;
 
+    const depositUrl = protocolRegistry.buildDepositUrl(opportunity);
+    const depositDisabled =
+        !depositUrl ||
+        (isMorphoSourceData(opportunity.protocol.data) &&
+            opportunity.protocol.data.depositDisabled);
+
     return (
         <div className={styles.root}>
             <div className={styles.header}>
@@ -26,10 +33,10 @@ export function ReviewCard({ opportunity }: ReviewCardProps) {
             </div>
             <Button
                 icon={ExternalLinkIcon}
-                href={protocolRegistry.buildDepositUrl(opportunity)}
+                href={depositUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                disabled={opportunity.protocol.data.depositDisabled}
+                disabled={depositDisabled}
                 className={styles.depositButton}
             >
                 {t("review.depositOn", { protocol: opportunity.protocol.name })}

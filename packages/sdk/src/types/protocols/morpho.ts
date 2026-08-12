@@ -1,8 +1,4 @@
-export enum SupportedProtocolSlug {
-    Morpho = "morpho",
-}
-
-export type ProtocolType = "yield-aggregator";
+import type { SourceData } from "./common";
 
 export interface MorphoCurator {
     address: string;
@@ -10,13 +6,25 @@ export interface MorphoCurator {
     url?: string | null;
 }
 
+export type MorphoMarketWarningKind =
+    | "unrecognized_oracle"
+    | "unrecognized_oracle_feed"
+    | "incorrect_oracle_configuration"
+    | "oracle_price_derivation"
+    | { other: string };
+
+export type MorphoWarningLevel = "yellow" | "red";
+
 export interface MorphoMarketWarning {
-    kind: string;
-    level: string;
+    kind: MorphoMarketWarningKind;
+    level: MorphoWarningLevel;
 }
 
+export type MorphoOracleKind =
+    "chainlink-oracle" | "chainlink-oracle-v2" | "custom-oracle" | "unknown";
+
 export interface MorphoOracle {
-    kind: string;
+    kind: MorphoOracleKind;
     baseFeeds: string[];
     baseVault?: string | null;
     quoteFeeds: string[];
@@ -45,11 +53,6 @@ export interface MorphoSourceData {
     timelockSeconds?: number | null;
 }
 
-export type SourceData = MorphoSourceData;
-
-export interface Protocol {
-    slug: SupportedProtocolSlug;
-    name: string;
-    type: ProtocolType;
-    data: SourceData;
+export function isMorphoSourceData(data: SourceData): data is MorphoSourceData {
+    return data.type === "morpho";
 }
