@@ -36,7 +36,10 @@ export interface OpportunityParams {
 }
 
 export class YeeldsApiClient {
-    constructor(public readonly baseUrl: string) {}
+    constructor(
+        public readonly baseUrl: string,
+        private readonly headers?: HeadersInit,
+    ) {}
 
     async fetchFeed(query: FeedParams = {}): Promise<PaginatedFeedResponse> {
         const url = new URL("v1/feed", this.baseUrl);
@@ -57,7 +60,7 @@ export class YeeldsApiClient {
             } else url.searchParams.set(param, value.toString());
         }
 
-        const response = await fetch(url);
+        const response = await fetch(url, { headers: this.headers });
         if (!response.ok)
             throw new Error(
                 `Response not ok while fetching feed: ${await response.text()}`,
@@ -87,7 +90,7 @@ export class YeeldsApiClient {
             } else url.searchParams.set(param, value.toString());
         }
 
-        const response = await fetch(url);
+        const response = await fetch(url, { headers: this.headers });
         if (!response.ok)
             throw new Error(
                 `Response not ok while fetching opportunities: ${await response.text()}`,
@@ -105,7 +108,7 @@ export class YeeldsApiClient {
             this.baseUrl,
         );
 
-        const response = await fetch(url);
+        const response = await fetch(url, { headers: this.headers });
         if (response.status === 404) return null;
         if (!response.ok)
             throw new Error(
@@ -118,6 +121,7 @@ export class YeeldsApiClient {
     async fetchOpportunitiesFilters(): Promise<OpportunitiesFiltersResponse> {
         const response = await fetch(
             new URL("v1/opportunities/filters", this.baseUrl),
+            { headers: this.headers },
         );
         if (!response.ok)
             throw new Error(

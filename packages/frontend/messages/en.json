@@ -93,7 +93,6 @@
         "paginationUnit": "opportunities"
     },
     "opportunity": {
-        "title": "Opportunity {chain}:{address}",
         "description": "Opportunity details",
         "notFound": {
             "title": "Opportunity not found",
