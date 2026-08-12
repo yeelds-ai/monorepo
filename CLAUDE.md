@@ -1,7 +1,6 @@
 # Yeelds frontend — coding standards
 
-Standards extracted from the Metrom monorepo; a review rejects code that breaks
-them.
+Consolidated standards; a review rejects code that breaks them.
 
 ## Repository shape
 
@@ -112,7 +111,7 @@ size from a prop, a portal's `top`/`left`).
   goes through the `@utility` layer.
 - **Tokens go in `@theme`; semantic roles get an `@utility`; components consume
   the utility, not the raw color.** A hardcoded hex is a bug. Dark-only theme;
-  if light mode lands, follow Metrom:
+  if light mode lands, use:
   `@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *))` via
   `next-themes` with `attribute="data-theme"`, not a `.dark` class.
 
