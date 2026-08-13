@@ -14,6 +14,7 @@ export function enrichOpportunity(
 
     return {
         ...opportunity,
+        apy: opportunity.apy * 100,
         protocol: {
             ...opportunity.protocol,
             registry: protocolData

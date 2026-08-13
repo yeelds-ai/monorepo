@@ -29,7 +29,17 @@ export function useOpportunities({
         queryKey: ["opportunities", query],
         queryFn: async () => {
             try {
-                return await YEELDS_API_CLIENT.fetchOpportunities(query);
+                return await YEELDS_API_CLIENT.fetchOpportunities({
+                    ...query,
+                    apyFrom:
+                        query.apyFrom !== undefined
+                            ? query.apyFrom / 100
+                            : undefined,
+                    apyTo:
+                        query.apyTo !== undefined
+                            ? query.apyTo / 100
+                            : undefined,
+                });
             } catch (error) {
                 console.error(`Could not fetch opportunities: ${error}`, error);
                 throw error;

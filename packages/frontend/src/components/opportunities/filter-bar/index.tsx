@@ -26,8 +26,8 @@ const TVL_MIN_DISTANCE = 1_000_000;
 
 const APY_MIN = 0;
 const APY_MAX = 100;
-const APY_STEP = 0.5;
-const APY_MIN_DISTANCE = 1;
+const APY_STEP = 0.25;
+const APY_MIN_DISTANCE = 0.5;
 
 export function FilterBar() {
     const t = useTranslations("opportunities.filterBar");
