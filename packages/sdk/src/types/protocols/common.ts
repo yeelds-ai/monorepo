@@ -1,14 +1,16 @@
 import type { AaveSourceData } from "./aave";
+import type { FluidSourceData } from "./fluid";
 import type { MorphoSourceData } from "./morpho";
 
 export enum SupportedProtocolSlug {
     Morpho = "morpho",
     Aave = "aave",
+    Fluid = "fluid",
 }
 
 export type ProtocolType = "yield-aggregator" | "lending";
 
-export type SourceData = MorphoSourceData | AaveSourceData;
+export type SourceData = MorphoSourceData | AaveSourceData | FluidSourceData;
 
 export interface Protocol {
     slug: SupportedProtocolSlug;

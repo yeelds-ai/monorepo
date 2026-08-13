@@ -1,5 +1,6 @@
 import type { PaginatedFeedResponse } from "../types/feed";
 import type { OpportunitiesFiltersResponse } from "../types/filters";
+import type { OpportunitiesHighlightsResponse } from "../types/highlights";
 import type {
     OpportunityResponse,
     PaginatedOpportunitiesResponse,
@@ -7,7 +8,6 @@ import type {
     SortField,
     Strategy,
 } from "../types/opportunity";
-import type { Stats } from "../types/stats";
 
 export interface FeedParams {
     page?: number;
@@ -131,17 +131,16 @@ export class YeeldsApiClient {
         return (await response.json()) as OpportunitiesFiltersResponse;
     }
 
-    /**
-     * The aggregate strip's four catalog-wide figures.
-     *
-     * TODO: implement against the backend API once its spec lands.
-     */
-    async fetchStats(): Promise<Stats> {
-        return {
-            totalOpportunities: 0,
-            totalTvlUsd: 0,
-            chainsCovered: 0,
-            protocolsCovered: 0,
-        };
+    async fetchOpportunitiesHighlights(): Promise<OpportunitiesHighlightsResponse> {
+        const response = await fetch(
+            new URL("v1/opportunities/highlights", this.baseUrl),
+            { headers: this.headers },
+        );
+        if (!response.ok)
+            throw new Error(
+                `Response not ok while fetching highlights: ${await response.text()}`,
+            );
+
+        return (await response.json()) as OpportunitiesHighlightsResponse;
     }
 }

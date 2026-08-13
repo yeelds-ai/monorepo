@@ -4,6 +4,6 @@ export * from "./types/feed";
 export * from "./types/filters";
 export * from "./types/grade";
 export * from "./types/opportunity";
+export * from "./types/highlights";
 export * from "./types/protocols";
-export * from "./types/stats";
 export * from "./types/token";
