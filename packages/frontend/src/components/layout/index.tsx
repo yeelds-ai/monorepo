@@ -13,7 +13,9 @@ export function Layout({ children }: LayoutProps) {
         <div className={styles.root}>
             <Sidebar />
             <div className={styles.mainWrapper}>
-                <main className={styles.main}>{children}</main>
+                <main className={styles.main}>
+                    <div className={styles.mainScroll}>{children}</div>
+                </main>
             </div>
         </div>
     );

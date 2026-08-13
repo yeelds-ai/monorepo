@@ -118,3 +118,26 @@ h5,
 h6 {
     font-family: var(--font-brand);
 }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-focus) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-focus);
+    border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-border-default);
+}

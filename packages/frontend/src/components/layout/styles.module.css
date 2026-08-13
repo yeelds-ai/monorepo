@@ -9,6 +9,10 @@
 }
 
 .main {
-    @apply h-full overflow-auto rounded-2xl;
+    @apply h-full overflow-hidden rounded-2xl;
     @apply background-surface;
+}
+
+.mainScroll {
+    @apply h-full overflow-auto;
 }
