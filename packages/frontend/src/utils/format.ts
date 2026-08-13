@@ -12,6 +12,12 @@ export function formatApy(apy: number | null): string {
     return `${apy.toFixed(2)}%`;
 }
 
+export function formatDailyEstimate(apy: number, principal = 1_000): string {
+    const daily = (principal * (apy / 100)) / 365;
+    if (daily < 0.01) return "<$0.01";
+    return `$${daily.toFixed(2)}`;
+}
+
 const USD_SUFFIX_MULTIPLIERS: Record<string, number> = {
     k: 1_000,
     m: 1_000_000,

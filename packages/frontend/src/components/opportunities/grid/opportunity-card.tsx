@@ -5,7 +5,7 @@ import { type MouseEvent } from "react";
 import { OpportunityIdentity } from "@/src/components/opportunity-identity";
 import { Link, useRouter } from "@/src/i18n/routing";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { formatApy, formatUsd } from "@/src/utils/format";
+import { formatApy, formatDailyEstimate, formatUsd } from "@/src/utils/format";
 
 import styles from "./styles.module.css";
 
@@ -100,7 +100,7 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
                             truncate
                             className={styles.statValue}
                         >
-                            {/* TODO: implement daily estimate */}-
+                            {formatDailyEstimate(opportunity.apy)}
                         </Typography>
                     </div>
                 </div>

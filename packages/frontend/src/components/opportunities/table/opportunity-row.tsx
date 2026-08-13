@@ -4,7 +4,7 @@ import { type MouseEvent } from "react";
 
 import { Link, useRouter } from "@/src/i18n/routing";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { formatApy, formatUsd } from "@/src/utils/format";
+import { formatApy, formatDailyEstimate, formatUsd } from "@/src/utils/format";
 
 import styles from "./styles.module.css";
 
@@ -78,7 +78,9 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
                 </Typography>
             </td>
             <td className={styles.cell}>
-                {/* TODO: implement daily estimate */}-
+                <Typography size={18} weight="bold">
+                    {formatDailyEstimate(opportunity.apy)}
+                </Typography>
             </td>
         </tr>
     );
