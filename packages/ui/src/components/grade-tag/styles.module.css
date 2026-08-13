@@ -9,7 +9,7 @@
 }
 
 .base {
-    @apply rounded-[0.625rem] h-8 max-w-10.5 px-3 py-1.5;
+    @apply rounded-[0.625rem] h-8 max-w-12 px-3 py-1.5 whitespace-nowrap;
 }
 
 .a {
