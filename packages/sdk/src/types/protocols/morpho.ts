@@ -40,6 +40,11 @@ export interface MorphoAllocation {
     warnings: MorphoMarketWarning[];
 }
 
+export interface MorphoDeploy {
+    address: string;
+    assetsUsd?: number | null;
+}
+
 export interface MorphoSourceData {
     type: "morpho";
     depositDisabled: boolean;
@@ -48,6 +53,7 @@ export interface MorphoSourceData {
     apy30d?: number | null;
     apyExcludingRewards?: number | null;
     availableLiquidityUsd?: number | null;
+    deploysInto: MorphoDeploy[];
     guardian?: string | null;
     owner?: string | null;
     timelockSeconds?: number | null;

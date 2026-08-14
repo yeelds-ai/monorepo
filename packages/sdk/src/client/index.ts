@@ -1,6 +1,6 @@
 import type { PaginatedFeedResponse } from "../types/feed";
 import type { OpportunitiesFiltersResponse } from "../types/filters";
-import type { OpportunitiesHighlightsResponse } from "../types/highlights";
+import type { OpportunitiesGraphResponse } from "../types/graph";
 import type {
     OpportunityResponse,
     PaginatedOpportunitiesResponse,
@@ -8,6 +8,7 @@ import type {
     SortField,
     Strategy,
 } from "../types/opportunity";
+import type { OverviewResponse } from "../types/overview";
 
 export interface FeedParams {
     page?: number;
@@ -33,6 +34,10 @@ export interface OpportunitiesParams {
 export interface OpportunityParams {
     chain: string;
     address: string;
+}
+
+export interface OverviewParams {
+    tvlFrom?: string;
 }
 
 export class YeeldsApiClient {
@@ -131,16 +136,34 @@ export class YeeldsApiClient {
         return (await response.json()) as OpportunitiesFiltersResponse;
     }
 
-    async fetchOpportunitiesHighlights(): Promise<OpportunitiesHighlightsResponse> {
+    async fetchOpportunitiesGraph(): Promise<OpportunitiesGraphResponse> {
         const response = await fetch(
-            new URL("v1/opportunities/highlights", this.baseUrl),
+            new URL("v1/opportunities/graph", this.baseUrl),
             { headers: this.headers },
         );
         if (!response.ok)
             throw new Error(
-                `Response not ok while fetching highlights: ${await response.text()}`,
+                `Response not ok while fetching opportunities graph: ${await response.text()}`,
             );
 
-        return (await response.json()) as OpportunitiesHighlightsResponse;
+        return (await response.json()) as OpportunitiesGraphResponse;
+    }
+
+    async fetchOverview(query: OverviewParams = {}): Promise<OverviewResponse> {
+        const url = new URL("v1/overview", this.baseUrl);
+
+        for (const param in query) {
+            const value = query[param as keyof OverviewParams];
+            if (value === undefined) continue;
+            url.searchParams.set(param, value.toString());
+        }
+
+        const response = await fetch(url, { headers: this.headers });
+        if (!response.ok)
+            throw new Error(
+                `Response not ok while fetching overview: ${await response.text()}`,
+            );
+
+        return (await response.json()) as OverviewResponse;
     }
 }
