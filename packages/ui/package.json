@@ -35,7 +35,7 @@
     "dependencies": {
         "@floating-ui/react": "^0.27.20",
         "classnames": "catalog:",
-        "motion": "^13.0.0",
+        "motion": "^13.1.0",
         "react-use": "^17.6.1",
         "react-window": "^2.3.0"
     },

@@ -15,10 +15,10 @@
         "@trivago/prettier-plugin-sort-imports": "catalog:",
         "husky": "^9.1.7",
         "prettier": "catalog:",
-        "turbo": "^2.10.8",
+        "turbo": "^2.10.9",
         "typescript": "catalog:"
     },
-    "packageManager": "pnpm@11.13.1",
+    "packageManager": "pnpm@11.21.0",
     "engines": {
         "node": ">=22 <26"
     },
