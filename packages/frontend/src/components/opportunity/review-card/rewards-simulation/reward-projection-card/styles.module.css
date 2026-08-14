@@ -1,0 +1,21 @@
+@reference "../../../../../app.css";
+
+.card {
+    @apply flex flex-1 flex-col rounded-xl background-raised;
+}
+
+.card.highlight {
+    @apply background-default;
+}
+
+.periodLabel {
+    @apply flex items-center justify-center border-b border-brand-primary/4 py-2;
+}
+
+.rewardValue {
+    @apply flex items-center justify-center py-2;
+}
+
+.card.highlight .periodLabelText {
+    @apply text-brand-primary/72;
+}

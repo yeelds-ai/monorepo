@@ -1,0 +1,29 @@
+@reference "../../../../app.css";
+
+.root {
+    @apply flex flex-col gap-3;
+}
+
+.header {
+    @apply flex items-center gap-2;
+}
+
+.giftIcon {
+    @apply text-primary;
+}
+
+.controls {
+    @apply flex items-center gap-2;
+}
+
+.inputRoot {
+    @apply w-40;
+}
+
+.inputRoot :global(.input) {
+    @apply text-14 font-bold;
+}
+
+.forecast {
+    @apply flex w-full gap-1;
+}

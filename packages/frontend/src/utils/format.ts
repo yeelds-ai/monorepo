@@ -1,8 +1,8 @@
 export function formatUsd(usd: number): string {
     if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(1)}B`;
     if (usd >= 1_000_000) return `$${(usd / 1_000_000).toFixed(1)}M`;
-    if (usd >= 1_000) return `$${(usd / 1_000).toFixed(1)}K`;
-    return `$${usd.toFixed(0)}`;
+    if (usd >= 10_000) return `$${(usd / 1_000).toFixed(1)}K`;
+    return `$${new Intl.NumberFormat("en-US").format(usd)}`;
 }
 
 export function formatApy(apy: number | null): string {
@@ -16,6 +16,14 @@ export function formatDailyEstimate(apy: number, principal = 1_000): string {
     const daily = (principal * (apy / 100)) / 365;
     if (daily < 0.01) return "<$0.01";
     return `$${daily.toFixed(2)}`;
+}
+
+export function calculateRewardEstimate(
+    apy: number,
+    principal: number,
+    days: number,
+): number {
+    return (principal * (apy / 100) * days) / 365;
 }
 
 const USD_SUFFIX_MULTIPLIERS: Record<string, number> = {

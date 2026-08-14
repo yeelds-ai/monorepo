@@ -134,7 +134,16 @@
         },
         "review": {
             "title": "Opportunity review",
-            "depositOn": "Deposit on {protocol}"
+            "depositOn": "Deposit on {protocol}",
+            "rewardsSimulation": {
+                "title": "Rewards Simulation",
+                "simulationAt": "Simulation at",
+                "periods": {
+                    "daily": "Daily",
+                    "monthly": "Monthly",
+                    "yearly": "Yearly"
+                }
+            }
         }
     },
     "opportunityIdentity": {

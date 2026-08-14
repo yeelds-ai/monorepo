@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { ClipboardCheckIcon } from "@/src/assets/clipboard-check-icon";
 import { ExternalLinkIcon } from "@/src/assets/external-link-icon";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
+import { RewardsSimulation } from "./rewards-simulation";
 
 import styles from "./styles.module.css";
 
@@ -31,6 +32,7 @@ export function ReviewCard({ opportunity }: ReviewCardProps) {
                     {t("review.title")}
                 </Typography>
             </div>
+            <RewardsSimulation opportunity={opportunity} />
             <Button
                 icon={ExternalLinkIcon}
                 href={depositUrl}

@@ -1,8 +1,16 @@
 @reference "../../theme.css";
 
 .root {
-    @apply rounded-xl border px-3 py-2 outline-none transition-colors;
-    @apply background-overlay stroke-divider text-primary;
-    @apply focus-visible:stroke-focus;
-    @apply disabled:cursor-not-allowed disabled:opacity-50;
+    @apply flex items-center gap-1.5 rounded-xl border px-3 py-2 transition-colors;
+    @apply background-overlay stroke-divider;
+    @apply has-focus-visible:stroke-focus;
+    @apply has-disabled:cursor-not-allowed has-disabled:opacity-50;
+}
+
+.input {
+    @apply w-full min-w-0 border-none bg-transparent p-0 text-primary outline-none;
+}
+
+.icon {
+    @apply size-4 shrink-0 text-secondary;
 }
