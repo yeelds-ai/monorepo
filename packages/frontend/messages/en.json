@@ -92,7 +92,6 @@
             "protocol": "Protocol",
             "strategy": "Strategy",
             "tvl": "TVL",
-            "stability": "Stability",
             "grade": "Grade",
             "apy": "APY",
             "dailyEstimate": "Daily est./$1k",

@@ -64,25 +64,6 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
                             uppercase
                             variant="secondary"
                         >
-                            {t("stability")}
-                        </Typography>
-                        <div className={styles.statBadge}>
-                            <Typography
-                                size={14}
-                                weight="bold"
-                                className={styles.statValue}
-                            >
-                                {/* TODO: implement stability badge */}-
-                            </Typography>
-                        </div>
-                    </div>
-                    <div className={styles.stat}>
-                        <Typography
-                            size={10}
-                            weight="bold"
-                            uppercase
-                            variant="secondary"
-                        >
                             {t("dailyPer1k")}
                         </Typography>
                         <Typography

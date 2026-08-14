@@ -67,9 +67,6 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
                 </Typography>
             </td>
             <td className={styles.cell}>
-                {/* TODO: implement stability badge */}-
-            </td>
-            <td className={styles.cell}>
                 <GradeTag grade={opportunity.grade?.letter} />
             </td>
             <td className={styles.cell}>
