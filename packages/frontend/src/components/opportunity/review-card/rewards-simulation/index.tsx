@@ -1,6 +1,6 @@
 "use client";
 
-import { Input, Typography } from "@yeelds/ui";
+import { InfoBanner, Input, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 import { type ChangeEvent, type KeyboardEvent, useState } from "react";
 
@@ -91,6 +91,7 @@ export function RewardsSimulation({ opportunity }: RewardsSimulationProps) {
                     variant="highlight"
                 />
             </div>
+            <InfoBanner text={t("infoBanner")} />
         </div>
     );
 }

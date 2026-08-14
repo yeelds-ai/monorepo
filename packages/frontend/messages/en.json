@@ -142,7 +142,8 @@
                     "daily": "Daily",
                     "monthly": "Monthly",
                     "yearly": "Yearly"
-                }
+                },
+                "infoBanner": "Reward projections are based on current APY and token prices. Actual returns may change as market conditions evolve. Capital is at risk."
             }
         }
     },
