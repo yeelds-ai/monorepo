@@ -20,21 +20,24 @@ export function ExposureCard({ opportunity }: ExposureCardProps) {
 
     return (
         <Card icon={ServerStackIcon} title={t("title")} className={styles.root}>
-            <DetailRow label={t("type")}>
+            <DetailRow label={t("type")} className={styles.detailRow}>
                 <Typography as="span" size={14} weight="bold">
                     {opportunity.assets.length === 1
                         ? t("typeSingle")
                         : t("typeMulti")}
                 </Typography>
             </DetailRow>
-            <DetailRow label={t("category")}>
+            <DetailRow label={t("category")} className={styles.detailRow}>
                 <Typography as="span" size={14} weight="bold">
                     {isStablecoin
                         ? t("categoryStablecoin")
                         : t("categoryGeneric")}
                 </Typography>
             </DetailRow>
-            <DetailRow label={t("underlyingTokens")}>
+            <DetailRow
+                label={t("underlyingTokens")}
+                className={styles.detailRow}
+            >
                 <AssetList assets={opportunity.assets} />
             </DetailRow>
         </Card>

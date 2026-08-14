@@ -9,6 +9,7 @@ import { ErrorState } from "../error-state";
 import { NavigationButton } from "../navigation-button";
 import { ExposureCard } from "./exposure-card";
 import { ReviewCard } from "./review-card";
+import { RiskSignalsCard } from "./risk-signals-card";
 import { VaultAllocationsCard } from "./vault-allocations-card";
 
 import styles from "./styles.module.css";
@@ -49,7 +50,7 @@ export function Opportunity({ chain, address }: OpportunityProps) {
 
             <div className={styles.content}>
                 <div className={styles.leftContent}>
-                    {/* TODO: implement risk signal card */}
+                    <RiskSignalsCard opportunity={opportunity} />
                     <ExposureCard opportunity={opportunity} />
                     <VaultAllocationsCard opportunity={opportunity} />
                     {/* TODO: implement incentive campaign card */}

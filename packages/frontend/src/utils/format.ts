@@ -45,3 +45,20 @@ export function parseApy(input: string): number | null {
     const value = Number(trimmed);
     return Number.isFinite(value) ? value : null;
 }
+
+function ordinalSuffix(day: number): string {
+    if (day % 10 === 1 && day % 100 !== 11) return "st";
+    if (day % 10 === 2 && day % 100 !== 12) return "nd";
+    if (day % 10 === 3 && day % 100 !== 13) return "rd";
+    return "th";
+}
+
+export function formatOrdinalDate(iso: string): string {
+    const date = new Date(iso);
+    const day = date.getUTCDate();
+    const month = new Intl.DateTimeFormat("en", {
+        month: "long",
+        timeZone: "UTC",
+    }).format(date);
+    return `${day}${ordinalSuffix(day)} ${month} ${date.getUTCFullYear()}`;
+}

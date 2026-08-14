@@ -1,7 +1,7 @@
 @reference "../../theme.css";
 
 .root {
-    @apply rounded-2xl background-raised p-4;
+    @apply rounded-2xl background-raised px-5 py-4;
 }
 
 .header {

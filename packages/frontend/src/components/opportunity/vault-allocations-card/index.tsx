@@ -44,7 +44,7 @@ export function VaultAllocationsCard({
                     </Tag>
                 )}
             </div>
-            <DetailRow label={t("deposits")}>
+            <DetailRow label={t("deposits")} className={styles.detailRow}>
                 <AssetList assets={opportunity.assets} />
             </DetailRow>
         </Card>

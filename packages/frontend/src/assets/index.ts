@@ -23,6 +23,7 @@ export * from "./info-icon";
 export * from "./lock-icon";
 export * from "./menu-icon";
 export * from "./news-icon";
+export * from "./methodology-icon";
 export * from "./pendulum-icon";
 export * from "./pie-chart-icon";
 export * from "./space-dashboard-icon";
@@ -33,5 +34,6 @@ export * from "./trending-up-icon";
 export * from "./upload-circle";
 
 export * from "./logos/yeelds";
+export * from "./logos/yeelds-compact";
 export * from "./logos/socials/telegram";
 export * from "./logos/socials/x";

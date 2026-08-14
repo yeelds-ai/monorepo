@@ -122,6 +122,16 @@
             "curator": "Curator",
             "deposits": "Deposits"
         },
+        "riskSignalsCard": {
+            "title": "Risk signals",
+            "yeeldsGrade": "Yeelds grade",
+            "score": "{score}",
+            "scoreMax": "/ 100",
+            "caption": "Higher number = safer",
+            "graded": "Graded {date}",
+            "methodology": "Methodology v{version}",
+            "disclaimer": "Dated opinion, not a guarantee"
+        },
         "review": {
             "title": "Opportunity review",
             "depositOn": "Deposit on {protocol}"
@@ -129,8 +139,8 @@
     },
     "opportunityIdentity": {
         "viewOnExplorer": "View on block explorer",
-        "apy": "APY {value}",
-        "tvl": "TVL {value}"
+        "apy": "{value} APY",
+        "tvl": "{value} TVL"
     },
     "feed": {
         "title": "Feed",

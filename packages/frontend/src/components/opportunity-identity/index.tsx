@@ -116,7 +116,7 @@ export function OpportunityIdentity({
                     {chain && (
                         <Tag padding="spaced" className={styles.tag}>
                             <span className={styles.chainChip}>
-                                <ChainDot chain={opportunity.chain} size={14} />
+                                <ChainDot chain={opportunity.chain} size={16} />
                                 <Typography as="span" size={16} weight="bold">
                                     {chain.name}
                                 </Typography>
