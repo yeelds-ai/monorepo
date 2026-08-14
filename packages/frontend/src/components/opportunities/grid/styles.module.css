@@ -21,7 +21,7 @@
 }
 
 .apy {
-    @apply tracking-tighter tabular-nums;
+    @apply tabular-nums;
 }
 
 .divider {

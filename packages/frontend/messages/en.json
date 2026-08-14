@@ -25,7 +25,15 @@
         "hotPicks": {
             "title": "Weekly Yeelds hot picks",
             "subtitle": "The week's standout vaults, ranked by Yeelds grade and yield across the catalog.",
-            "empty": "No hot picks available right now."
+            "empty": "No hot picks available right now.",
+            "exploreAllYields": "Explore all yields",
+            "categories": {
+                "topGraded": "Top risk-adjusted yield",
+                "topStableYield": "Top stable yield",
+                "deepestLiquidity": "Deepest liquidity",
+                "topBlueChip": "Top blue chip",
+                "highestApy": "Highest APY"
+            }
         },
         "news": {
             "title": "Weekly news",

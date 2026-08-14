@@ -9,7 +9,7 @@
 }
 
 .title {
-    @apply tracking-tight sm:text-28;
+    @apply sm:text-28;
 }
 
 .subtitle {

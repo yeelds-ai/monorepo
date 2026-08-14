@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { MessagePage } from "@/src/components/message-page";
+import { Explore } from "@/src/components/explore";
 import type { Locale } from "@/src/i18n/routing";
 
 interface ExplorePageProps {
@@ -21,8 +21,6 @@ export async function generateMetadata({
     };
 }
 
-export default async function ExplorePage() {
-    const t = await getTranslations("explore");
-
-    return <MessagePage title={t("title")} description={t("subtitle")} />;
+export default function ExplorePage() {
+    return <Explore />;
 }
