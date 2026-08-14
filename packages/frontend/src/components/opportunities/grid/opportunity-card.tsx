@@ -1,9 +1,8 @@
 import { Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
-import { type MouseEvent } from "react";
 
 import { OpportunityIdentity } from "@/src/components/opportunity-identity";
-import { Link, useRouter } from "@/src/i18n/routing";
+import { Link } from "@/src/i18n/routing";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { formatApy, formatDailyEstimate, formatUsd } from "@/src/utils/format";
 
@@ -15,24 +14,16 @@ interface OpportunityCardProps {
 
 export function OpportunityCard({ opportunity }: OpportunityCardProps) {
     const t = useTranslations("opportunities.table");
-    const router = useRouter();
     const href = `/opportunities/${opportunity.chain}/${opportunity.address}`;
 
-    function handleOnCardClick(event: MouseEvent<HTMLDivElement>) {
-        if ((event.target as HTMLElement).closest("a")) return;
-        router.push(href);
-    }
-
     return (
-        <div className={styles.card} onClick={handleOnCardClick}>
+        <Link
+            href={href}
+            aria-label={`${opportunity.protocol.name} ${opportunity.strategy}`}
+            className={styles.card}
+        >
             <div className={styles.content}>
-                <Link
-                    href={href}
-                    aria-label={`${opportunity.protocol.name} ${opportunity.strategy}`}
-                    className={styles.identityLink}
-                >
-                    <OpportunityIdentity opportunity={opportunity} />
-                </Link>
+                <OpportunityIdentity opportunity={opportunity} />
 
                 <div className={styles.apyRow}>
                     <Typography size={24} font="brand" className={styles.apy}>
@@ -105,6 +96,6 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
