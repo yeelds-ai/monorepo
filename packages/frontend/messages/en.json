@@ -16,7 +16,7 @@
     },
     "explore": {
         "title": "Explore",
-        "metaTitle": "Explore DeFi Yields — Vaults, Grades & Weekly Hot Picks",
+        "metaTitle": "Explore DeFi Yields - Vaults, Grades & Weekly Hot Picks",
         "subtitle": "Track the yield landscape, surface the week's standout vaults, and compare opportunities by category.",
         "stats": {
             "chains": "Chains",
@@ -46,7 +46,7 @@
     },
     "opportunities": {
         "title": "Opportunities",
-        "metaTitle": "Yield Opportunities — Compare APY Across Protocols",
+        "metaTitle": "Yield Opportunities - Compare APY Across Protocols",
         "subtitle": "Compare thousands of yield opportunities across protocols, chains, and strategies.",
         "viewToggle": {
             "ariaLabel": "View as table or grid",
@@ -153,7 +153,7 @@
     },
     "feed": {
         "title": "Feed",
-        "metaTitle": "Yeelds Feed — DeFi Yield News, Articles & Insights",
+        "metaTitle": "Latest DeFi Yield News, Articles & Insights | Yeelds",
         "subtitle": "Fresh yield updates, articles, and posts from across the DeFi ecosystem.",
         "empty": "No articles found.",
         "readTime": "{minutes}min read",
@@ -161,7 +161,7 @@
     },
     "deals": {
         "title": "Liquidity deals",
-        "metaTitle": "Liquidity Deals — Vetted DeFi Yield Campaigns",
+        "metaTitle": "Liquidity Deals - Vetted DeFi Yield Campaigns | Yeelds",
         "subtitle": "Compare yield opportunities across protocols, chains, and strategies.",
         "empty": "No deals available right now. Check back soon."
     },
@@ -186,7 +186,7 @@
         "lastPage": "Last page"
     },
     "metadata": {
-        "title": "Yeelds — DeFi yields graded",
+        "title": "DeFi Yield Vaults, Graded on Risk & Trust | Yeelds",
         "description": "Discover and compare yield opportunities across chains. Vaults graded on collateral, curator, governance and NAV."
     },
     "notFound": {

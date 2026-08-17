@@ -29,7 +29,7 @@ export async function generateMetadata({
     }
 
     return {
-        title: deal.hero.title,
+        title: `${deal.hero.title} | Yeelds`,
         description: deal.hero.subtitle,
         alternates: { canonical: `/${locale}/deals/${slug}` },
     };

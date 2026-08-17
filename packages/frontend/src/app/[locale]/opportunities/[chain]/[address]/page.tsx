@@ -28,7 +28,7 @@ async function getPageTitle({
 
         if (!opportunity) return t("notFound.title");
 
-        return opportunity.name;
+        return `${opportunity.name} Yield & APY | Yeelds`;
     } catch {
         return t("notFound.title");
     }
