@@ -19,7 +19,11 @@ export function AllocationsTable({
     depositTokenSymbol,
 }: AllocationsTableProps) {
     const t = useTranslations("opportunity.exposureCard");
-    if (allocations.length === 0) return null;
+    if (
+        allocations.length === 0 ||
+        (allocations.length === 1 && allocations[0].amountUsd === 0)
+    )
+        return null;
 
     return (
         <div>
