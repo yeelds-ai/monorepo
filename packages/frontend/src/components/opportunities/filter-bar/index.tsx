@@ -14,7 +14,12 @@ import { useMemo, useState } from "react";
 import { FilterListIcon } from "@/src/assets";
 import { useOpportunitiesFilters } from "@/src/hooks/useFilters";
 import { useOpportunitiesParams } from "@/src/hooks/useOpportunitiesParams";
-import { formatApy, formatUsd, parseApy, parseUsd } from "@/src/utils/format";
+import {
+    formatPercentage,
+    formatUsd,
+    parseApy,
+    parseUsd,
+} from "@/src/utils/format";
 import { RangeFilter } from "./range-filter";
 
 import styles from "./styles.module.css";
@@ -213,7 +218,7 @@ export function FilterBar() {
                             ? [query.apyFrom ?? APY_MIN, query.apyTo ?? APY_MAX]
                             : undefined
                     }
-                    format={formatApy}
+                    format={formatPercentage}
                     parse={parseApy}
                     onChange={handleOnApyChange}
                 />

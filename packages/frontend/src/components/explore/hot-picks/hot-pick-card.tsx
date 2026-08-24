@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { OpportunityIdentity } from "@/src/components/opportunity-identity";
 import { Link } from "@/src/i18n/routing";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { formatApy, formatUsd } from "@/src/utils/format";
+import { formatPercentage, formatUsd } from "@/src/utils/format";
 
 import styles from "./styles.module.css";
 
@@ -31,7 +31,7 @@ export function HotPickCard({ opportunity }: HotPickCardProps) {
                         font="brand"
                         className={styles.apyValue}
                     >
-                        {formatApy(opportunity.apy)}
+                        {formatPercentage(opportunity.apy)}
                     </Typography>
                     <Typography size={14} weight="bold" variant="secondary">
                         {t("apy")}
@@ -42,7 +42,7 @@ export function HotPickCard({ opportunity }: HotPickCardProps) {
                     <Typography size={14} weight="bold">
                         {opportunity.tvlUsd
                             ? formatUsd(opportunity.tvlUsd)
-                            : "—"}
+                            : "-"}
                     </Typography>
                     <Typography size={14} weight="bold" variant="secondary">
                         {t("tvl")}

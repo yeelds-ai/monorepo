@@ -28,11 +28,11 @@ export const Scale: Story = {
         <div className="flex gap-12">
             <div className="flex flex-col gap-3">
                 <Typography font="system" size={12} variant="secondary">
-                    Brand / Clash Display — Semibold
+                    Brand / Clash Display - Semibold
                 </Typography>
                 {BRAND_SIZES.map((size) => (
                     <Typography key={size} font="brand" size={size}>
-                        brand-{size} — The quick brown fox jumps over the lazy
+                        brand-{size} - The quick brown fox jumps over the lazy
                         dog
                     </Typography>
                 ))}
@@ -49,7 +49,7 @@ export const Scale: Story = {
                             size={size}
                             weight={weight}
                         >
-                            system-{size}-{weight} — The quick brown fox jumps
+                            system-{size}-{weight} - The quick brown fox jumps
                             over the lazy dog
                         </Typography>
                     )),
@@ -63,10 +63,10 @@ export const Variant: Story = {
     render: () => (
         <div className="flex flex-col gap-2">
             <Typography font="system" size={16} variant="primary">
-                primary — #FFFFFF
+                primary - #FFFFFF
             </Typography>
             <Typography font="system" size={16} variant="secondary">
-                secondary — #B1AFB1
+                secondary - #B1AFB1
             </Typography>
         </div>
     ),

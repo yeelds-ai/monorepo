@@ -7,7 +7,3 @@
 .root :global(.header) {
     @apply px-5;
 }
-
-:global(.row).detailRow {
-    @apply px-5;
-}

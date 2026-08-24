@@ -24,12 +24,6 @@ export interface AaveUnderlying {
     symbol: string;
 }
 
-export interface AaveAllocation {
-    address?: string | null;
-    symbol?: string | null;
-    usd?: number | null;
-}
-
 export interface AaveSourceData {
     type: "aave";
     market: AaveMarketInfo;
@@ -39,7 +33,6 @@ export interface AaveSourceData {
     timelockSeconds: number;
     apyExcludingRewards: number;
     incentives: AaveIncentive[];
-    allocations: AaveAllocation[];
     utilizationRate?: number | null;
 }
 

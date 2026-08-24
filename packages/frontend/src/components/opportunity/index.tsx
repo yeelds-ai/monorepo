@@ -10,7 +10,6 @@ import { NavigationButton } from "../navigation-button";
 import { ExposureCard } from "./exposure-card";
 import { ReviewCard } from "./review-card";
 import { RiskSignalsCard } from "./risk-signals-card";
-import { VaultAllocationsCard } from "./vault-allocations-card";
 
 import styles from "./styles.module.css";
 
@@ -52,7 +51,6 @@ export function Opportunity({ chain, address }: OpportunityProps) {
                 <div className={styles.leftContent}>
                     <RiskSignalsCard opportunity={opportunity} />
                     <ExposureCard opportunity={opportunity} />
-                    <VaultAllocationsCard opportunity={opportunity} />
                     {/* TODO: implement incentive campaign card */}
                 </div>
 

@@ -1,4 +1,5 @@
 import { SUPPORTED_CHAINS } from "@yeelds/registry";
+import { isMorphoSourceData } from "@yeelds/sdk";
 import { GradeTag, Tag, Typography } from "@yeelds/ui";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
@@ -7,7 +8,7 @@ import { ExternalLinkIcon } from "@/src/assets";
 import { ChainDot } from "@/src/components/chain-dot";
 import { ProtocolLogo } from "@/src/components/protocol-logo";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { formatApy, formatUsd } from "@/src/utils/format";
+import { formatPercentage, formatUsd } from "@/src/utils/format";
 
 import styles from "./styles.module.css";
 
@@ -33,8 +34,12 @@ export function OpportunityIdentity({
     className,
 }: OpportunityIdentityProps) {
     const t = useTranslations("opportunityIdentity");
+
     const iconSizes = ICON_SIZES[size];
     const chain = SUPPORTED_CHAINS[opportunity.chain];
+    const curator = isMorphoSourceData(opportunity.protocol.data)
+        ? opportunity.protocol.data.curator
+        : undefined;
 
     return (
         <div
@@ -130,7 +135,9 @@ export function OpportunityIdentity({
                             font="brand"
                             color="brand"
                         >
-                            {t("apy", { value: formatApy(opportunity.apy) })}
+                            {t("apy", {
+                                value: formatPercentage(opportunity.apy),
+                            })}
                         </Typography>
                     </Tag>
                     {opportunity.tvlUsd != null && (
@@ -140,6 +147,24 @@ export function OpportunityIdentity({
                                     value: formatUsd(opportunity.tvlUsd),
                                 })}
                             </Typography>
+                        </Tag>
+                    )}
+                    {curator?.name && curator.url && (
+                        <Tag className={styles.tag} padding="spaced">
+                            <Typography size={16} variant="secondary">
+                                {t("curator")}
+                            </Typography>
+                            <a
+                                href={curator.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.curatorLink}
+                            >
+                                <Typography as="span" size={16} weight="bold">
+                                    {curator.name}
+                                </Typography>
+                                <ExternalLinkIcon className={styles.linkIcon} />
+                            </a>
                         </Tag>
                     )}
                 </span>

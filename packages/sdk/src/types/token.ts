@@ -37,10 +37,15 @@ export type StablecoinPegType =
     | "var"
     | "unknown";
 
+export type PharosGrade =
+    "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D" | "F";
+
 export interface TokenStablecoin {
     id: string;
     pegType: StablecoinPegType;
     pegMechanism: StablecoinPegMechanism;
+    activeDepegBps?: number | null;
+    grade?: PharosGrade | null;
     priceConfidence?: string | null;
     priceUsd?: number | null;
 }

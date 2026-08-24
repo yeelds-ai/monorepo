@@ -38,7 +38,7 @@ export const WithIcon: Story = {
 
 export const WithRows: Story = {
     render: () => (
-        <Card icon={CircledPlusIcon} title="Vault Allocations">
+        <Card icon={CircledPlusIcon} title="Card title">
             <div className="flex items-center justify-between gap-3 py-2">
                 <Typography as="span" size={14} variant="secondary">
                     Curator

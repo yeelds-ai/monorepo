@@ -8,20 +8,8 @@ export type SortField = "apy" | "tvl" | "score";
 
 export type SortDirection = "asc" | "desc";
 
-export interface OnChainContract {
-    ageDays?: number | null;
-    scam: boolean;
-    verified: boolean;
-}
-
-export interface OnChainToken {
-    holdersCount: number;
-    topHolderConcentration: number;
-}
-
 export interface OnChainData {
-    contract: OnChainContract;
-    token?: OnChainToken | null;
+    ageDays: number;
 }
 
 export interface OpportunityAsset {
@@ -35,6 +23,11 @@ export interface OpportunityReward {
     apr?: number | null;
 }
 
+export interface OpportunityAllocation {
+    amountUsd?: number | null;
+    token?: Token | null;
+}
+
 export interface Opportunity {
     chain: string;
     address: string;
@@ -43,6 +36,7 @@ export interface Opportunity {
     strategy: Strategy;
     apy: number;
     assets: OpportunityAsset[];
+    allocations: OpportunityAllocation[];
     rewards: OpportunityReward[];
     tvlUsd?: number | null;
     onChain?: OnChainData | null;

@@ -60,3 +60,11 @@
 .chainChip {
     @apply flex items-center gap-1.5;
 }
+
+.curatorLink {
+    @apply flex items-center gap-1 ml-2 text-primary leading-0;
+}
+
+.linkIcon {
+    @apply size-4;
+}

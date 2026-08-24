@@ -4,7 +4,11 @@ import { useTranslations } from "next-intl";
 import { OpportunityIdentity } from "@/src/components/opportunity-identity";
 import { Link } from "@/src/i18n/routing";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { formatApy, formatDailyEstimate, formatUsd } from "@/src/utils/format";
+import {
+    formatDailyEstimate,
+    formatPercentage,
+    formatUsd,
+} from "@/src/utils/format";
 
 import styles from "./styles.module.css";
 
@@ -27,7 +31,7 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
 
                 <div className={styles.apyRow}>
                     <Typography size={24} font="brand" className={styles.apy}>
-                        {formatApy(opportunity.apy)}
+                        {formatPercentage(opportunity.apy)}
                     </Typography>
                     <Typography size={14} weight="bold" variant="secondary">
                         {t("apy")}
@@ -54,7 +58,7 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
                         >
                             {opportunity.tvlUsd
                                 ? formatUsd(opportunity.tvlUsd)
-                                : "—"}
+                                : "-"}
                         </Typography>
                     </div>
                     <div className={styles.stat}>

@@ -33,7 +33,7 @@
     --color-text-secondary: #b1afb1;
     --color-text-disabled: rgb(255 255 255 / 0.2);
 
-    /* Status ramp — also the polarity ladder every grade chip runs on */
+    /* Status ramp - also the polarity ladder every grade chip runs on */
     --color-status-excellent: #2fcb60;
     --color-status-good: #6dcb2f;
     --color-status-mixed: #cbc12f;

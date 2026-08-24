@@ -6,7 +6,7 @@ import type { TranslationsKeys } from "@/src/types/utils";
 
 import styles from "./styles.module.css";
 
-// A blank href renders the icon dimmed and non-clickable — we never ship a
+// A blank href renders the icon dimmed and non-clickable - we never ship a
 // guessed social link.
 const SOCIALS: {
     name: TranslationsKeys<"navigation.socials">;

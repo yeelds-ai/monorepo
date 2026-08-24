@@ -80,7 +80,7 @@ const nextConfig: NextConfig = {
                 permanent: false,
             },
             // Prefix every unprefixed path with the default locale (replaces the
-            // next-intl middleware — a redirect is cheaper and cacheable).
+            // next-intl middleware - a redirect is cheaper and cacheable).
             {
                 source: "/:path((?!en$|en/|_next/|api/|.*\\.).+)",
                 destination: "/en/:path",

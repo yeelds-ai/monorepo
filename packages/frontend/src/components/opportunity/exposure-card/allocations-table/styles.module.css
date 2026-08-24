@@ -1,0 +1,49 @@
+@reference "../../../../app.css";
+
+.titleWrapper {
+    @apply flex items-center gap-2 px-5 mt-4;
+}
+
+.chartIcon {
+    @apply size-4.5;
+}
+
+.table {
+    @apply w-full table-fixed border-collapse text-left;
+}
+
+.marketCol {
+    @apply w-[44%];
+}
+
+.allocationCol {
+    @apply w-[28%];
+}
+
+.shareCol {
+    @apply w-[28%];
+}
+
+.headerCell {
+    @apply px-5 py-2 text-left;
+}
+
+.row {
+    @apply border-t stroke-divider;
+}
+
+.cell {
+    @apply px-5 py-2 align-middle;
+}
+
+.shareCell {
+    @apply text-right;
+}
+
+.market {
+    @apply flex items-center gap-1.5;
+}
+
+.icon {
+    @apply rounded-full;
+}

@@ -2,7 +2,7 @@ import { Environment } from "@yeelds/sdk";
 
 // The single place `process.env` is read. Validation runs at module load so a
 // misconfiguration fails the boot instead of one request, and the cast is what
-// lets every consumer treat the value as a real Environment — the throw below is
+// lets every consumer treat the value as a real Environment - the throw below is
 // the thing that makes it true.
 //
 // Adding a variable means touching four things: this file, .env.example,

@@ -2,7 +2,7 @@ import { YeeldsApiClient } from "@yeelds/sdk";
 
 // SSR-safe placeholder: this module is also evaluated during the server
 // render pass of "use client" components, where `window` doesn't exist yet.
-// Never actually fetched against there — these hooks only run their queryFn
+// Never actually fetched against there - these hooks only run their queryFn
 // client-side (enabled-gated, no prefetch/hydration in this app).
 const BROWSER_ORIGIN =
     typeof window === "undefined" ? "http://localhost" : window.location.origin;

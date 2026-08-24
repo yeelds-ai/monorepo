@@ -1,7 +1,49 @@
+import type { ExposureClass } from "./token";
+
+export type ProtocolTier = "p1" | "p2" | "p3";
+
+export type StrategyTier = "s1" | "s2" | "s3" | "s4" | "s5";
+
+export interface GradeWithdrawable {
+    usd: number;
+    share: number;
+}
+
+export interface GradeExposure {
+    share: number;
+    class: ExposureClass;
+    address?: string | null;
+    symbol?: string | null;
+}
+
+export interface GradeNudge {
+    factor: string;
+    delta: number;
+    reason: string;
+}
+
+export interface GradeSlash {
+    factor: string;
+    mult: number;
+    reason: string;
+}
+
+export interface GradeDerivation {
+    exposures: GradeExposure[];
+    nudges: GradeNudge[];
+    slashes: GradeSlash[];
+}
+
 export interface OpportunityGrade {
     score: number;
+    strategyTier: StrategyTier;
+    protocolTier: ProtocolTier;
+    anchorBase: number;
+    depositClass: ExposureClass;
+    withdrawable: GradeWithdrawable;
     methodologyVersion: number;
     gradedAt: string;
+    derivation?: GradeDerivation | null;
 }
 
 export type GradeLetter =

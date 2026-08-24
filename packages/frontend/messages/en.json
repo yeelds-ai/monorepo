@@ -108,18 +108,16 @@
         "backToOpportunities": "Back to opportunities",
         "exposureCard": {
             "title": "Exposure",
-            "type": "Type",
-            "typeSingle": "Single asset",
-            "typeMulti": "Multi asset",
+            "strategy": "Strategy",
             "category": "Category",
             "categoryStablecoin": "Stablecoin",
             "categoryGeneric": "Crypto assets",
-            "underlyingTokens": "Underlying tokens"
-        },
-        "vaultAllocationsCard": {
-            "title": "Vault Allocations",
-            "curator": "Curator",
-            "deposits": "Deposits"
+            "depositToken": "Deposit token",
+            "allocations": "Allocations",
+            "marketExposure": "Market exposure",
+            "allocation": "Allocation ({token})",
+            "notAllocated": "Not allocated",
+            "share": "Allocation %age"
         },
         "riskSignalsCard": {
             "title": "Risk signals",
@@ -149,7 +147,8 @@
     "opportunityIdentity": {
         "viewOnExplorer": "View on block explorer",
         "apy": "{value} APY",
-        "tvl": "{value} TVL"
+        "tvl": "{value} TVL",
+        "curator": "Curator"
     },
     "feed": {
         "title": "Feed",

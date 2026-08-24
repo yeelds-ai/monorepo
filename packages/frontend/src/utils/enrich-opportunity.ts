@@ -1,7 +1,36 @@
 import { SUPPORTED_PROTOCOLS } from "@yeelds/registry";
-import { type Opportunity, gradeFromScore } from "@yeelds/sdk";
+import {
+    type Opportunity,
+    type OpportunityAllocation,
+    gradeFromScore,
+} from "@yeelds/sdk";
 
-import type { EnrichedOpportunity } from "@/src/types/opportunity";
+import type {
+    EnrichedOpportunity,
+    EnrichedOpportunityAllocation,
+} from "@/src/types/opportunity";
+
+function withShares(
+    allocations: OpportunityAllocation[],
+): EnrichedOpportunityAllocation[] {
+    // Any unpriced allocation makes the total unknown — percentages off a
+    // partial book would read as complete.
+    const total = allocations.reduce(
+        (sum, allocation) =>
+            sum === null || allocation.amountUsd == null
+                ? null
+                : sum + allocation.amountUsd,
+        0 as number | null,
+    );
+
+    return allocations.map((allocation) => ({
+        ...allocation,
+        share:
+            total && allocation.amountUsd != null
+                ? (allocation.amountUsd / total) * 100
+                : null,
+    }));
+}
 
 export function enrichOpportunity(
     opportunity: Opportunity,
@@ -15,6 +44,7 @@ export function enrichOpportunity(
     return {
         ...opportunity,
         apy: opportunity.apy * 100,
+        allocations: withShares(opportunity.allocations),
         protocol: {
             ...opportunity.protocol,
             registry: protocolData

@@ -4,7 +4,11 @@ import { type MouseEvent } from "react";
 
 import { Link, useRouter } from "@/src/i18n/routing";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { formatApy, formatDailyEstimate, formatUsd } from "@/src/utils/format";
+import {
+    formatDailyEstimate,
+    formatPercentage,
+    formatUsd,
+} from "@/src/utils/format";
 
 import styles from "./styles.module.css";
 
@@ -63,7 +67,7 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
             </td>
             <td className={styles.cell}>
                 <Typography size={18} weight="bold" className={styles.tvlCell}>
-                    {opportunity.tvlUsd ? formatUsd(opportunity.tvlUsd) : "—"}
+                    {opportunity.tvlUsd ? formatUsd(opportunity.tvlUsd) : "-"}
                 </Typography>
             </td>
             <td className={styles.cell}>
@@ -71,7 +75,7 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
             </td>
             <td className={styles.cell}>
                 <Typography size={18} weight="bold">
-                    {formatApy(opportunity.apy)}
+                    {formatPercentage(opportunity.apy)}
                 </Typography>
             </td>
             <td className={styles.cell}>

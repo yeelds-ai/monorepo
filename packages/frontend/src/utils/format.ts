@@ -5,11 +5,11 @@ export function formatUsd(usd: number): string {
     return `$${new Intl.NumberFormat("en-US").format(usd)}`;
 }
 
-export function formatApy(apy: number | null): string {
-    if (apy === null) return "—";
-    if (apy < 0.01) return "<0.01%";
-    if (apy > 10_000) return ">10,000%";
-    return `${apy.toFixed(2)}%`;
+export function formatPercentage(value: number | null): string {
+    if (value === null) return "-";
+    if (value < 0.01) return "<0.01%";
+    if (value > 10_000) return ">10,000%";
+    return `${value.toFixed(2)}%`;
 }
 
 export function formatDailyEstimate(apy: number, principal = 1_000): string {

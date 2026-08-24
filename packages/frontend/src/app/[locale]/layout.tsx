@@ -15,7 +15,7 @@ import { routing } from "@/src/i18n/routing";
 
 import "../../app.css";
 
-// Brand face — Clash Display, self-hosted. The ramp is Semibold (600); Medium
+// Brand face - Clash Display, self-hosted. The ramp is Semibold (600); Medium
 // and Bold round it out.
 const clashDisplay = localFont({
     src: [

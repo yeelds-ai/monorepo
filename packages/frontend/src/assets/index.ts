@@ -35,6 +35,7 @@ export * from "./shield-icon";
 export * from "./trending-up-icon";
 export * from "./upload-circle";
 
+export * from "./logos/pharos";
 export * from "./logos/yeelds";
 export * from "./logos/yeelds-compact";
 export * from "./logos/socials/telegram";
