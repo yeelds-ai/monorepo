@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-    @apply px-6 pb-4 sm:px-8;
+    @apply px-4 pb-4 sm:px-8;
 }
 
 .grid {

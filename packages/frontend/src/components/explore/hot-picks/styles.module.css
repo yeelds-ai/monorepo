@@ -5,11 +5,11 @@
 }
 
 .header {
-    @apply flex items-center justify-between gap-3 px-6 pb-4 sm:px-8;
+    @apply flex items-center justify-between gap-3 px-4 pb-4 sm:px-8;
 }
 
 .content {
-    @apply px-6 pb-4 sm:px-8;
+    @apply px-4 pb-4 sm:px-8;
 }
 
 .exploreLink {
