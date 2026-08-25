@@ -58,8 +58,8 @@ function parseQuery(searchParams: URLSearchParams): OpportunitiesParams {
         apyFrom: apyFrom ? Number(apyFrom) : undefined,
         apyTo: apyTo ? Number(apyTo) : undefined,
         minScore: minScore ? Number(minScore) : undefined,
-        sort: sort ? (sort as SortField) : undefined,
-        direction: direction ? (direction as SortDirection) : undefined,
+        sort: sort ? (sort as SortField) : "tvl",
+        direction: direction ? (direction as SortDirection) : "desc",
     };
 }
 

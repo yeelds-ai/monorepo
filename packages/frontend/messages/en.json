@@ -93,9 +93,7 @@
             "strategy": "Strategy",
             "tvl": "TVL",
             "grade": "Grade",
-            "apy": "APY",
-            "dailyEstimate": "Daily est./$1k",
-            "dailyPer1k": "Daily / $1k"
+            "apy": "APY"
         },
         "paginationUnit": "opportunities"
     },

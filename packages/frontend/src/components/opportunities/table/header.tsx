@@ -14,7 +14,6 @@ export const HEADER_KEYS = [
     "tvl",
     "grade",
     "apy",
-    "dailyEstimate",
 ] as const;
 
 const SORT_FIELDS: Partial<Record<(typeof HEADER_KEYS)[number], SortField>> = {
@@ -30,7 +29,6 @@ const COL_WIDTH_RATIOS: Record<(typeof HEADER_KEYS)[number], number> = {
     tvl: 8,
     grade: 8,
     apy: 8,
-    dailyEstimate: 8,
 };
 
 const TOTAL_COL_WIDTH_RATIO = Object.values(COL_WIDTH_RATIOS).reduce(
