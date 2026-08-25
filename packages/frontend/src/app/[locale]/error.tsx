@@ -1,9 +1,8 @@
 "use client";
 
+import { ErrorState } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 import { type ErrorInfo, catchError } from "next/error";
-
-import { ErrorState } from "@/src/components/error-state";
 
 function ErrorFallback(_props: object, { retry }: ErrorInfo) {
     const t = useTranslations("error");

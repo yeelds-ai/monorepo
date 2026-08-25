@@ -1,8 +1,7 @@
 import type { FeedItem } from "@yeelds/sdk";
-import { Skeleton, Typography } from "@yeelds/ui";
+import { LoadingBar, Skeleton, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
-import { LoadingBar } from "@/src/components/loading-bar";
 import { FeedCard } from "../feed-card";
 
 import styles from "./styles.module.css";

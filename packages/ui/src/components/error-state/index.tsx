@@ -1,6 +1,5 @@
-import { Typography } from "@yeelds/ui";
-
-import { MessagePage } from "@/src/components/message-page";
+import { MessagePage } from "../message-page";
+import { Typography } from "../typography";
 
 import styles from "./styles.module.css";
 

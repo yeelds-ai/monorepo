@@ -1,4 +1,4 @@
-@reference "../../app.css";
+@reference "../../theme.css";
 
 .root {
     @apply h-0.5 w-full overflow-hidden bg-transparent;

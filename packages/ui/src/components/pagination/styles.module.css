@@ -1,4 +1,4 @@
-@reference "../../app.css";
+@reference "../../theme.css";
 
 .root {
     @apply flex items-center justify-between gap-1.5 h-11 px-8 py-3;
@@ -18,7 +18,7 @@
 }
 
 .navIcon {
-    @apply size-[18px];
+    @apply size-[18px] text-primary;
 }
 
 .current {

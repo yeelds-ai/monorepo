@@ -1,4 +1,5 @@
-import { LoadingBar } from "@/src/components/loading-bar";
+import { LoadingBar } from "@yeelds/ui";
+
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { EmptyOpportunities } from "../empty";
 import { OpportunityCard } from "./opportunity-card";

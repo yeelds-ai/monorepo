@@ -1,10 +1,9 @@
 "use client";
 
-import { Typography } from "@yeelds/ui";
+import { Pagination, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-import { Pagination } from "@/src/components/pagination";
 import { useFeed } from "@/src/hooks/useFeed";
 import { FeedGrid } from "./grid";
 
@@ -14,6 +13,7 @@ export const DEFAULT_PAGE_LIMIT = 12;
 
 export function Feed() {
     const t = useTranslations("feed");
+    const tPagination = useTranslations("pagination");
     const [page, setPage] = useState(1);
     const { feedItems, totalFeedItems, loading, placeholderData, fetching } =
         useFeed({
@@ -59,8 +59,18 @@ export function Feed() {
             <Pagination
                 page={page}
                 totalPages={totalPages}
-                total={totalFeedItems}
-                unit={t("paginationUnit")}
+                labels={{
+                    showing: tPagination("showing", {
+                        page,
+                        totalPages,
+                        total: totalFeedItems,
+                        unit: t("paginationUnit"),
+                    }),
+                    firstPage: tPagination("firstPage"),
+                    previousPage: tPagination("previousPage"),
+                    nextPage: tPagination("nextPage"),
+                    lastPage: tPagination("lastPage"),
+                }}
                 onPageChange={setPage}
             />
         </div>

@@ -1,7 +1,7 @@
+import { MessagePage } from "@yeelds/ui";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { MessagePage } from "@/src/components/message-page";
 import { NavigationButton } from "@/src/components/navigation-button";
 
 export async function generateMetadata(): Promise<Metadata> {

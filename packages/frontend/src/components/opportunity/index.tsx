@@ -1,11 +1,11 @@
 "use client";
 
+import { ErrorState } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
 import { OpportunityIdentity } from "@/src/components/opportunity-identity";
 import { OpportunitySkeleton } from "@/src/components/page-skeletons/opportunity-skeleton";
 import { useOpportunity } from "@/src/hooks/useOpportunity";
-import { ErrorState } from "../error-state";
 import { NavigationButton } from "../navigation-button";
 import { ExposureCard } from "./exposure-card";
 import { ReviewCard } from "./review-card";

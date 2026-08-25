@@ -1,6 +1,6 @@
 import type { SortDirection, SortField } from "@yeelds/sdk";
+import { LoadingBar } from "@yeelds/ui";
 
-import { LoadingBar } from "@/src/components/loading-bar";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { DEFAULT_PAGE_LIMIT } from "..";
 import { EmptyOpportunities } from "../empty";

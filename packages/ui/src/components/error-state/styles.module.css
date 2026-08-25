@@ -1,4 +1,4 @@
-@reference "../../app.css";
+@reference "../../theme.css";
 
 .retry {
     @apply rounded-xl px-4 py-2;

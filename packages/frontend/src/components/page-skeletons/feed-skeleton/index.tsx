@@ -1,9 +1,7 @@
 "use client";
 
-import { Skeleton } from "@yeelds/ui";
+import { Pagination, Skeleton } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
-
-import { Pagination } from "@/src/components/pagination";
 
 import styles from "./styles.module.css";
 
@@ -11,6 +9,7 @@ const SKELETON_CARDS = 12;
 
 export function FeedSkeleton() {
     const t = useTranslations("feed");
+    const tPagination = useTranslations("pagination");
 
     return (
         <div className={styles.root}>
@@ -40,8 +39,18 @@ export function FeedSkeleton() {
             <Pagination
                 page={1}
                 totalPages={1}
-                total={0}
-                unit={t("paginationUnit")}
+                labels={{
+                    showing: tPagination("showing", {
+                        page: 1,
+                        totalPages: 1,
+                        total: 0,
+                        unit: t("paginationUnit"),
+                    }),
+                    firstPage: tPagination("firstPage"),
+                    previousPage: tPagination("previousPage"),
+                    nextPage: tPagination("nextPage"),
+                    lastPage: tPagination("lastPage"),
+                }}
                 onPageChange={() => {}}
             />
         </div>

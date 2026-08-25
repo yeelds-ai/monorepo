@@ -1,11 +1,10 @@
 "use client";
 
 import type { SortDirection, SortField } from "@yeelds/sdk";
-import { Typography } from "@yeelds/ui";
+import { Pagination, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-import { Pagination } from "@/src/components/pagination";
 import { useOpportunities } from "@/src/hooks/useOpportunities";
 import { useOpportunitiesParams } from "@/src/hooks/useOpportunitiesParams";
 import { FilterBar } from "./filter-bar";
@@ -19,6 +18,7 @@ export const DEFAULT_PAGE_LIMIT = 20;
 
 export function Opportunities() {
     const t = useTranslations("opportunities");
+    const tPagination = useTranslations("pagination");
     const { query, setParam, setParams } = useOpportunitiesParams();
     const [view, setView] = useState<YieldsView>("table");
     const {
@@ -91,8 +91,18 @@ export function Opportunities() {
             <Pagination
                 page={page}
                 totalPages={totalPages}
-                total={totalOpportunities}
-                unit={t("paginationUnit")}
+                labels={{
+                    showing: tPagination("showing", {
+                        page,
+                        totalPages,
+                        total: totalOpportunities,
+                        unit: t("paginationUnit"),
+                    }),
+                    firstPage: tPagination("firstPage"),
+                    previousPage: tPagination("previousPage"),
+                    nextPage: tPagination("nextPage"),
+                    lastPage: tPagination("lastPage"),
+                }}
                 onPageChange={handleOnPageChange}
             />
         </div>

@@ -1,34 +1,36 @@
 "use client";
 
-import { Typography } from "@yeelds/ui";
-import { useTranslations } from "next-intl";
-
 import {
     ChevronDoubleLeftIcon,
     ChevronDoubleRightIcon,
     ChevronLeftIcon,
     ChevronRightIcon,
-} from "@/src/assets";
+} from "../../assets";
+import { Typography } from "../typography";
 
 import styles from "./styles.module.css";
+
+interface PaginationLabels {
+    showing: string;
+    firstPage: string;
+    previousPage: string;
+    nextPage: string;
+    lastPage: string;
+}
 
 interface PaginationProps {
     page: number;
     totalPages: number;
-    total: number;
-    unit: string;
+    labels: PaginationLabels;
     onPageChange: (page: number) => void;
 }
 
 export function Pagination({
     page,
     totalPages,
-    total,
-    unit,
+    labels,
     onPageChange,
 }: PaginationProps) {
-    const t = useTranslations("pagination");
-
     const atFirst = page <= 1;
     const atLast = page >= totalPages;
 
@@ -51,14 +53,14 @@ export function Pagination({
     return (
         <div className={styles.root}>
             <Typography size={10} weight="medium" variant="secondary">
-                {t("showing", { page, totalPages, total, unit })}
+                {labels.showing}
             </Typography>
 
             <div className={styles.nav}>
                 <button
                     onClick={handleOnFirstPage}
                     disabled={atFirst}
-                    aria-label={t("firstPage")}
+                    aria-label={labels.firstPage}
                     className={styles.navButton}
                 >
                     <ChevronDoubleLeftIcon className={styles.navIcon} />
@@ -66,7 +68,7 @@ export function Pagination({
                 <button
                     onClick={handleOnPreviousPage}
                     disabled={atFirst}
-                    aria-label={t("previousPage")}
+                    aria-label={labels.previousPage}
                     className={styles.navButton}
                 >
                     <ChevronLeftIcon className={styles.navIcon} />
@@ -79,7 +81,7 @@ export function Pagination({
                 <button
                     onClick={handleOnNextPage}
                     disabled={atLast}
-                    aria-label={t("nextPage")}
+                    aria-label={labels.nextPage}
                     className={styles.navButton}
                 >
                     <ChevronRightIcon className={styles.navIcon} />
@@ -87,7 +89,7 @@ export function Pagination({
                 <button
                     onClick={handleOnLastPage}
                     disabled={atLast}
-                    aria-label={t("lastPage")}
+                    aria-label={labels.lastPage}
                     className={styles.navButton}
                 >
                     <ChevronDoubleRightIcon className={styles.navIcon} />

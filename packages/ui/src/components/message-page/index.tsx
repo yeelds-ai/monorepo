@@ -1,5 +1,6 @@
-import { Typography } from "@yeelds/ui";
 import type { ReactNode } from "react";
+
+import { Typography } from "../typography";
 
 import styles from "./styles.module.css";
 
