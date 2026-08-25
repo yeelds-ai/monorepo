@@ -7,6 +7,7 @@ export function formatUsd(usd: number): string {
 
 export function formatPercentage(value: number | null): string {
     if (value === null) return "-";
+    if (value === 0) return "0%";
     if (value < 0.01) return "<0.01%";
     if (value > 10_000) return ">10,000%";
     return `${value.toFixed(2)}%`;

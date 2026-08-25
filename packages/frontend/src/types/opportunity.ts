@@ -26,4 +26,6 @@ export interface EnrichedOpportunity extends Omit<
     protocol: EnrichedProtocol;
     grade?: EnrichedOpportunityGrade | null;
     allocations: EnrichedOpportunityAllocation[];
+    totalApy: number;
+    totalRewardsApr: number;
 }

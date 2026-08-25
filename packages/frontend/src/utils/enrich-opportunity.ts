@@ -41,9 +41,17 @@ export function enrichOpportunity(
             `No registry data for protocol slug "${opportunity.protocol.slug}"`,
         );
 
+    const apy = opportunity.apy * 100;
+    const totalRewardsApr = opportunity.rewards.reduce(
+        (sum, reward) => sum + (reward.apr != null ? reward.apr * 100 : 0),
+        0,
+    );
+
     return {
         ...opportunity,
-        apy: opportunity.apy * 100,
+        apy,
+        totalApy: apy + totalRewardsApr,
+        totalRewardsApr,
         allocations: withShares(opportunity.allocations),
         protocol: {
             ...opportunity.protocol,

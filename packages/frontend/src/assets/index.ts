@@ -4,6 +4,7 @@ export * from "./arrow-left-icon";
 export * from "./arrow-right-icon";
 export * from "./arrow-up-icon";
 export * from "./book-icon";
+export * from "./chart-average-icon";
 export * from "./calendar-check-icon";
 export * from "./clipboard-check-icon";
 export * from "./clock-icon";

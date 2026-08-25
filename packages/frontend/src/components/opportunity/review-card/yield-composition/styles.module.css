@@ -1,0 +1,49 @@
+@reference "../../../../app.css";
+
+.root {
+    @apply flex flex-col gap-3;
+}
+
+.header {
+    @apply flex items-center gap-2;
+}
+
+.chartIcon {
+    @apply text-primary;
+}
+
+.summary {
+    @apply flex items-center justify-between;
+}
+
+.bar {
+    @apply flex h-2.5 w-full overflow-hidden rounded-full;
+}
+
+.baseSegment {
+    @apply bg-brand-primary;
+}
+
+.rewardsSegment {
+    @apply bg-brand-primary/20 flex-1;
+}
+
+.legend {
+    @apply flex flex-col gap-1;
+}
+
+.row {
+    @apply flex items-baseline gap-2;
+}
+
+.swatch {
+    @apply size-3 rounded;
+}
+
+.baseSwatch {
+    @apply bg-brand-primary;
+}
+
+.rewardsSwatch {
+    @apply bg-brand-primary/20;
+}

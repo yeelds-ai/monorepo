@@ -131,6 +131,13 @@
         "review": {
             "title": "Opportunity review",
             "depositOn": "Deposit on {protocol}",
+            "yieldComposition": {
+                "title": "Yield composition",
+                "totalApy": "Total APY",
+                "baseApy": "Base APY",
+                "incentiveRewards": "Incentive rewards",
+                "organicRatio": "Organic ratio"
+            },
             "rewardsSimulation": {
                 "title": "Rewards Simulation",
                 "simulationAt": "Simulation at",
