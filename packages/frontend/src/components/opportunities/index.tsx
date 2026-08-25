@@ -3,14 +3,11 @@
 import type { SortDirection, SortField } from "@yeelds/sdk";
 import { Pagination, Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 
 import { useOpportunities } from "@/src/hooks/useOpportunities";
 import { useOpportunitiesParams } from "@/src/hooks/useOpportunitiesParams";
 import { FilterBar } from "./filter-bar";
-import { OpportunitiesGrid } from "./grid";
 import { OpportunitiesTable } from "./table";
-import { ViewToggle, type YieldsView } from "./view-toggle";
 
 import styles from "./styles.module.css";
 
@@ -20,7 +17,6 @@ export function Opportunities() {
     const t = useTranslations("opportunities");
     const tPagination = useTranslations("pagination");
     const { query, setParam, setParams } = useOpportunitiesParams();
-    const [view, setView] = useState<YieldsView>("table");
     const {
         opportunities,
         totalOpportunities,
@@ -35,7 +31,6 @@ export function Opportunities() {
     const page = query.page ?? 1;
     const limit = query.pageSize ?? DEFAULT_PAGE_LIMIT;
     const totalPages = Math.max(1, Math.ceil(totalOpportunities / limit));
-    const isGrid = view === "grid";
 
     function handleOnPageChange(page: number) {
         setParam("page", page <= 1 ? undefined : page);
@@ -65,27 +60,19 @@ export function Opportunities() {
                         {t("subtitle")}
                     </Typography>
                 </div>
-                <ViewToggle view={view} onChange={setView} />
             </div>
 
             <FilterBar />
 
             <div className={styles.content}>
-                {isGrid ? (
-                    <OpportunitiesGrid
-                        opportunities={opportunities}
-                        placeholderLoading={placeholderData && fetching}
-                    />
-                ) : (
-                    <OpportunitiesTable
-                        opportunities={opportunities}
-                        loading={loading}
-                        placeholderLoading={placeholderData && fetching}
-                        sort={query.sort}
-                        direction={query.direction}
-                        onSortChange={handleOnSortChange}
-                    />
-                )}
+                <OpportunitiesTable
+                    opportunities={opportunities}
+                    loading={loading}
+                    placeholderLoading={placeholderData && fetching}
+                    sort={query.sort}
+                    direction={query.direction}
+                    onSortChange={handleOnSortChange}
+                />
             </div>
 
             <Pagination

@@ -48,11 +48,6 @@
         "title": "Opportunities",
         "metaTitle": "Yield Opportunities - Compare APY Across Protocols",
         "subtitle": "Compare thousands of yield opportunities across protocols, chains, and strategies.",
-        "viewToggle": {
-            "ariaLabel": "View as table or grid",
-            "table": "Table",
-            "grid": "Grid"
-        },
         "empty": {
             "title": "No opportunities found",
             "description": "Try adjusting your filters to discover more opportunities.",

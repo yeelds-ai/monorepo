@@ -16,7 +16,6 @@ export * from "./explore-icon";
 export * from "./external-link-icon";
 export * from "./filter-list-icon";
 export * from "./gift-icon";
-export * from "./grid-view-icon";
 export * from "./info-icon";
 export * from "./lock-icon";
 export * from "./menu-icon";
