@@ -1,6 +1,8 @@
 "use client";
 
 import {
+    CancelCircleIcon,
+    CircledPlusIcon,
     Input,
     Popover,
     Slider,
@@ -17,6 +19,7 @@ import styles from "./styles.module.css";
 export interface RangeFilterProps {
     label: string;
     ariaLabel: string;
+    clearAriaLabel: string;
     title: string;
     minCaption: string;
     maxCaption: string;
@@ -33,6 +36,7 @@ export interface RangeFilterProps {
 export function RangeFilter({
     label,
     ariaLabel,
+    clearAriaLabel,
     title,
     minCaption,
     maxCaption,
@@ -45,7 +49,7 @@ export function RangeFilter({
     parse,
     onChange,
 }: RangeFilterProps) {
-    const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
+    const [anchor, setAnchor] = useState<HTMLDivElement | null>(null);
     const [open, setOpen] = useState(false);
 
     const low = value?.[0] ?? min;
@@ -78,6 +82,11 @@ export function RangeFilter({
 
     function handleOnToggleOpen() {
         setOpen((current) => !current);
+    }
+
+    function handleOnClear() {
+        setDraft([min, max]);
+        onChange(undefined);
     }
 
     function handleOnSliderChange(next: SliderValue) {
@@ -146,32 +155,54 @@ export function RangeFilter({
 
     return (
         <>
-            <button
+            <div
                 ref={setAnchor}
-                type="button"
-                aria-label={ariaLabel}
-                aria-expanded={open}
-                onClick={handleOnToggleOpen}
                 className={classNames("root", styles.trigger, {
                     [styles.active]: active,
                     [styles.open]: open,
                 })}
             >
-                <Typography
-                    size={14}
-                    weight="medium"
-                    className={classNames(styles.triggerLabel, {
-                        [styles.active]: active,
-                    })}
-                >
-                    {label}
-                </Typography>
                 {active && (
-                    <Typography size={12} weight="bold" color="brand">
-                        {format(draft[0])}–{format(draft[1])}
-                    </Typography>
+                    <button
+                        type="button"
+                        onClick={handleOnClear}
+                        aria-label={clearAriaLabel}
+                        className={classNames("clear", styles.clearButton)}
+                    >
+                        <CancelCircleIcon
+                            className={classNames(
+                                styles.triggerIcon,
+                                styles.active,
+                            )}
+                        />
+                    </button>
                 )}
-            </button>
+                <button
+                    type="button"
+                    aria-label={ariaLabel}
+                    aria-expanded={open}
+                    onClick={handleOnToggleOpen}
+                    className={classNames("open", styles.openButton)}
+                >
+                    {!active && (
+                        <CircledPlusIcon className={styles.triggerIcon} />
+                    )}
+                    <Typography
+                        size={14}
+                        weight="medium"
+                        className={classNames(styles.triggerLabel, {
+                            [styles.active]: active,
+                        })}
+                    >
+                        {label}
+                    </Typography>
+                    {active && (
+                        <Typography size={12} weight="bold" color="brand">
+                            {format(draft[0])}–{format(draft[1])}
+                        </Typography>
+                    )}
+                </button>
+            </div>
             <Popover
                 anchor={anchor}
                 open={open}

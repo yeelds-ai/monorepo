@@ -1,3 +1,5 @@
+export * from "./assets/cancel-circle-icon";
+export * from "./assets/circled-plus-icon";
 export * from "./components/button";
 export * from "./components/card";
 export * from "./components/error-state";

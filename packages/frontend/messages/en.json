@@ -85,6 +85,7 @@
                 "label": "APY",
                 "title": "APY range, %"
             },
+            "clearFilterAriaLabel": "Clear filter",
             "clear": "Clear ({count})"
         },
         "table": {

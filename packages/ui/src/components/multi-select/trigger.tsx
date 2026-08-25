@@ -3,7 +3,7 @@
 import classNames from "classnames";
 import type { FunctionComponent, SVGProps } from "react";
 
-import { ChevronDownIcon } from "../../assets";
+import { CancelCircleIcon, CircledPlusIcon } from "../../assets";
 import { Typography } from "../typography";
 
 import styles from "./styles.module.css";
@@ -13,8 +13,10 @@ export interface MultiSelectTriggerProps {
     label: string;
     selectedLabels: string[];
     open: boolean;
-    onAnchorChange: (element: HTMLButtonElement | null) => void;
+    clearLabel: string;
+    onAnchorChange: (element: HTMLDivElement | null) => void;
     onClick: () => void;
+    onClear: () => void;
 }
 
 export function MultiSelectTrigger({
@@ -22,8 +24,10 @@ export function MultiSelectTrigger({
     label,
     selectedLabels,
     open,
+    clearLabel,
     onAnchorChange,
     onClick,
+    onClear,
 }: MultiSelectTriggerProps) {
     const firstSelected = selectedLabels[0];
     const extraCount = Math.max(selectedLabels.length - 1, 0);
@@ -31,46 +35,73 @@ export function MultiSelectTrigger({
     const showSelectedLabels = firstSelected || extraCount > 0;
 
     return (
-        <button
+        <div
             ref={onAnchorChange}
-            type="button"
-            onClick={onClick}
             className={classNames("root", styles.trigger, {
                 [styles.active]: active,
                 [styles.open]: open,
             })}
         >
-            {Icon && <Icon className={styles.triggerIcon} />}
-            <div className={styles.triggerLabels}>
-                <Typography
-                    size={14}
-                    weight="medium"
-                    className={classNames(styles.triggerLabel, {
-                        [styles.active]: active,
-                    })}
+            {active && (
+                <button
+                    type="button"
+                    onClick={onClear}
+                    aria-label={clearLabel}
+                    className={classNames("clear", styles.clearButton)}
                 >
-                    {label}
-                </Typography>
-                {showSelectedLabels && (
-                    <div className={styles.selectedWithCountLabel}>
-                        {firstSelected && (
-                            <Typography size={12} weight="bold" color="brand">
-                                {firstSelected}
-                            </Typography>
+                    <CancelCircleIcon
+                        className={classNames(
+                            styles.triggerIcon,
+                            styles.active,
                         )}
-                        {extraCount > 0 && (
-                            <Typography
-                                size={12}
-                                weight="bold"
-                                variant="secondary"
-                            >
-                                +{extraCount}
-                            </Typography>
-                        )}
-                    </div>
-                )}
-            </div>
-            <ChevronDownIcon className={styles.chevronIcon} />
-        </button>
+                    />
+                </button>
+            )}
+            <button
+                type="button"
+                onClick={onClick}
+                className={classNames("open", styles.openButton)}
+            >
+                {!active &&
+                    (Icon ? (
+                        <Icon className={styles.triggerIcon} />
+                    ) : (
+                        <CircledPlusIcon className={styles.triggerIcon} />
+                    ))}
+                <div className={styles.triggerLabels}>
+                    <Typography
+                        size={14}
+                        weight="medium"
+                        className={classNames(styles.triggerLabel, {
+                            [styles.active]: active,
+                        })}
+                    >
+                        {label}
+                    </Typography>
+                    {showSelectedLabels && (
+                        <div className={styles.selectedWithCountLabel}>
+                            {firstSelected && (
+                                <Typography
+                                    size={12}
+                                    weight="bold"
+                                    color="brand"
+                                >
+                                    {firstSelected}
+                                </Typography>
+                            )}
+                            {extraCount > 0 && (
+                                <Typography
+                                    size={12}
+                                    weight="bold"
+                                    variant="secondary"
+                                >
+                                    +{extraCount}
+                                </Typography>
+                            )}
+                        </div>
+                    )}
+                </div>
+            </button>
+        </div>
     );
 }

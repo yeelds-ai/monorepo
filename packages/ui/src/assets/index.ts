@@ -1,3 +1,4 @@
+export * from "./cancel-circle-icon";
 export * from "./check-icon";
 export * from "./chevron-double-left-icon";
 export * from "./chevron-double-right-icon";

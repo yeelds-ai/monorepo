@@ -5,8 +5,8 @@
 }
 
 .trigger {
-    @apply relative flex cursor-pointer items-center gap-1;
-    @apply rounded-xl border h-8 py-2 pr-2 pl-3 transition-colors;
+    @apply relative flex cursor-pointer items-stretch gap-1;
+    @apply rounded-xl border h-8 transition-colors;
     @apply background-overlay stroke-divider text-secondary;
     @apply hover:stroke-focus;
 }
@@ -24,13 +24,30 @@
     @apply text-primary;
 }
 
+.clearButton,
+.openButton {
+    @apply flex cursor-pointer items-center border-0 bg-transparent p-0;
+}
+
+.clearButton {
+    @apply shrink-0 pl-3;
+}
+
+.openButton {
+    @apply gap-1 pr-2;
+}
+
+.openButton:first-child {
+    @apply pl-3;
+}
+
 .triggerIcon {
     @apply size-5 shrink-0;
     @apply text-secondary transition-colors;
 }
 
-.chevronIcon {
-    @apply text-secondary size-5 shrink-0;
+.triggerIcon.active {
+    @apply text-primary;
 }
 
 .triggerLabels {

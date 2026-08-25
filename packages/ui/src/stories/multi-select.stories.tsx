@@ -28,6 +28,7 @@ const MESSAGES = {
     deselectAll: "Deselect all",
     noResults: "No results",
     searchPlaceholder: "Search",
+    clear: "Clear",
 };
 
 function ControlledMultiSelect({

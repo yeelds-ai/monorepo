@@ -34,6 +34,7 @@ export interface MultiSelectMessages {
     deselectAll: string;
     noResults: string;
     searchPlaceholder: string;
+    clear: string;
 }
 
 const OPTION_ROW_HEIGHT = 36;
@@ -76,7 +77,7 @@ export function MultiSelect<V extends ValueType, O extends SelectOption<V>>({
     className,
     onChange,
 }: MultiSelectProps<V, O>) {
-    const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
+    const [anchor, setAnchor] = useState<HTMLDivElement | null>(null);
     const [open, setOpen] = useState(false);
     const [query, setQuery] = useState("");
     const [debouncedQuery, setDebouncedQuery] = useState("");
@@ -163,8 +164,10 @@ export function MultiSelect<V extends ValueType, O extends SelectOption<V>>({
                 label={label}
                 selectedLabels={selectedLabels}
                 open={open}
+                clearLabel={messages.clear}
                 onAnchorChange={setAnchor}
                 onClick={handleOnToggleOpen}
+                onClear={handleOnDeselectAll}
             />
             <Popover
                 anchor={anchor}

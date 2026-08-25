@@ -45,6 +45,7 @@ export function FilterBar() {
         deselectAll: t("deselectAll"),
         noResults: t("noResults"),
         searchPlaceholder: t("searchPlaceholder"),
+        clear: t("clearFilterAriaLabel"),
     };
 
     const chainOptions = useMemo<SelectOption<string>[]>(
@@ -187,6 +188,7 @@ export function FilterBar() {
                 <RangeFilter
                     label={t("tvl.label")}
                     ariaLabel={t("tvlAriaLabel")}
+                    clearAriaLabel={t("clearFilterAriaLabel")}
                     title={t("tvl.title")}
                     minCaption={t("rangeMinLabel")}
                     maxCaption={t("rangeMaxLabel")}
@@ -206,6 +208,7 @@ export function FilterBar() {
                 <RangeFilter
                     label={t("apr.label")}
                     ariaLabel={t("aprAriaLabel")}
+                    clearAriaLabel={t("clearFilterAriaLabel")}
                     title={t("apr.title")}
                     minCaption={t("rangeMinLabel")}
                     maxCaption={t("rangeMaxLabel")}
