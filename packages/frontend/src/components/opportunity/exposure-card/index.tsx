@@ -23,11 +23,6 @@ export function ExposureCard({ opportunity }: ExposureCardProps) {
 
     return (
         <Card icon={ServerStackIcon} title={t("title")} className={styles.root}>
-            <DetailRow label={t("strategy")}>
-                <Typography as="span" size={14} capitalize weight="bold">
-                    {opportunity.strategy}
-                </Typography>
-            </DetailRow>
             <DetailRow label={t("category")}>
                 <Typography as="span" size={14} weight="bold">
                     {isStablecoin

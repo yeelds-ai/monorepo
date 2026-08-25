@@ -107,7 +107,6 @@
         "backToOpportunities": "Back to opportunities",
         "exposureCard": {
             "title": "Exposure",
-            "strategy": "Strategy",
             "category": "Category",
             "categoryStablecoin": "Stablecoin",
             "categoryGeneric": "Crypto assets",
