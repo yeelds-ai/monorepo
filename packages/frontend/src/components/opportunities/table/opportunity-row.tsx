@@ -1,5 +1,5 @@
 import { SUPPORTED_CHAINS } from "@yeelds/registry";
-import { GradeTag, Tag, Typography } from "@yeelds/ui";
+import { GradeTag, Typography } from "@yeelds/ui";
 import { type MouseEvent } from "react";
 
 import { Link, useRouter } from "@/src/i18n/routing";
@@ -45,17 +45,6 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
             </td>
             <td className={styles.cell}>
                 <div className={styles.strategy}>
-                    <Tag>
-                        <Typography
-                            size={16}
-                            weight="medium"
-                            capitalize
-                            variant="secondary"
-                            truncate
-                        >
-                            {opportunity.strategy}
-                        </Typography>
-                    </Tag>
                     <Typography size={18} weight="bold" truncate>
                         {opportunity.name}
                     </Typography>

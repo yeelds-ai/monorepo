@@ -65,9 +65,6 @@
             "searchPlaceholder": "Search",
             "chainLabel": "Chains",
             "protocolLabel": "Protocols",
-            "strategy": {
-                "label": "Strategies"
-            },
             "rangeMinLabel": "Min.",
             "rangeMaxLabel": "Max.",
             "tvlAriaLabel": "Filter by TVL",
@@ -86,7 +83,7 @@
         "table": {
             "chain": "Chain",
             "protocol": "Protocol",
-            "strategy": "Strategy",
+            "name": "Name",
             "tvl": "TVL",
             "grade": "Grade",
             "apy": "APY"
@@ -118,6 +115,7 @@
             "score": "{score}",
             "scoreMax": "/ 100",
             "caption": "Higher number = safer",
+            "stablecoinSafety": "Stablecoin safety",
             "graded": "Graded {date}",
             "methodology": "Methodology v{version}",
             "disclaimer": "Dated opinion, not a guarantee"

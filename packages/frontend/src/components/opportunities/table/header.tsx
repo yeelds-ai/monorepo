@@ -10,7 +10,7 @@ import styles from "./styles.module.css";
 export const HEADER_KEYS = [
     "chain",
     "protocol",
-    "strategy",
+    "name",
     "tvl",
     "grade",
     "apy",
@@ -25,7 +25,7 @@ const SORT_FIELDS: Partial<Record<(typeof HEADER_KEYS)[number], SortField>> = {
 const COL_WIDTH_RATIOS: Record<(typeof HEADER_KEYS)[number], number> = {
     chain: 5,
     protocol: 9,
-    strategy: 22,
+    name: 22,
     tvl: 8,
     grade: 8,
     apy: 8,

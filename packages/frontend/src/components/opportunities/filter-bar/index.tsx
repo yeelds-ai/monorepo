@@ -1,6 +1,5 @@
 "use client";
 
-import type { Strategy } from "@yeelds/sdk";
 import {
     MultiSelect,
     type SelectOption,
@@ -66,15 +65,6 @@ export function FilterBar() {
         [filters.protocols],
     );
 
-    const strategyOptions = useMemo<SelectOption<Strategy>[]>(
-        () =>
-            filters.strategies.map((strategy) => ({
-                value: strategy.slug,
-                label: strategy.name,
-            })),
-        [filters.strategies],
-    );
-
     const selectedChains = useMemo(
         () =>
             chainOptions.filter((option) =>
@@ -91,14 +81,6 @@ export function FilterBar() {
         [protocolOptions, query.protocols],
     );
 
-    const selectedStrategies = useMemo(
-        () =>
-            strategyOptions.filter((option) =>
-                query.strategies?.includes(option.value),
-            ),
-        [strategyOptions, query.strategies],
-    );
-
     function handleOnToggleMobile() {
         setMobileOpen((open) => !open);
     }
@@ -113,13 +95,6 @@ export function FilterBar() {
     function handleOnProtocolsChange(options: SelectOption<string>[]) {
         setParam(
             "protocols",
-            options.length ? options.map((option) => option.value) : undefined,
-        );
-    }
-
-    function handleOnStrategiesChange(options: SelectOption<Strategy>[]) {
-        setParam(
-            "strategies",
             options.length ? options.map((option) => option.value) : undefined,
         );
     }
@@ -175,15 +150,6 @@ export function FilterBar() {
                     loading={loading}
                     messages={messages}
                     onChange={handleOnProtocolsChange}
-                />
-                <MultiSelect
-                    label={t("strategy.label")}
-                    options={strategyOptions}
-                    values={selectedStrategies}
-                    search={strategyOptions.length > 1}
-                    loading={loading}
-                    messages={messages}
-                    onChange={handleOnStrategiesChange}
                 />
                 <RangeFilter
                     label={t("tvl.label")}
