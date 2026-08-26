@@ -5,7 +5,7 @@ import { Typography } from "../typography";
 import styles from "./styles.module.css";
 
 export type GradeLetter =
-    "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D";
+    "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D" | "F";
 
 export interface GradeTagProps {
     grade?: GradeLetter | null;
@@ -26,6 +26,7 @@ const COLOR_GROUP_BY_GRADE: Record<GradeLetter, ColorGroup> = {
     C: "c",
     "C-": "c",
     D: "d",
+    F: "e",
 };
 
 const TEXT_CLASS_BY_GROUP: Record<ColorGroup, string> = {

@@ -13,6 +13,7 @@ const GRADES: GradeLetter[] = [
     "C",
     "C-",
     "D",
+    "F",
 ];
 
 const meta = {
