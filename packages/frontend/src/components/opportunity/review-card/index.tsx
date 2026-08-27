@@ -16,6 +16,7 @@ interface ReviewCardProps {
 
 export function ReviewCard({ opportunity }: ReviewCardProps) {
     const t = useTranslations("opportunity");
+
     const protocolRegistry = opportunity.protocol.registry;
     if (!protocolRegistry) return null;
 

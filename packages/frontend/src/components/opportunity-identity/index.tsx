@@ -41,6 +41,13 @@ export function OpportunityIdentity({
         ? opportunity.protocol.data.curator
         : undefined;
 
+    const protocolRegistry = opportunity.protocol.registry;
+    const depositUrl = protocolRegistry?.buildDepositUrl(opportunity);
+    const depositDisabled =
+        !depositUrl ||
+        (isMorphoSourceData(opportunity.protocol.data) &&
+            opportunity.protocol.data.depositDisabled);
+
     return (
         <div
             className={classNames("root", styles.root, className, {
@@ -70,9 +77,9 @@ export function OpportunityIdentity({
                             <Typography size={18} variant="secondary">
                                 {opportunity.name}
                             </Typography>
-                            {chain && (
+                            {depositUrl && !depositDisabled && (
                                 <a
-                                    href={`${chain.blockExplorerUrl}/address/${opportunity.address}`}
+                                    href={depositUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={t("viewOnExplorer")}
