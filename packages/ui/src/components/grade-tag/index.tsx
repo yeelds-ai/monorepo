@@ -8,7 +8,8 @@ export type GradeLetter =
     "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D" | "F";
 
 export interface GradeTagProps {
-    grade?: GradeLetter | null;
+    grade?: GradeLetter;
+    score?: number;
     size?: "sm" | "base";
     className?: string;
 }
@@ -37,8 +38,16 @@ const TEXT_CLASS_BY_GROUP: Record<ColorGroup, string> = {
     e: styles.textE,
 };
 
-export function GradeTag({ grade, size = "base", className }: GradeTagProps) {
+export function GradeTag({
+    grade,
+    score,
+    size = "base",
+    className,
+}: GradeTagProps) {
     const group = grade ? COLOR_GROUP_BY_GRADE[grade] : undefined;
+    const weight = group ? "bold" : "medium";
+    const variant = group ? "primary" : "secondary";
+    const textClassName = group ? TEXT_CLASS_BY_GROUP[group] : undefined;
 
     return (
         <div
@@ -53,12 +62,23 @@ export function GradeTag({ grade, size = "base", className }: GradeTagProps) {
             <Typography
                 as="span"
                 size={size === "sm" ? 14 : 18}
-                weight={group ? "bold" : "medium"}
-                variant={group ? "primary" : "secondary"}
-                className={group ? TEXT_CLASS_BY_GROUP[group] : undefined}
+                weight={weight}
+                variant={variant}
+                className={textClassName}
             >
                 {grade ?? "n/a"}
             </Typography>
+            {score && (
+                <Typography
+                    as="span"
+                    size={size === "sm" ? 12 : 16}
+                    weight={weight}
+                    variant={variant}
+                    className={textClassName}
+                >
+                    {`(${score})`}
+                </Typography>
+            )}
         </div>
     );
 }

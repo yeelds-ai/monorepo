@@ -31,6 +31,13 @@ export const Base: Story = {
     },
 };
 
+export const WithScore: Story = {
+    args: {
+        grade: "A+",
+        score: 95,
+    },
+};
+
 export const Grades: Story = {
     render: () => (
         <div className="flex flex-col gap-3">
