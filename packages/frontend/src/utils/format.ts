@@ -19,14 +19,6 @@ export function formatDailyEstimate(apy: number, principal = 1_000): string {
     return `$${daily.toFixed(2)}`;
 }
 
-export function calculateRewardEstimate(
-    apy: number,
-    principal: number,
-    days: number,
-): number {
-    return (principal * (apy / 100) * days) / 365;
-}
-
 const USD_SUFFIX_MULTIPLIERS: Record<string, number> = {
     k: 1_000,
     m: 1_000_000,

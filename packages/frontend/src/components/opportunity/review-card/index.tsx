@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { ClipboardCheckIcon } from "@/src/assets/clipboard-check-icon";
 import { ExternalLinkIcon } from "@/src/assets/external-link-icon";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { RewardsSimulation } from "./rewards-simulation";
 import { YieldComposition } from "./yield-composition";
 
 import styles from "./styles.module.css";
@@ -35,8 +34,6 @@ export function ReviewCard({ opportunity }: ReviewCardProps) {
                 </Typography>
             </div>
             <YieldComposition opportunity={opportunity} />
-            <div className={styles.divider} />
-            <RewardsSimulation opportunity={opportunity} />
             <Button
                 icon={ExternalLinkIcon}
                 href={depositUrl}
