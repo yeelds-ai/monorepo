@@ -5,11 +5,19 @@
 }
 
 .grades {
-    @apply grid grid-cols-1 sm:grid-cols-2 items-center gap-3;
+    @apply flex flex-col items-center gap-3;
+}
+
+.pharosGrades {
+    @apply w-full grid grid-cols-1 sm:grid-cols-3 items-center gap-3;
 }
 
 .grade {
     @apply flex flex-col gap-3 rounded-xl background-default p-3;
+}
+
+.yeeldsGrade {
+    @apply w-full;
 }
 
 .gradeHeader {

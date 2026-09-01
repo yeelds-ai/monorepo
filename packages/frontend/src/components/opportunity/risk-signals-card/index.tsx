@@ -1,4 +1,5 @@
 import { Card, GradeTag, Typography } from "@yeelds/ui";
+import classNames from "classnames";
 import { useTranslations } from "next-intl";
 
 import {
@@ -36,7 +37,7 @@ export function RiskSignalsCard({ opportunity }: RiskSignalsCardProps) {
     return (
         <Card icon={ShieldIcon} title={t("title")} className={styles.root}>
             <div className={styles.grades}>
-                <div className={styles.grade}>
+                <div className={classNames(styles.grade, styles.yeeldsGrade)}>
                     <div className={styles.gradeHeader}>
                         <YeeldsCompactLogo className={styles.gradeLogo} />
                         <Typography as="span" size={12} weight="bold">
@@ -75,44 +76,52 @@ export function RiskSignalsCard({ opportunity }: RiskSignalsCardProps) {
                         </div>
                     </div>
                 </div>
-                {pharosGradedStablecoins.map(
-                    ({ address, symbol, stablecoin }) => (
-                        <div key={address} className={styles.grade}>
-                            <div className={styles.gradeHeader}>
-                                <PharosLogo className={styles.gradeLogo} />
-                                <Typography as="span" size={12} weight="bold">
-                                    Pharos
-                                </Typography>
-                            </div>
-                            <div className={styles.gradeContent}>
-                                <GradeTag
-                                    grade={stablecoin.grade}
-                                    size="base"
-                                    className={styles.gradeTag}
-                                />
-                                <div className={styles.gradeScore}>
-                                    <span className={styles.scoreRow}>
-                                        <Typography
-                                            as="span"
-                                            font="brand"
-                                            size={20}
-                                            className={styles.stablecoinSymbol}
-                                        >
-                                            {symbol}
-                                        </Typography>
-                                    </span>
+                <div className={styles.pharosGrades}>
+                    {pharosGradedStablecoins.map(
+                        ({ address, symbol, stablecoin }) => (
+                            <div key={address} className={styles.grade}>
+                                <div className={styles.gradeHeader}>
+                                    <PharosLogo className={styles.gradeLogo} />
                                     <Typography
                                         as="span"
                                         size={12}
-                                        variant="secondary"
+                                        weight="bold"
                                     >
-                                        {t("stablecoinSafety")}
+                                        Pharos
                                     </Typography>
                                 </div>
+                                <div className={styles.gradeContent}>
+                                    <GradeTag
+                                        grade={stablecoin.grade}
+                                        size="base"
+                                        className={styles.gradeTag}
+                                    />
+                                    <div className={styles.gradeScore}>
+                                        <span className={styles.scoreRow}>
+                                            <Typography
+                                                as="span"
+                                                font="brand"
+                                                size={20}
+                                                className={
+                                                    styles.stablecoinSymbol
+                                                }
+                                            >
+                                                {symbol}
+                                            </Typography>
+                                        </span>
+                                        <Typography
+                                            as="span"
+                                            size={12}
+                                            variant="secondary"
+                                        >
+                                            {t("stablecoinSafety")}
+                                        </Typography>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    ),
-                )}
+                        ),
+                    )}
+                </div>
             </div>
             <div className={styles.footer}>
                 <span className={styles.footerItem}>
