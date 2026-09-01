@@ -8,7 +8,7 @@ export type GradeLetter =
     "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D" | "F";
 
 export interface GradeTagProps {
-    grade?: GradeLetter;
+    grade?: GradeLetter | null;
     score?: number;
     size?: "sm" | "base";
     className?: string;

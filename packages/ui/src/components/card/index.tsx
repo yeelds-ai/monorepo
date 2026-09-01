@@ -17,9 +17,13 @@ export function Card({ icon: Icon, title, children, className }: CardProps) {
         <div className={classNames("card", styles.root, className)}>
             <div className={classNames("header", styles.header)}>
                 {Icon && <Icon className={classNames("icon", styles.icon)} />}
-                <Typography as="span" size={16} weight="bold">
-                    {title}
-                </Typography>
+                {typeof title === "string" || typeof title === "number" ? (
+                    <Typography as="span" size={16} weight="bold">
+                        {title}
+                    </Typography>
+                ) : (
+                    title
+                )}
             </div>
             {children}
         </div>

@@ -9,6 +9,7 @@ export * from "./components/info-banner";
 export * from "./components/input";
 export * from "./components/loading-bar";
 export * from "./components/message-page";
+export * from "./components/modal";
 export * from "./components/multi-select";
 export * from "./components/pagination";
 export * from "./components/popover";

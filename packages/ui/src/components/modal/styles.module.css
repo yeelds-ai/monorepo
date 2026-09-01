@@ -1,0 +1,25 @@
+@reference "../../theme.css";
+
+.root {
+    @apply fixed top-0 left-0 z-50 flex h-screen w-screen p-4 overlay;
+}
+
+.slideRight {
+    @apply justify-end;
+}
+
+.fadeCenter {
+    @apply items-center justify-center;
+}
+
+.panel {
+    @apply flex w-fit max-w-5xl flex-col overflow-y-auto rounded-[1.25rem] py-8 background-raised;
+}
+
+.panelFull {
+    @apply h-full;
+}
+
+.panelAuto {
+    @apply max-h-full;
+}

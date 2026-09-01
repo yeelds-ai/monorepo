@@ -24,6 +24,9 @@
     --color-bg-raised: #1b1519;
     --color-bg-default: #261f23;
 
+    /* Scrim behind modals / dialogs */
+    --color-bg-scrim: #00000080;
+
     /* Borders */
     --color-border-default: #282828;
     --color-border-focus: #686366;
@@ -72,6 +75,10 @@
 
 @utility background-default {
     @apply bg-bg-default;
+}
+
+@utility overlay {
+    @apply bg-bg-scrim backdrop-blur-[2px];
 }
 
 @utility text-primary {
