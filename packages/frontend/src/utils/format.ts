@@ -69,5 +69,17 @@ export function formatOrdinalDate(iso: string): string {
         month: "long",
         timeZone: "UTC",
     }).format(date);
+
     return `${day}${ordinalSuffix(day)} ${month} ${date.getUTCFullYear()}`;
+}
+
+export function formatOrdinalTime(iso: string): string {
+    const date = new Date(iso);
+
+    return new Intl.DateTimeFormat("en", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23",
+        timeZone: "UTC",
+    }).format(date);
 }

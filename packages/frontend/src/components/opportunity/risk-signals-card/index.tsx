@@ -9,7 +9,7 @@ import {
     YeeldsCompactLogo,
 } from "@/src/assets";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
-import { formatOrdinalDate } from "@/src/utils/format";
+import { formatOrdinalDate, formatOrdinalTime } from "@/src/utils/format";
 import { isTokenStablecoin } from "@/src/utils/token";
 
 import styles from "./styles.module.css";
@@ -120,6 +120,7 @@ export function RiskSignalsCard({ opportunity }: RiskSignalsCardProps) {
                     <Typography as="span" size={12} variant="secondary">
                         {t("graded", {
                             date: formatOrdinalDate(grade.gradedAt),
+                            time: formatOrdinalTime(grade.gradedAt),
                         })}
                     </Typography>
                 </span>

@@ -117,7 +117,7 @@
             "scoreMax": "/ 100",
             "caption": "Higher number = safer",
             "stablecoinSafety": "Stablecoin safety",
-            "graded": "Graded {date}",
+            "graded": "Graded {date} at {time}",
             "methodology": "Methodology v{version}",
             "disclaimer": "Dated opinion, not a guarantee"
         },

@@ -1,7 +1,7 @@
 @reference "../../theme.css";
 
 .root {
-    @apply flex items-center justify-center gap-1 border;
+    @apply flex w-fit items-center justify-center gap-1 border;
 }
 
 .sm {
