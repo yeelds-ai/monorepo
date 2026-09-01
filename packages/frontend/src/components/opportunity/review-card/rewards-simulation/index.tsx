@@ -42,13 +42,13 @@ export function RewardsSimulation({ opportunity }: RewardsSimulationProps) {
     }
 
     const daily = formatUsd(
-        calculateRewardEstimate(opportunity.totalApy, principal, 1),
+        calculateRewardEstimate(opportunity.apy, principal, 1),
     );
     const monthly = formatUsd(
-        calculateRewardEstimate(opportunity.totalApy, principal, 30),
+        calculateRewardEstimate(opportunity.apy, principal, 30),
     );
     const yearly = formatUsd(
-        calculateRewardEstimate(opportunity.totalApy, principal, 365),
+        calculateRewardEstimate(opportunity.apy, principal, 365),
     );
 
     return (

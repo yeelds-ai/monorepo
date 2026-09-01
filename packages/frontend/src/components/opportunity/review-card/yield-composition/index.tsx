@@ -15,8 +15,8 @@ interface YieldCompositionProps {
 export function YieldComposition({ opportunity }: YieldCompositionProps) {
     const t = useTranslations("opportunity.review.yieldComposition");
 
-    const { apy, totalApy, totalRewardsApr } = opportunity;
-    const baseShare = totalApy > 0 ? (apy / totalApy) * 100 : 100;
+    const { apy, baseApy, totalRewardsApr } = opportunity;
+    const baseShare = apy > 0 ? (baseApy / apy) * 100 : 100;
 
     return (
         <div className={styles.root}>
@@ -32,7 +32,7 @@ export function YieldComposition({ opportunity }: YieldCompositionProps) {
                     {t("totalApy")}
                 </Typography>
                 <Typography as="span" size={20} font="brand">
-                    {formatPercentage(totalApy)}
+                    {formatPercentage(apy)}
                 </Typography>
             </div>
 
@@ -53,7 +53,7 @@ export function YieldComposition({ opportunity }: YieldCompositionProps) {
                         {t("baseApy")}:
                     </Typography>
                     <Typography as="span" size={14} font="brand" color="brand">
-                        {formatPercentage(apy)}
+                        {formatPercentage(baseApy)}
                     </Typography>
                 </div>
                 <div className={styles.row}>

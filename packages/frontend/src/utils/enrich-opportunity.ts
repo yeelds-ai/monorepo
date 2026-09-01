@@ -46,11 +46,14 @@ export function enrichOpportunity(
         (sum, reward) => sum + (reward.apr != null ? reward.apr * 100 : 0),
         0,
     );
+    // opportunity.apy is already the net APY with rewards included, so the
+    // organic base is what's left once the incentive APR is backed out.
+    const baseApy = Math.max(0, apy - totalRewardsApr);
 
     return {
         ...opportunity,
         apy,
-        totalApy: apy + totalRewardsApr,
+        baseApy,
         totalRewardsApr,
         allocations: withShares(opportunity.allocations),
         protocol: {
