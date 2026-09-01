@@ -10,18 +10,25 @@ import {
     MenuIcon,
     NewsIcon,
     SpaceDashboardIcon,
+    TelegramLogo,
+    XLogo,
     YeeldsLogo,
 } from "@/src/assets";
 import { usePathname } from "@/src/i18n/routing";
 import type { TranslationsKeys } from "@/src/types/utils";
 import { NavItem } from "./nav-item";
 import { NavSection } from "./nav-section";
-import { SocialLinks } from "./social-links";
 
 import styles from "./styles.module.css";
 
 interface NavItem {
     label: TranslationsKeys<"navigation">;
+    href: string;
+    icon: FunctionComponent<SVGProps<SVGSVGElement>>;
+}
+
+interface CommunityItem {
+    label: TranslationsKeys<"navigation.socials">;
     href: string;
     icon: FunctionComponent<SVGProps<SVGSVGElement>>;
 }
@@ -40,8 +47,14 @@ const RESEARCH_ITEMS: NavItem[] = [
     { label: "liquidityDeals", href: "/deals", icon: AgreementIcon },
 ];
 
+const COMMUNITY_ITEMS: CommunityItem[] = [
+    { label: "x", href: "https://x.com/YeeldsAi", icon: XLogo },
+    { label: "telegram", href: "https://t.me/YeeldsAi", icon: TelegramLogo },
+];
+
 export function Sidebar() {
     const t = useTranslations("navigation");
+    const tSocials = useTranslations("navigation.socials");
     const pathname = usePathname();
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -58,7 +71,6 @@ export function Sidebar() {
             <div className={styles.brand}>
                 <YeeldsLogo className={styles.logo} />
             </div>
-
             <nav aria-label={t("mainNavigation")} className={styles.nav}>
                 <NavSection title={t("discover")}>
                     {DISCOVER_ITEMS.map(({ label, href, icon }) => (
@@ -72,7 +84,6 @@ export function Sidebar() {
                         />
                     ))}
                 </NavSection>
-
                 <NavSection title={t("research")}>
                     {RESEARCH_ITEMS.map(({ label, href, icon }) => (
                         <NavItem
@@ -85,11 +96,20 @@ export function Sidebar() {
                         />
                     ))}
                 </NavSection>
+                <NavSection title={t("community")}>
+                    {COMMUNITY_ITEMS.map(({ label, href, icon }) => (
+                        <NavItem
+                            key={href}
+                            href={href}
+                            label={tSocials(label)}
+                            icon={icon}
+                            active={false}
+                            external
+                            onClick={handleOnClose}
+                        />
+                    ))}
+                </NavSection>
             </nav>
-
-            <div className={styles.footer}>
-                <SocialLinks />
-            </div>
         </div>
     );
 

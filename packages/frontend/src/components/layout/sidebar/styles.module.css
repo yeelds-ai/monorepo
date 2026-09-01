@@ -47,33 +47,11 @@
 }
 
 .itemIcon {
-    @apply size-4 shrink-0 text-secondary;
+    @apply size-4 shrink-0 text-primary;
 }
 
 .item.active .itemIcon {
     @apply text-brand-primary;
-}
-
-.footer {
-    @apply px-4 pt-4 pb-6;
-}
-
-.socials {
-    @apply flex items-center gap-1;
-}
-
-.social {
-    @apply flex size-9 items-center justify-center rounded-xl;
-    @apply text-secondary transition-colors hover:background-default;
-}
-
-.socialDisabled {
-    @apply flex size-9 items-center justify-center rounded-xl;
-    @apply text-secondary opacity-40;
-}
-
-.socialIcon {
-    @apply size-[18px];
 }
 
 .topbar {
