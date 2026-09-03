@@ -2,7 +2,7 @@ import type { OpportunityGrade } from "./grade";
 import type { Protocol } from "./protocols";
 import type { Token } from "./token";
 
-export type Strategy = "vault" | "lending";
+export type Strategy = "vault" | "lending" | "fixed-yield" | "liquidity";
 
 export type SortField = "apy" | "tvl" | "score";
 
