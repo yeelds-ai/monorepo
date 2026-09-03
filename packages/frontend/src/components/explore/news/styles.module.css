@@ -24,39 +24,3 @@
 .empty {
     @apply px-5 py-8 text-center;
 }
-
-.item {
-    @apply flex h-44 flex-col gap-2 overflow-hidden p-5;
-}
-
-.card .item + .item {
-    @apply border-t stroke-divider;
-}
-
-.itemHeader {
-    @apply flex items-center gap-3;
-}
-
-.publication {
-    @apply min-w-0;
-}
-
-.avatar {
-    @apply flex size-8 shrink-0 items-center justify-center rounded-full;
-}
-
-.time {
-    @apply ml-auto flex shrink-0 items-center gap-1.5;
-}
-
-.timeIcon {
-    @apply size-4 shrink-0 text-secondary;
-}
-
-.title {
-    @apply line-clamp-2;
-}
-
-.excerpt {
-    @apply line-clamp-2;
-}

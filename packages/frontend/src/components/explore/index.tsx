@@ -15,11 +15,7 @@ export async function Explore() {
                 <Typography as="h1" font="brand" size={28}>
                     {t("title")}
                 </Typography>
-                <Typography
-                    size={16}
-                    variant="secondary"
-                    className={styles.subtitle}
-                >
+                <Typography size={16} variant="secondary">
                     {t("subtitle")}
                 </Typography>
             </div>

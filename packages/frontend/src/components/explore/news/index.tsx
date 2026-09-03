@@ -7,7 +7,7 @@ import { ArrowRightIcon } from "@/src/assets";
 import { useFeed } from "@/src/hooks/useFeed";
 import { Link } from "@/src/i18n/routing";
 import { NewsItem } from "./news-item";
-import { NewsItemSkeleton } from "./news-item-skeleton";
+import { NewsItemSkeleton } from "./news-item/news-item-skeleton";
 
 import styles from "./styles.module.css";
 
