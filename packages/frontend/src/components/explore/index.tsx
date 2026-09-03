@@ -2,6 +2,7 @@ import { Typography } from "@yeelds/ui";
 import { getTranslations } from "next-intl/server";
 
 import { HotPicks } from "./hot-picks";
+import { WeeklyNews } from "./news";
 
 import styles from "./styles.module.css";
 
@@ -24,6 +25,7 @@ export async function Explore() {
             </div>
 
             <div className={styles.content}>
+                <WeeklyNews />
                 <HotPicks />
             </div>
         </div>

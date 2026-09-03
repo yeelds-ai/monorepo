@@ -24,8 +24,8 @@ export function DealTeam({ team, title }: DealTeamProps) {
                                 backgroundColor: stringToColor(member.name),
                             }}
                         >
-                            <Typography size={14} weight="bold">
-                                {member.name.charAt(0).toUpperCase()}
+                            <Typography size={14} weight="bold" uppercase>
+                                {member.name}
                             </Typography>
                         </div>
                         <div className={styles.memberContent}>

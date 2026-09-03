@@ -38,6 +38,7 @@
         },
         "news": {
             "title": "Weekly news",
+            "seeAll": "See all news",
             "empty": "No news available right now. Check back soon."
         },
         "opportunity": {

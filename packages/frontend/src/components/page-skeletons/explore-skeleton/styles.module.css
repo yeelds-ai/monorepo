@@ -16,6 +16,10 @@
     @apply flex-1 px-6 pb-4 sm:px-8;
 }
 
+.newsListBar {
+    @apply w-full rounded-2xl lg:w-1/3;
+}
+
 .hotPicksHeader {
     @apply flex items-center justify-between gap-3 pb-4;
 }

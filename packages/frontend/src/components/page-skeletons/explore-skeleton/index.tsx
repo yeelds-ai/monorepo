@@ -20,6 +20,8 @@ export function ExploreSkeleton() {
             </div>
 
             <div className={styles.content}>
+                <Skeleton height={530} className={styles.newsListBar} />
+
                 <div className={styles.hotPicksHeader}>
                     <Skeleton height={28} width={120} />
                     <Skeleton height={20} width={140} />

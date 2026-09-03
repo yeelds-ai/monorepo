@@ -28,8 +28,8 @@ export function FeedCard({ item }: FeedCardProps) {
                     style={{ backgroundColor: stringToColor(item.publication) }}
                     aria-hidden="true"
                 >
-                    <Typography size={14} weight="bold">
-                        {item.publication.charAt(0).toUpperCase()}
+                    <Typography size={14} weight="bold" uppercase>
+                        {item.publication.charAt(0)}
                     </Typography>
                 </div>
                 <div className={styles.publicationMeta}>
