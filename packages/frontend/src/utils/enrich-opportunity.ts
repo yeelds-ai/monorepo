@@ -42,13 +42,21 @@ export function enrichOpportunity(
         );
 
     const apy = opportunity.apy * 100;
-    const totalRewardsApr = opportunity.rewards.reduce(
+    // The API reports the organic (rewards-stripped) net APY directly; Morpho is
+    // the only source that can omit it, in which case fall back to backing the
+    // incentive APR out of the net APY.
+    const apyExcludingRewards = opportunity.protocol.data.apyExcludingRewards;
+    const rewardsAprFromTokens = opportunity.rewards.reduce(
         (sum, reward) => sum + (reward.apr != null ? reward.apr * 100 : 0),
         0,
     );
-    // opportunity.apy is already the net APY with rewards included, so the
-    // organic base is what's left once the incentive APR is backed out.
-    const baseApy = Math.max(0, apy - totalRewardsApr);
+    const baseApy = Math.max(
+        0,
+        apyExcludingRewards != null
+            ? apyExcludingRewards * 100
+            : apy - rewardsAprFromTokens,
+    );
+    const totalRewardsApr = Math.max(0, apy - baseApy);
 
     return {
         ...opportunity,
