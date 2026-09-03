@@ -1,0 +1,71 @@
+@reference "../../../../app.css";
+
+.trigger {
+    @apply relative flex cursor-pointer items-stretch gap-1.5;
+    @apply rounded-xl border h-8 transition-colors;
+    @apply background-overlay stroke-divider text-secondary hover:stroke-focus;
+}
+
+.trigger.active {
+    @apply text-primary stroke-focus;
+}
+
+.trigger.open {
+    @apply border-border-focus;
+}
+
+.clearButton,
+.openButton {
+    @apply flex cursor-pointer items-center border-0 bg-transparent p-0;
+}
+
+.clearButton {
+    @apply shrink-0 pl-3;
+}
+
+.openButton {
+    @apply gap-1.5 pr-3;
+}
+
+.openButton:first-child {
+    @apply pl-3;
+}
+
+.triggerIcon {
+    @apply size-5 shrink-0;
+    @apply text-secondary transition-colors;
+}
+
+.triggerIcon.active {
+    @apply text-primary;
+}
+
+.triggerLabel {
+    @apply whitespace-nowrap text-secondary transition-colors;
+}
+
+.triggerLabel.active {
+    @apply text-primary;
+}
+
+.popover {
+    @apply flex flex-col overflow-hidden p-0;
+}
+
+.options {
+    @apply flex flex-col;
+}
+
+.option {
+    @apply stroke-divider flex cursor-pointer items-center gap-3 max-h-9 border-x-0 border-t-0 border-b bg-transparent p-2.5 text-left transition-colors;
+    @apply last:border-b-0;
+}
+
+.radio {
+    @apply stroke-focus size-4 shrink-0 rounded-full border transition-colors;
+}
+
+.radio.selected {
+    @apply border-brand-primary bg-brand-primary;
+    box-shadow: inset 0 0 0 3px var(--color-bg-overlay);
+}

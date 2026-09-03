@@ -1,5 +1,6 @@
 "use client";
 
+import { GRADE_TIERS, type GradeTier, minScoreForTier } from "@yeelds/sdk";
 import {
     MultiSelect,
     type SelectOption,
@@ -19,6 +20,7 @@ import {
     parseApy,
     parseUsd,
 } from "@/src/utils/format";
+import { GradeFilter } from "./grade-filter";
 import { RangeFilter } from "./range-filter";
 
 import styles from "./styles.module.css";
@@ -81,6 +83,16 @@ export function FilterBar() {
         [protocolOptions, query.protocols],
     );
 
+    const selectedGrade = useMemo<GradeTier | undefined>(
+        () =>
+            query.minScore === undefined
+                ? undefined
+                : GRADE_TIERS.find(
+                      (tier) => minScoreForTier(tier) === query.minScore,
+                  ),
+        [query.minScore],
+    );
+
     function handleOnToggleMobile() {
         setMobileOpen((open) => !open);
     }
@@ -97,6 +109,21 @@ export function FilterBar() {
             "protocols",
             options.length ? options.map((option) => option.value) : undefined,
         );
+    }
+
+    function handleOnGradeChange(tier: GradeTier | undefined) {
+        setParam(
+            "minScore",
+            tier !== undefined ? minScoreForTier(tier) : undefined,
+        );
+    }
+
+    function getGradeOptionLabel(grade: GradeTier) {
+        return t("grade.option", { grade });
+    }
+
+    function getGradeValueLabel(grade: GradeTier) {
+        return t("grade.value", { grade });
     }
 
     function handleOnTvlChange(value: SliderValue | undefined) {
@@ -171,11 +198,20 @@ export function FilterBar() {
                     parse={parseUsd}
                     onChange={handleOnTvlChange}
                 />
-                <RangeFilter
-                    label={t("apr.label")}
-                    ariaLabel={t("aprAriaLabel")}
+                <GradeFilter
+                    label={t("grade.label")}
+                    ariaLabel={t("gradeAriaLabel")}
                     clearAriaLabel={t("clearFilterAriaLabel")}
-                    title={t("apr.title")}
+                    optionLabel={getGradeOptionLabel}
+                    valueLabel={getGradeValueLabel}
+                    value={selectedGrade}
+                    onChange={handleOnGradeChange}
+                />
+                <RangeFilter
+                    label={t("apy.label")}
+                    ariaLabel={t("apyAriaLabel")}
+                    clearAriaLabel={t("clearFilterAriaLabel")}
+                    title={t("apy.title")}
                     minCaption={t("rangeMinLabel")}
                     maxCaption={t("rangeMaxLabel")}
                     min={APY_MIN}

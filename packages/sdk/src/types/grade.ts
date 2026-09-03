@@ -49,7 +49,7 @@ export interface OpportunityGrade {
 export type GradeLetter =
     "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D";
 
-const GRADE_THRESHOLDS: [number, GradeLetter][] = [
+export const GRADE_THRESHOLDS: [number, GradeLetter][] = [
     [93, "A+"],
     [87, "A"],
     [82, "A-"],
@@ -66,4 +66,20 @@ export function gradeFromScore(score: number): GradeLetter {
     if (!grade) return "D";
 
     return grade[1];
+}
+
+export type GradeTier = "A" | "B" | "C" | "D";
+
+export const GRADE_TIERS: GradeTier[] = ["A", "B", "C", "D"];
+
+/**
+ * Lowest score that still grades within `tier` (its minus-variant floor); 0 for
+ * D, which covers everything. Lets a "minimum grade" filter translate a tier
+ * into the `minScore` opportunities query param.
+ */
+export function minScoreForTier(tier: GradeTier): number {
+    const floors = GRADE_THRESHOLDS.filter(
+        ([, letter]) => letter[0] === tier,
+    ).map(([min]) => min);
+    return floors.length ? Math.min(...floors) : 0;
 }

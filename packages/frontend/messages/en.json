@@ -74,10 +74,16 @@
                 "label": "TVL",
                 "title": "TVL range, USD"
             },
-            "aprAriaLabel": "Filter by APY range",
-            "apr": {
+            "apyAriaLabel": "Filter by APY range",
+            "apy": {
                 "label": "APY",
                 "title": "APY range, %"
+            },
+            "gradeAriaLabel": "Filter by grade",
+            "grade": {
+                "label": "Grade",
+                "option": "{grade} & above",
+                "value": "≥ {grade}"
             },
             "clearFilterAriaLabel": "Clear filter",
             "clear": "Clear ({count})"
