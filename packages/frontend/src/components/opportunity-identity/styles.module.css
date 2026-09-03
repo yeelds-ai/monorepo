@@ -16,6 +16,18 @@
     @apply relative shrink-0;
 }
 
+.logo {
+    @apply rounded-full;
+}
+
+.logo.sm {
+    @apply size-8;
+}
+
+.logo.lg {
+    @apply size-12;
+}
+
 .chainDot {
     @apply absolute -right-0.5 -bottom-0.5 flex rounded-full;
     box-shadow: 0 0 0 2px var(--color-bg-raised);

@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 
 import { ExternalLinkIcon } from "@/src/assets";
 import { ChainDot } from "@/src/components/chain-dot";
-import { ProtocolLogo } from "@/src/components/protocol-logo";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { formatPercentage, formatUsd } from "@/src/utils/format";
 
@@ -56,11 +55,13 @@ export function OpportunityIdentity({
         >
             <div className={styles.topRow}>
                 <span className={styles.logoWrapper}>
-                    <ProtocolLogo
-                        protocol={opportunity.protocol.slug}
-                        symbol={opportunity.protocol.name}
-                        size={iconSizes.protocol}
-                    />
+                    {protocolRegistry && (
+                        <protocolRegistry.icon
+                            className={classNames(styles.logo, {
+                                [styles[size]]: true,
+                            })}
+                        />
+                    )}
                     <span className={styles.chainDot}>
                         <ChainDot
                             chain={opportunity.chain}
