@@ -1,19 +1,21 @@
 import { Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
-import { OpportunityIdentity } from "@/src/components/opportunity-identity";
 import { Link } from "@/src/i18n/routing";
+import type { HotPickCategory } from "@/src/types/hot-picks";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { formatPercentage, formatUsd } from "@/src/utils/format";
+import { HotPickIdentity } from "./identity";
 
 import styles from "./styles.module.css";
 
 interface HotPickCardProps {
+    category: HotPickCategory;
     opportunity: EnrichedOpportunity;
 }
 
-export function HotPickCard({ opportunity }: HotPickCardProps) {
-    const t = useTranslations("explore.opportunity");
+export function HotPickCard({ category, opportunity }: HotPickCardProps) {
+    const t = useTranslations("opportunities.hotPicks.opportunity");
     const href = `/opportunities/${opportunity.chain}/${opportunity.address}`;
 
     return (
@@ -22,7 +24,7 @@ export function HotPickCard({ opportunity }: HotPickCardProps) {
             aria-label={`${opportunity.protocol.name} ${opportunity.strategy}`}
             className={styles.card}
         >
-            <OpportunityIdentity opportunity={opportunity} />
+            <HotPickIdentity category={category} opportunity={opportunity} />
 
             <div className={styles.stats}>
                 <div className={styles.stat}>

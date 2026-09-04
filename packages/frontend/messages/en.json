@@ -6,7 +6,6 @@
         "discover": "Discover",
         "research": "Research",
         "community": "Community",
-        "explore": "Explore",
         "opportunities": "Opportunities",
         "feed": "Feed",
         "liquidityDeals": "Liquidity deals",
@@ -15,41 +14,29 @@
             "telegram": "Telegram"
         }
     },
-    "explore": {
-        "title": "Explore",
-        "metaTitle": "Explore DeFi Yields - Vaults, Grades & Weekly Hot Picks",
-        "subtitle": "Track the yield landscape, surface the week's standout vaults, and compare opportunities by category.",
-        "stats": {
-            "chains": "Chains",
-            "protocols": "Protocols"
-        },
+    "opportunities": {
+        "title": "Opportunities",
+        "metaTitle": "Yield Opportunities - Compare APY Across Protocols",
+        "subtitle": "Compare thousands of yield opportunities across protocols, chains, and strategies.",
         "hotPicks": {
-            "title": "Weekly Yeelds hot picks",
-            "subtitle": "The week's standout vaults, ranked by Yeelds grade and yield across the catalog.",
+            "title": "Weekly hot picks",
             "empty": "No hot picks available right now.",
-            "exploreAllYields": "Explore all yields",
+            "hide": "Hide",
+            "show": "Show",
+            "scrollLeft": "Scroll left",
+            "scrollRight": "Scroll right",
             "categories": {
                 "topGraded": "Top risk-adjusted yield",
                 "topStableYield": "Top stable yield",
                 "deepestLiquidity": "Deepest liquidity",
                 "topBlueChip": "Top blue chip",
                 "highestApy": "Highest APY"
+            },
+            "opportunity": {
+                "apy": "APY",
+                "tvl": "TVL"
             }
         },
-        "news": {
-            "title": "Weekly news",
-            "seeAll": "See all news",
-            "empty": "No news available right now. Check back soon."
-        },
-        "opportunity": {
-            "apy": "APY",
-            "tvl": "TVL"
-        }
-    },
-    "opportunities": {
-        "title": "Opportunities",
-        "metaTitle": "Yield Opportunities - Compare APY Across Protocols",
-        "subtitle": "Compare thousands of yield opportunities across protocols, chains, and strategies.",
         "empty": {
             "title": "No opportunities found",
             "description": "Try adjusting your filters to discover more opportunities.",

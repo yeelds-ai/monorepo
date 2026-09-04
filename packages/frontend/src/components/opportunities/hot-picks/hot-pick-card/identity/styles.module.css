@@ -1,0 +1,46 @@
+@reference "../../../../../app.css";
+
+.root {
+    @apply flex items-center gap-3;
+}
+
+.logoWrapper {
+    @apply relative shrink-0;
+}
+
+.logo {
+    @apply size-8 rounded-full;
+}
+
+.chainDot {
+    @apply absolute -right-0.5 -bottom-0.5 flex rounded-full;
+    box-shadow: 0 0 0 2px var(--color-bg-raised);
+}
+
+.infoContainer {
+    @apply flex min-w-0 flex-1 flex-col;
+}
+
+.labelRow {
+    @apply flex items-center gap-1;
+}
+
+.labelIcon {
+    @apply size-3 shrink-0 text-secondary;
+}
+
+.titleRow {
+    @apply flex min-w-0 items-baseline gap-2;
+}
+
+.protocolName {
+    @apply shrink-0;
+}
+
+.strategyText {
+    @apply min-w-0 flex-1;
+}
+
+.gradeTag {
+    @apply shrink-0;
+}

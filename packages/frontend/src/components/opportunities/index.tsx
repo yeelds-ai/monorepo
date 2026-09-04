@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { useOpportunities } from "@/src/hooks/useOpportunities";
 import { useOpportunitiesParams } from "@/src/hooks/useOpportunitiesParams";
 import { FilterBar } from "./filter-bar";
+import { HotPicks } from "./hot-picks";
 import { OpportunitiesTable } from "./table";
 
 import styles from "./styles.module.css";
@@ -61,6 +62,8 @@ export function Opportunities() {
                     </Typography>
                 </div>
             </div>
+
+            <HotPicks />
 
             <FilterBar />
 

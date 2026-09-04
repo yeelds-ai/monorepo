@@ -1,29 +1,36 @@
 import { Skeleton } from "@yeelds/ui";
 import classNames from "classnames";
 
+import identityStyles from "./identity/styles.module.css";
 import styles from "./styles.module.css";
 
 export function HotPickCardSkeleton() {
     return (
         <div className={classNames(styles.card, styles.skeleton)}>
-            <div className={styles.skeletonIdentityRow}>
-                <div className={styles.skeletonLogoWrapper}>
+            <div className={identityStyles.root}>
+                <div className={identityStyles.logoWrapper}>
                     <Skeleton circular width={32} />
                     <Skeleton
                         circular
                         width={16}
-                        className={styles.skeletonChainDot}
+                        className={identityStyles.chainDot}
                     />
                 </div>
-                <div className={styles.skeletonIdentityText}>
-                    <Skeleton size={16} width={90} />
-                    <Skeleton size={12} width={70} />
+                <div
+                    className={classNames(
+                        identityStyles.infoContainer,
+                        styles.skeletonInfo,
+                    )}
+                >
+                    <div className={identityStyles.labelRow}>
+                        <Skeleton size={14} width={12} />
+                        <Skeleton size={14} width={90} />
+                    </div>
+                    <div className={identityStyles.titleRow}>
+                        <Skeleton size={18} width={60} />
+                        <Skeleton size={14} width={80} />
+                    </div>
                 </div>
-                <Skeleton
-                    height={28}
-                    width={28}
-                    className={styles.skeletonGradeTag}
-                />
             </div>
 
             <div className={styles.stats}>
