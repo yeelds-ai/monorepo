@@ -59,7 +59,7 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
                 <GradeTag grade={opportunity.grade?.letter} />
             </td>
             <td className={styles.cell}>
-                <Typography size={18} weight="bold">
+                <Typography size={18} font="brand">
                     {formatPercentage(opportunity.apy)}
                 </Typography>
             </td>
