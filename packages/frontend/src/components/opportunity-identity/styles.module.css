@@ -5,11 +5,7 @@
 }
 
 .topRow {
-    @apply flex items-center gap-3;
-}
-
-.root.lg .topRow {
-    @apply gap-4;
+    @apply flex items-center gap-4;
 }
 
 .logoWrapper {
@@ -17,15 +13,7 @@
 }
 
 .logo {
-    @apply rounded-full;
-}
-
-.logo.sm {
-    @apply size-8;
-}
-
-.logo.lg {
-    @apply size-12;
+    @apply rounded-full size-12;
 }
 
 .chainDot {
@@ -55,10 +43,6 @@
 
 .explorerIcon {
     @apply size-4;
-}
-
-.gradeTag {
-    @apply self-start;
 }
 
 .chipRow {

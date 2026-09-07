@@ -45,13 +45,12 @@ export function Opportunity({ chain, address }: OpportunityProps) {
                 text={t("backToOpportunities")}
             />
 
-            <OpportunityIdentity opportunity={opportunity} size="lg" />
+            <OpportunityIdentity opportunity={opportunity} />
 
             <div className={styles.content}>
                 <div className={styles.leftContent}>
                     <RiskSignalsCard opportunity={opportunity} />
                     <ExposureCard opportunity={opportunity} />
-                    {/* TODO: implement incentive campaign card */}
                 </div>
 
                 <div className={styles.rightContent}>
