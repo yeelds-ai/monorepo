@@ -121,9 +121,11 @@
             "yieldComposition": {
                 "title": "Yield composition",
                 "totalApy": "Total APY",
+                "impliedApy": "Implied APY",
                 "baseApy": "Base APY",
                 "incentiveRewards": "Incentive rewards",
-                "organicRatio": "Organic ratio"
+                "organicRatio": "Organic ratio",
+                "underlyingApy": "{symbol} underlying APY"
             }
         }
     },

@@ -47,3 +47,12 @@
 .rewardsSwatch {
     @apply bg-brand-primary/20;
 }
+
+.reference {
+    @apply flex items-center justify-between;
+    @apply stroke-divider border-t pt-3;
+}
+
+.referenceLabel {
+    @apply flex items-center gap-2;
+}
