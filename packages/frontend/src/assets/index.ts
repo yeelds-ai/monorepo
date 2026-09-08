@@ -20,6 +20,7 @@ export * from "./flame-icon";
 export * from "./gift-icon";
 export * from "./info-icon";
 export * from "./lock-icon";
+export * from "./logout-icon";
 export * from "./menu-icon";
 export * from "./news-icon";
 export * from "./pen-icon";
@@ -33,6 +34,7 @@ export * from "./search-icon";
 export * from "./shield-icon";
 export * from "./trending-up-icon";
 export * from "./upload-circle";
+export * from "./wallet-icon";
 
 export * from "./logos/pharos";
 export * from "./logos/yeelds";

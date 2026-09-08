@@ -30,8 +30,11 @@ Run everything from the root (`pnpm lint`/`format`/`build` →
   `build.env` array or Turbo serves a stale cached build. Server-only secrets
   skip the stale-cache concern but follow the same rule. Either way, a new var
   touches four places: `src/commons/env.ts`, `.env.example`, `turbo.json`, and
-  this list. `YEELDS_API_TOKEN` is the first server-only one — see
-  `src/commons/server.ts` below.
+  this list. Current vars: `NEXT_PUBLIC_ENVIRONMENT`,
+  `NEXT_PUBLIC_UMAMI_WEBSITE_ID`, `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID`
+  (required, throwing — Reown project id for wallet connection), and
+  `YEELDS_API_TOKEN` (the first server-only one — see `src/commons/server.ts`
+  below).
 
 ## Naming
 

@@ -11,7 +11,9 @@
         "format": "eslint --fix . && prettier --write ."
     },
     "dependencies": {
+        "@metamask/connect-evm": "^2.1.0",
         "@tanstack/react-query": "catalog:",
+        "@walletconnect/ethereum-provider": "^2.23.10",
         "@yeelds/registry": "workspace:*",
         "@yeelds/sdk": "workspace:*",
         "@yeelds/ui": "workspace:*",
@@ -20,7 +22,9 @@
         "react": "catalog:",
         "react-dom": "catalog:",
         "react-use": "catalog:",
-        "server-only": "^0.0.1"
+        "server-only": "^0.0.1",
+        "viem": "catalog:",
+        "wagmi": "catalog:"
     },
     "devDependencies": {
         "@eslint/js": "catalog:",

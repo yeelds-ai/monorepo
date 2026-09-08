@@ -13,6 +13,10 @@ cp packages/frontend/.env.example packages/frontend/.env.local
 pnpm build
 ```
 
+Set `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` in `.env.local` before building - the
+frontend throws on boot without it. Get a project id at
+[cloud.reown.com](https://cloud.reown.com).
+
 `packages/frontend` consumes the SDK's build output, so `pnpm build` (via Turbo)
 must run once before the first `dev`.
 

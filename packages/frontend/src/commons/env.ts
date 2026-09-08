@@ -18,6 +18,16 @@ if (
 export const UMAMI_WEBSITE_ID: string =
     process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID!;
 
+// Reown (WalletConnect) project id, needed to build the walletConnect connector.
+// Required and throwing: it is a NEXT_PUBLIC_ var so this read is client-safe.
+// Get one at https://cloud.reown.com.
+export const WALLETCONNECT_PROJECT_ID = process.env
+    .NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID as string;
+if (!WALLETCONNECT_PROJECT_ID)
+    throw new Error(
+        "A valid NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID env variable is needed",
+    );
+
 // Bearer token Yeelds backend. Optional/non-throwing here since
 // this file is also evaluated in client bundles; the required check and the
 // server-only guard live in src/commons/server.ts, the only module that

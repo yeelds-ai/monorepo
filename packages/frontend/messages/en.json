@@ -9,6 +9,12 @@
         "opportunities": "Opportunities",
         "feed": "Feed",
         "liquidityDeals": "Liquidity deals",
+        "connectWallet": "Connect wallet",
+        "wallets": {
+            "title": "Connect a wallet",
+            "close": "Close",
+            "disconnect": "Disconnect wallet"
+        },
         "socials": {
             "x": "X",
             "telegram": "Telegram"

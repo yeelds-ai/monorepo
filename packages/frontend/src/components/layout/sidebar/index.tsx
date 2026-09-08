@@ -13,6 +13,7 @@ import {
     XLogo,
     YeeldsLogo,
 } from "@/src/assets";
+import { ConnectWallet } from "@/src/components/connect-wallet";
 import { usePathname } from "@/src/i18n/routing";
 import type { TranslationsKeys } from "@/src/types/utils";
 import { NavItem } from "./nav-item";
@@ -70,43 +71,46 @@ export function Sidebar() {
                 <YeeldsLogo className={styles.logo} />
             </div>
             <nav aria-label={t("mainNavigation")} className={styles.nav}>
-                <NavSection title={t("discover")}>
-                    {DISCOVER_ITEMS.map(({ label, href, icon }) => (
-                        <NavItem
-                            key={href}
-                            href={href}
-                            label={t(label)}
-                            icon={icon}
-                            active={pathname === href}
-                            onClick={handleOnClose}
-                        />
-                    ))}
-                </NavSection>
-                <NavSection title={t("research")}>
-                    {RESEARCH_ITEMS.map(({ label, href, icon }) => (
-                        <NavItem
-                            key={href}
-                            href={href}
-                            label={t(label)}
-                            icon={icon}
-                            active={pathname === href}
-                            onClick={handleOnClose}
-                        />
-                    ))}
-                </NavSection>
-                <NavSection title={t("community")}>
-                    {COMMUNITY_ITEMS.map(({ label, href, icon }) => (
-                        <NavItem
-                            key={href}
-                            href={href}
-                            label={tSocials(label)}
-                            icon={icon}
-                            active={false}
-                            external
-                            onClick={handleOnClose}
-                        />
-                    ))}
-                </NavSection>
+                <div className={styles.sections}>
+                    <NavSection title={t("discover")}>
+                        {DISCOVER_ITEMS.map(({ label, href, icon }) => (
+                            <NavItem
+                                key={href}
+                                href={href}
+                                label={t(label)}
+                                icon={icon}
+                                active={pathname === href}
+                                onClick={handleOnClose}
+                            />
+                        ))}
+                    </NavSection>
+                    <NavSection title={t("research")}>
+                        {RESEARCH_ITEMS.map(({ label, href, icon }) => (
+                            <NavItem
+                                key={href}
+                                href={href}
+                                label={t(label)}
+                                icon={icon}
+                                active={pathname === href}
+                                onClick={handleOnClose}
+                            />
+                        ))}
+                    </NavSection>
+                    <NavSection title={t("community")}>
+                        {COMMUNITY_ITEMS.map(({ label, href, icon }) => (
+                            <NavItem
+                                key={href}
+                                href={href}
+                                label={tSocials(label)}
+                                icon={icon}
+                                active={false}
+                                external
+                                onClick={handleOnClose}
+                            />
+                        ))}
+                    </NavSection>
+                </div>
+                <ConnectWallet />
             </nav>
         </div>
     );

@@ -1,0 +1,5 @@
+@reference "../../../app.css";
+
+.connectorIcon {
+    @apply size-8 shrink-0 rounded-lg;
+}

@@ -1,0 +1,22 @@
+@reference "../../app.css";
+
+.connected {
+    @apply flex w-full items-center justify-between rounded-2xl max-h-12 px-4 py-3.5;
+    @apply stroke-divider border text-primary bg-bg-raised;
+}
+
+.wallet {
+    @apply flex items-center gap-2;
+}
+
+.walletIcon {
+    @apply size-5 shrink-0 text-primary;
+}
+
+.disconnect {
+    @apply -mr-1 shrink-0 cursor-pointer rounded-lg p-1;
+}
+
+.disconnectIcon {
+    @apply size-5;
+}

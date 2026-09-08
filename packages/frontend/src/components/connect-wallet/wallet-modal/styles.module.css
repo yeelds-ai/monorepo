@@ -1,0 +1,21 @@
+@reference "../../../app.css";
+
+.modal {
+    @apply flex w-full flex-col gap-4 sm:min-w-80;
+}
+
+.title {
+    @apply flex items-center justify-between px-8;
+}
+
+.close {
+    @apply shrink-0 cursor-pointer p-1;
+}
+
+.closeIcon {
+    @apply size-4 text-primary;
+}
+
+.walletList {
+    @apply flex flex-col;
+}

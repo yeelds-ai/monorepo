@@ -1,5 +1,6 @@
 "use client";
 
+import { FloatingPortal } from "@floating-ui/react";
 import classNames from "classnames";
 import {
     AnimatePresence,
@@ -80,31 +81,33 @@ export function Modal({
     return (
         <AnimatePresence>
             {open && (
-                <motion.div
-                    ref={overlayRef}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={TRANSITION}
-                    className={classNames(
-                        "root",
-                        styles.root,
-                        centered ? styles.fadeCenter : styles.slideRight,
-                    )}
-                >
+                <FloatingPortal>
                     <motion.div
-                        {...PANEL_MOTION[transition]}
+                        ref={overlayRef}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         transition={TRANSITION}
                         className={classNames(
-                            "panel",
-                            styles.panel,
-                            centered ? styles.panelAuto : styles.panelFull,
-                            className,
+                            "root",
+                            styles.root,
+                            centered ? styles.fadeCenter : styles.slideRight,
                         )}
                     >
-                        {children}
+                        <motion.div
+                            {...PANEL_MOTION[transition]}
+                            transition={TRANSITION}
+                            className={classNames(
+                                "panel",
+                                styles.panel,
+                                centered ? styles.panelAuto : styles.panelFull,
+                                className,
+                            )}
+                        >
+                            {children}
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </FloatingPortal>
             )}
         </AnimatePresence>
     );
