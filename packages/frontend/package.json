@@ -19,6 +19,7 @@
         "next-intl": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
+        "react-use": "catalog:",
         "server-only": "^0.0.1"
     },
     "devDependencies": {

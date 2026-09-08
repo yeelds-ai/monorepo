@@ -12,6 +12,7 @@ import { startTransition, useOptimistic } from "react";
 import { usePathname, useRouter } from "@/src/i18n/routing";
 
 const FILTER_GROUPS: (keyof OpportunitiesParams)[][] = [
+    ["search"],
     ["chains"],
     ["protocols"],
     ["strategies"],
@@ -32,6 +33,7 @@ export interface UseOpportunitiesParamsReturnValue {
 }
 
 function parseQuery(searchParams: URLSearchParams): OpportunitiesParams {
+    const search = searchParams.get("search");
     const chains = searchParams.get("chains");
     const protocols = searchParams.get("protocols");
     const strategies = searchParams.get("strategies");
@@ -46,6 +48,7 @@ function parseQuery(searchParams: URLSearchParams): OpportunitiesParams {
     const direction = searchParams.get("direction");
 
     return {
+        search: search ?? undefined,
         chains: chains ? chains.split(",") : undefined,
         protocols: protocols ? protocols.split(",") : undefined,
         strategies: strategies

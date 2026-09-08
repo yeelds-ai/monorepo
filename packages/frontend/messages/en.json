@@ -52,6 +52,8 @@
             "deselectAll": "Deselect all",
             "noResults": "No results",
             "searchPlaceholder": "Search",
+            "searchPoolsPlaceholder": "Search pools, tokens...",
+            "searchAriaLabel": "Search pools and tokens",
             "chainLabel": "Chains",
             "protocolLabel": "Protocols",
             "rangeMinLabel": "Min.",

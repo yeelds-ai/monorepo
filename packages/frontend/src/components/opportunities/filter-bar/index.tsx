@@ -22,6 +22,7 @@ import {
 } from "@/src/utils/format";
 import { GradeFilter } from "./grade-filter";
 import { RangeFilter } from "./range-filter";
+import { SearchFilter } from "./search-filter";
 
 import styles from "./styles.module.css";
 
@@ -97,6 +98,10 @@ export function FilterBar() {
         setMobileOpen((open) => !open);
     }
 
+    function handleOnSearchChange(value: string | undefined) {
+        setParam("search", value);
+    }
+
     function handleOnChainsChange(options: SelectOption<string>[]) {
         setParam(
             "chains",
@@ -160,6 +165,13 @@ export function FilterBar() {
                     [styles.open]: mobileOpen,
                 })}
             >
+                <SearchFilter
+                    value={query.search}
+                    placeholder={t("searchPoolsPlaceholder")}
+                    ariaLabel={t("searchAriaLabel")}
+                    clearAriaLabel={t("clearFilterAriaLabel")}
+                    onChange={handleOnSearchChange}
+                />
                 <MultiSelect
                     label={t("chainLabel")}
                     options={chainOptions}

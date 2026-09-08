@@ -1,0 +1,33 @@
+@reference "../../../../app.css";
+
+.root {
+    @apply flex h-8 w-56 items-center gap-1.5 rounded-xl border px-3 transition-colors lg:w-64;
+    @apply background-overlay stroke-divider;
+    @apply hover:stroke-focus focus-within:stroke-focus;
+}
+
+.root.active {
+    @apply stroke-focus;
+}
+
+.icon {
+    @apply size-5 shrink-0 text-secondary;
+}
+
+.input {
+    @apply w-full min-w-0 border-none bg-transparent p-0 text-sm outline-none;
+    @apply text-primary placeholder:text-secondary;
+}
+
+.input::-webkit-search-cancel-button {
+    @apply hidden;
+}
+
+.clearButton {
+    @apply flex shrink-0 cursor-pointer items-center border-0 bg-transparent p-0;
+    @apply text-secondary transition-colors hover:text-primary;
+}
+
+.clearIcon {
+    @apply size-4;
+}

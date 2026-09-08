@@ -29,6 +29,7 @@ export * from "./pie-chart-icon";
 export * from "./space-dashboard-icon";
 export * from "./server-stack-icon";
 export * from "./safe-icon";
+export * from "./search-icon";
 export * from "./shield-icon";
 export * from "./trending-up-icon";
 export * from "./upload-circle";

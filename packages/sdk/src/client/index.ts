@@ -27,6 +27,7 @@ export interface OpportunitiesParams {
     apyFrom?: number;
     apyTo?: number;
     minScore?: number;
+    search?: string;
     sort?: SortField;
     direction?: SortDirection;
 }
