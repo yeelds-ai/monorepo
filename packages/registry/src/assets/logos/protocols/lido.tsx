@@ -1,0 +1,25 @@
+import type { SVGProps } from "react";
+
+export function LidoLogo(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="350"
+            height="350"
+            viewBox="75 75 350 350"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M250.05 77L336.211 211.056L250.05 260.934L163.889 211.056L250.05 77ZM190.246 204.687L250.05 111.684L309.854 204.687L250.05 239.295L190.246 204.687Z"
+                fill="#0085FF"
+            />
+            <path
+                d="M249.972 290.402L150.016 232.543L147.319 236.764C116.569 284.646 123.428 347.339 163.811 387.548C211.361 434.817 288.505 434.817 336.133 387.548C376.593 347.339 383.452 284.646 352.625 236.764L349.927 232.543L249.972 290.402Z"
+                fill="#0085FF"
+            />
+        </svg>
+    );
+}

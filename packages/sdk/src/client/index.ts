@@ -3,6 +3,7 @@ import type { OpportunitiesFiltersResponse } from "../types/filters";
 import type { OpportunitiesGraphResponse } from "../types/graph";
 import type {
     OpportunityResponse,
+    OpportunityTvlPoint,
     PaginatedOpportunitiesResponse,
     SortDirection,
     SortField,
@@ -35,6 +36,12 @@ export interface OpportunitiesParams {
 export interface OpportunityParams {
     chain: string;
     address: string;
+}
+
+export interface OpportunityTvlParams {
+    chain: string;
+    address: string;
+    from?: string;
 }
 
 export interface OverviewParams {
@@ -122,6 +129,27 @@ export class YeeldsApiClient {
             );
 
         return (await response.json()) as OpportunityResponse;
+    }
+
+    async fetchOpportunityTvl({
+        chain,
+        address,
+        from,
+    }: OpportunityTvlParams): Promise<OpportunityTvlPoint[] | null> {
+        const url = new URL(
+            `v1/opportunities/${encodeURIComponent(chain)}/${encodeURIComponent(address)}/tvl`,
+            this.baseUrl,
+        );
+        if (from) url.searchParams.set("from", from);
+
+        const response = await fetch(url, { headers: this.headers });
+        if (response.status === 404) return null;
+        if (!response.ok)
+            throw new Error(
+                `Response not ok while fetching opportunity TVL: ${await response.text()}`,
+            );
+
+        return (await response.json()) as OpportunityTvlPoint[];
     }
 
     async fetchOpportunitiesFilters(): Promise<OpportunitiesFiltersResponse> {

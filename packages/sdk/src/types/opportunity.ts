@@ -45,6 +45,11 @@ export interface Opportunity {
 
 export type OpportunityResponse = Opportunity | null;
 
+export interface OpportunityTvlPoint {
+    capturedAt: string;
+    tvlUsd: number;
+}
+
 export interface PaginatedOpportunitiesResponse {
     opportunities: Opportunity[];
     totalItems: number;
