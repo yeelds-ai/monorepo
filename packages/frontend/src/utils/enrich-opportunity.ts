@@ -42,10 +42,14 @@ export function enrichOpportunity(
         );
 
     const apy = opportunity.apy * 100;
-    // The API reports the organic (rewards-stripped) net APY directly; Morpho is
-    // the only source that can omit it, in which case fall back to backing the
-    // incentive APR out of the net APY.
-    const apyExcludingRewards = opportunity.protocol.data.apyExcludingRewards;
+    // The API reports the organic (rewards-stripped) net APY directly on every
+    // source except Morpho (optional) and Lido (pure staking, no reward tokens);
+    // when absent, back the incentive APR out of the net APY.
+    const sourceData = opportunity.protocol.data;
+    const apyExcludingRewards =
+        "apyExcludingRewards" in sourceData
+            ? sourceData.apyExcludingRewards
+            : undefined;
     const rewardsAprFromTokens = opportunity.rewards.reduce(
         (sum, reward) => sum + (reward.apr != null ? reward.apr * 100 : 0),
         0,
