@@ -11,6 +11,8 @@
         "format": "eslint --fix . && prettier --write ."
     },
     "dependencies": {
+        "@lifi/widget": "^4.6.0",
+        "@lifi/widget-provider-ethereum": "^4.1.4",
         "@metamask/connect-evm": "^2.1.0",
         "@tanstack/react-query": "catalog:",
         "@walletconnect/ethereum-provider": "^2.23.10",

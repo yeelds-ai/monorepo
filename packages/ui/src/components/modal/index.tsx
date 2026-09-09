@@ -19,6 +19,7 @@ export interface ModalProps {
     open?: boolean;
     onDismiss?: () => void;
     transition?: ModalTransition;
+    noUnmount?: boolean;
     className?: string;
     children?: ReactNode;
 }
@@ -45,6 +46,7 @@ export function Modal({
     open,
     onDismiss,
     transition = "slide-right",
+    noUnmount,
     className,
     children,
 }: ModalProps) {
@@ -77,25 +79,38 @@ export function Modal({
     }, [open, onDismiss]);
 
     const centered = transition === "fade-center";
+    const panelMotion = PANEL_MOTION[transition];
 
     return (
         <AnimatePresence>
-            {open && (
+            {(noUnmount || open) && (
                 <FloatingPortal>
                     <motion.div
                         ref={overlayRef}
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        animate={
+                            open
+                                ? { opacity: 1, visibility: "visible" }
+                                : {
+                                      opacity: 0,
+                                      transitionEnd: { visibility: "hidden" },
+                                  }
+                        }
                         exit={{ opacity: 0 }}
                         transition={TRANSITION}
                         className={classNames(
                             "root",
                             styles.root,
                             centered ? styles.fadeCenter : styles.slideRight,
+                            { [styles.closed]: noUnmount && !open },
                         )}
                     >
                         <motion.div
-                            {...PANEL_MOTION[transition]}
+                            initial={panelMotion.initial}
+                            animate={
+                                open ? panelMotion.animate : panelMotion.initial
+                            }
+                            exit={panelMotion.exit}
                             transition={TRANSITION}
                             className={classNames(
                                 "panel",
