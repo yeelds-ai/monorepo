@@ -108,6 +108,10 @@
     @apply opacity-100;
 }
 
+.optionIcon {
+    @apply size-4 shrink-0 rounded-full;
+}
+
 .optionLabel {
     @apply flex-1 truncate;
 }

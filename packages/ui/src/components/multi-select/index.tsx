@@ -26,6 +26,7 @@ export type ValueType = string | number;
 export interface SelectOption<V extends ValueType, D = unknown> {
     label: string;
     value: V;
+    icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
     data?: D;
     disabled?: boolean;
 }
@@ -275,6 +276,7 @@ function OptionRow<V extends ValueType, O extends SelectOption<V>>({
 }: RowComponentProps<OptionRowData<V, O>>) {
     const option = options[index];
     const selected = selectedValues.has(option.value);
+    const Icon = option.icon;
 
     function handleOnClick() {
         if (option.disabled) return;
@@ -301,6 +303,7 @@ function OptionRow<V extends ValueType, O extends SelectOption<V>>({
                     })}
                 />
             </span>
+            {Icon && <Icon className={styles.optionIcon} />}
             <Typography size={14} className={styles.optionLabel}>
                 {option.label}
             </Typography>

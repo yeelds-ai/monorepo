@@ -1,6 +1,12 @@
 "use client";
 
-import { GRADE_TIERS, type GradeTier, minScoreForTier } from "@yeelds/sdk";
+import { SUPPORTED_CHAINS, SUPPORTED_PROTOCOLS } from "@yeelds/registry";
+import {
+    GRADE_TIERS,
+    type GradeTier,
+    type SupportedProtocolSlug,
+    minScoreForTier,
+} from "@yeelds/sdk";
 import {
     MultiSelect,
     type SelectOption,
@@ -55,6 +61,7 @@ export function FilterBar() {
             filters.chains.map((chain) => ({
                 value: chain.slug,
                 label: chain.name.charAt(0).toUpperCase() + chain.name.slice(1),
+                icon: SUPPORTED_CHAINS[chain.slug]?.icon,
             })),
         [filters.chains],
     );
@@ -64,6 +71,9 @@ export function FilterBar() {
             filters.protocols.map((protocol) => ({
                 value: protocol.slug,
                 label: protocol.name,
+                icon: SUPPORTED_PROTOCOLS[
+                    protocol.slug as SupportedProtocolSlug
+                ]?.icon,
             })),
         [filters.protocols],
     );
