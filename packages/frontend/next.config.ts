@@ -9,7 +9,7 @@ const SECURITY_HEADERS = [
 
 const CSP_HEADER = `
     default-src 'self';
-    connect-src 'self' https://api.dev.yeelds.ai https://api.yeelds.ai https://raw.githubusercontent.com/metrom-xyz/token-icons/refs/heads/main/mainnet-icons.json https://umami.metrom.xyz/api/c https://ethereum-rpc.publicnode.com https://arbitrum-one-rpc.publicnode.com https://base-rpc.publicnode.com https://rpc.mainnet.chain.robinhood.com https://*.metamask.io wss://relay.walletconnect.com wss://relay.walletconnect.org https://relay.walletconnect.com https://relay.walletconnect.org https://rpc.walletconnect.org https://explorer-api.walletconnect.com https://api.web3modal.org https://pulse.walletconnect.org;
+    connect-src 'self' https://api.dev.yeelds.ai https://api.yeelds.ai https://raw.githubusercontent.com/metrom-xyz/token-icons/refs/heads/main/mainnet-icons.json https://umami.metrom.xyz/api/c https://ethereum-rpc.publicnode.com https://arbitrum-one-rpc.publicnode.com https://base-rpc.publicnode.com https://rpc.mainnet.chain.robinhood.com https://*.metamask.io wss://relay.walletconnect.com wss://relay.walletconnect.org https://relay.walletconnect.com https://relay.walletconnect.org https://rpc.walletconnect.org https://explorer-api.walletconnect.com https://api.web3modal.org https://pulse.walletconnect.org https://li.quest https://ethereum.reth.rs;
     frame-src 'self' https://verify.walletconnect.org https://secure.walletconnect.org;
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://umami.metrom.xyz;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;

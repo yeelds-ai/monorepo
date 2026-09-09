@@ -51,3 +51,34 @@ export const Centered: Story = {
         );
     },
 };
+
+export const Persistent: Story = {
+    render: () => {
+        const [open, setOpen] = useState(false);
+
+        return (
+            <>
+                <Button onClick={() => setOpen(true)}>Open modal</Button>
+                <Modal
+                    open={open}
+                    onDismiss={() => setOpen(false)}
+                    transition="fade-center"
+                    noUnmount
+                    className="max-w-md"
+                >
+                    <div className="flex flex-col gap-2 px-8 text-text-primary">
+                        <p>
+                            Type below, close, reopen — the value survives
+                            because <code>noUnmount</code> keeps the panel
+                            mounted.
+                        </p>
+                        <input
+                            className="stroke-focus rounded-lg border p-2"
+                            placeholder="Stateful input"
+                        />
+                    </div>
+                </Modal>
+            </>
+        );
+    },
+};

@@ -4,6 +4,10 @@
     @apply fixed top-0 left-0 z-100 flex h-screen w-screen p-4 overlay;
 }
 
+.root.closed {
+    @apply pointer-events-none;
+}
+
 .slideRight {
     @apply justify-end;
 }
