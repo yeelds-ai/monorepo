@@ -40,6 +40,16 @@
                 "highestApy": "Highest APY",
                 "topStableYield": "Top stable yield"
             }
+        },
+        "totalTvl": {
+            "title": "Total TVL (all opportunities)",
+            "empty": "No TVL data available right now.",
+            "ranges": {
+                "1M": "1M",
+                "3M": "3M",
+                "6M": "6M",
+                "1Y": "1Y"
+            }
         }
     },
     "opportunities": {

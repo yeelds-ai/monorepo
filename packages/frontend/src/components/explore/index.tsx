@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 
 import { ExploreHotPicks } from "./hot-picks";
 import { WeeklyNews } from "./news";
+import { TotalTvlChart } from "./total-tvl-chart";
 
 import styles from "./styles.module.css";
 
@@ -30,7 +31,10 @@ export async function Explore() {
             </div>
 
             <div className={styles.content}>
-                <WeeklyNews />
+                <div className={styles.topRow}>
+                    <TotalTvlChart />
+                    <WeeklyNews />
+                </div>
                 <ExploreHotPicks />
             </div>
         </div>

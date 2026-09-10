@@ -54,24 +54,25 @@ function ordinalSuffix(day: number): string {
     return "th";
 }
 
+const ORDINAL_MONTH_FORMAT = new Intl.DateTimeFormat("en", {
+    month: "long",
+    timeZone: "UTC",
+});
+const ORDINAL_TIME_FORMAT = new Intl.DateTimeFormat("en", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZone: "UTC",
+});
+
 export function formatOrdinalDate(iso: string): string {
     const date = new Date(iso);
     const day = date.getUTCDate();
-    const month = new Intl.DateTimeFormat("en", {
-        month: "long",
-        timeZone: "UTC",
-    }).format(date);
+    const month = ORDINAL_MONTH_FORMAT.format(date);
 
     return `${day}${ordinalSuffix(day)} ${month} ${date.getUTCFullYear()}`;
 }
 
 export function formatOrdinalTime(iso: string): string {
-    const date = new Date(iso);
-
-    return new Intl.DateTimeFormat("en", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hourCycle: "h23",
-        timeZone: "UTC",
-    }).format(date);
+    return ORDINAL_TIME_FORMAT.format(new Date(iso));
 }
