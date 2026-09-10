@@ -13,7 +13,6 @@ import {
     XLogo,
     YeeldsLogo,
 } from "@/src/assets";
-import { ConnectWallet } from "@/src/components/connect-wallet";
 import { usePathname } from "@/src/i18n/routing";
 import type { TranslationsKeys } from "@/src/types/utils";
 import { NavItem } from "./nav-item";
@@ -110,7 +109,8 @@ export function Sidebar() {
                         ))}
                     </NavSection>
                 </div>
-                <ConnectWallet />
+                {/* TODO: enable once lifi integration is complete */}
+                {/* <ConnectWallet /> */}
             </nav>
         </div>
     );
