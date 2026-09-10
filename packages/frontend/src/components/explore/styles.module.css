@@ -1,0 +1,21 @@
+@reference "../../app.css";
+
+.root {
+    @apply flex min-h-full min-w-0 flex-col;
+}
+
+.header {
+    @apply flex flex-col px-4 pt-6 pb-4 sm:px-8;
+}
+
+.title {
+    @apply sm:text-28;
+}
+
+.subtitle {
+    @apply mt-1;
+}
+
+.content {
+    @apply flex min-w-0 flex-1 flex-col gap-8 px-4 pb-8 sm:px-8;
+}

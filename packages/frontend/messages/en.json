@@ -6,6 +6,7 @@
         "discover": "Discover",
         "research": "Research",
         "community": "Community",
+        "explore": "Explore",
         "opportunities": "Opportunities",
         "feed": "Feed",
         "liquidityDeals": "Liquidity deals",
@@ -20,29 +21,31 @@
             "telegram": "Telegram"
         }
     },
+    "explore": {
+        "title": "Yields discovery",
+        "metaTitle": "Explore DeFi Yields - Vaults, Grades & Weekly Hot Picks",
+        "subtitle": "Track market signals, spot yield movements, and compare opportunities by category.",
+        "news": {
+            "title": "Weekly news",
+            "seeAll": "See all news",
+            "empty": "No news available right now. Check back soon.",
+            "readTime": "{minutes}min read"
+        },
+        "hotPicks": {
+            "title": "Weekly Yeelds hot picks",
+            "exploreAllYields": "Explore all yields",
+            "empty": "No hot picks available right now.",
+            "tabs": {
+                "topGraded": "Top graded",
+                "highestApy": "Highest APY",
+                "topStableYield": "Top stable yield"
+            }
+        }
+    },
     "opportunities": {
         "title": "Opportunities",
         "metaTitle": "Yield Opportunities - Compare APY Across Protocols",
         "subtitle": "Compare thousands of yield opportunities across protocols, chains, and strategies.",
-        "hotPicks": {
-            "title": "Weekly hot picks",
-            "empty": "No hot picks available right now.",
-            "hide": "Hide",
-            "show": "Show",
-            "scrollLeft": "Scroll left",
-            "scrollRight": "Scroll right",
-            "categories": {
-                "topGraded": "Top risk-adjusted yield",
-                "topStableYield": "Top stable yield",
-                "deepestLiquidity": "Deepest liquidity",
-                "topBlueChip": "Top blue chip",
-                "highestApy": "Highest APY"
-            },
-            "opportunity": {
-                "apy": "APY",
-                "tvl": "TVL"
-            }
-        },
         "empty": {
             "title": "No opportunities found",
             "description": "Try adjusting your filters to discover more opportunities.",

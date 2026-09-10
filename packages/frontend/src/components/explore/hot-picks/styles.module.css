@@ -1,0 +1,26 @@
+@reference "../../../app.css";
+
+.root {
+    @apply flex min-w-0 flex-col gap-3;
+}
+
+.header {
+    @apply flex items-center justify-between gap-3;
+}
+
+.exploreLink {
+    @apply flex shrink-0 items-center gap-1.5 text-brand-primary;
+}
+
+.exploreLinkIcon {
+    @apply size-4;
+}
+
+.card {
+    @apply flex flex-col overflow-hidden rounded-2xl pt-4 pb-2;
+    @apply background-raised;
+}
+
+.empty {
+    @apply py-10 text-center;
+}

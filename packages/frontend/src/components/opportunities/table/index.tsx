@@ -1,5 +1,6 @@
 import type { SortDirection, SortField } from "@yeelds/sdk";
 import { LoadingBar } from "@yeelds/ui";
+import type { ReactNode } from "react";
 
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { DEFAULT_PAGE_LIMIT } from "..";
@@ -14,6 +15,9 @@ interface OpportunitiesTableProps {
     opportunities: EnrichedOpportunity[];
     loading?: boolean;
     placeholderLoading?: boolean;
+    skeletonRowCount?: number;
+    emptyState?: ReactNode;
+    sortable?: boolean;
     sort?: SortField;
     direction?: SortDirection;
     onSortChange?: (sort?: SortField, direction?: SortDirection) => void;
@@ -23,11 +27,14 @@ export function OpportunitiesTable({
     opportunities,
     loading = false,
     placeholderLoading = false,
+    skeletonRowCount = DEFAULT_PAGE_LIMIT,
+    emptyState = <EmptyOpportunities />,
+    sortable = true,
     sort,
     direction,
     onSortChange = () => {},
 }: OpportunitiesTableProps) {
-    if (!loading && opportunities.length === 0) return <EmptyOpportunities />;
+    if (!loading && opportunities.length === 0) return <>{emptyState}</>;
 
     return (
         <div className={styles.wrapper}>
@@ -39,6 +46,7 @@ export function OpportunitiesTable({
                         ))}
                     </colgroup>
                     <OpportunitiesTableHeader
+                        sortable={sortable}
                         sort={sort}
                         direction={direction}
                         onSortChange={onSortChange}
@@ -56,7 +64,7 @@ export function OpportunitiesTable({
                             </td>
                         </tr>
                         {loading
-                            ? Array.from({ length: DEFAULT_PAGE_LIMIT }).map(
+                            ? Array.from({ length: skeletonRowCount }).map(
                                   (_, index) => (
                                       <SkeletonOpportunityRow key={index} />
                                   ),
