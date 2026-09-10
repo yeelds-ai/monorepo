@@ -36,6 +36,10 @@
     @apply text-28 leading-9;
 }
 
+.size36 {
+    @apply text-36 leading-11;
+}
+
 .brand {
     @apply font-brand font-semibold;
 }
@@ -62,6 +66,14 @@
 
 .colorBrand {
     @apply text-brand-primary;
+}
+
+.colorExcellent {
+    @apply text-status-excellent;
+}
+
+.colorNegative {
+    @apply text-error;
 }
 
 .uppercase {

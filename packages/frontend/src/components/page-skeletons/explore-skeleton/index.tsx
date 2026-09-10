@@ -23,14 +23,27 @@ export function ExploreSkeleton() {
             </div>
 
             <div className={styles.content}>
-                <div className={styles.newsCard}>
-                    <div className={styles.newsHeader}>
-                        <Skeleton height={28} width={120} />
-                        <Skeleton height={20} width={88} />
+                <div className={styles.topRow}>
+                    <div className={styles.tvlCard}>
+                        <div className={styles.tvlHeader}>
+                            <div className={styles.tvlHeadline}>
+                                <Skeleton height={19} width={184} />
+                                <Skeleton height={44} width={140} />
+                            </div>
+                            <Skeleton height={36} width={174} />
+                        </div>
+                        <Skeleton height={300} className={styles.tvlChart} />
                     </div>
-                    {Array.from({ length: NEWS_ITEMS }).map((_, index) => (
-                        <NewsItemSkeleton key={index} />
-                    ))}
+
+                    <div className={styles.newsCard}>
+                        <div className={styles.newsHeader}>
+                            <Skeleton height={28} width={120} />
+                            <Skeleton height={20} width={88} />
+                        </div>
+                        {Array.from({ length: NEWS_ITEMS }).map((_, index) => (
+                            <NewsItemSkeleton key={index} />
+                        ))}
+                    </div>
                 </div>
 
                 <div className={styles.hotPicks}>

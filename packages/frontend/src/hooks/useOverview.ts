@@ -6,7 +6,9 @@ import type { HookBaseParams } from "@/src/types/hooks";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
 import { enrichOpportunity } from "@/src/utils/enrich-opportunity";
 
-interface UseOverviewParams extends HookBaseParams, OverviewParams {}
+interface UseOverviewParams extends HookBaseParams, OverviewParams {
+    staleTime?: number;
+}
 
 export interface UseOverviewReturnValue {
     loading: boolean;
@@ -22,6 +24,7 @@ export interface UseOverviewReturnValue {
 
 export function useOverview({
     enabled = true,
+    staleTime,
     ...query
 }: UseOverviewParams = {}): UseOverviewReturnValue {
     const {
@@ -40,6 +43,7 @@ export function useOverview({
             }
         },
         placeholderData: keepPreviousData,
+        staleTime,
         enabled,
     });
 

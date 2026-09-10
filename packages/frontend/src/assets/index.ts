@@ -23,6 +23,7 @@ export * from "./news-icon";
 export * from "./pen-icon";
 export * from "./methodology-icon";
 export * from "./pie-chart-icon";
+export * from "./rounded-triangle-icon";
 export * from "./space-dashboard-icon";
 export * from "./server-stack-icon";
 export * from "./search-icon";

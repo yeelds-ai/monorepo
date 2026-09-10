@@ -19,3 +19,7 @@
 .content {
     @apply flex min-w-0 flex-1 flex-col gap-8 px-4 pb-8 sm:px-8;
 }
+
+.topRow {
+    @apply grid min-w-0 grid-cols-1 items-stretch gap-6 lg:grid-cols-2;
+}
