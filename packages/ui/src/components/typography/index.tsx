@@ -7,9 +7,9 @@ import styles from "./styles.module.css";
 
 interface BrandTypographyProps {
     font: "brand";
-    size?: 14 | 16 | 18 | 20 | 24 | 28;
+    size?: 14 | 16 | 18 | 20 | 24 | 28 | 36;
     variant?: "primary" | "secondary";
-    color?: "brand";
+    color?: "brand" | "excellent" | "negative";
 }
 
 interface SystemTypographyProps {
@@ -17,7 +17,7 @@ interface SystemTypographyProps {
     size?: 10 | 12 | 14 | 16 | 18 | 20;
     weight?: "medium" | "bold";
     variant?: "primary" | "secondary";
-    color?: "brand";
+    color?: "brand" | "excellent" | "negative";
 }
 
 type TypographyBaseProps = (BrandTypographyProps | SystemTypographyProps) & {
@@ -63,6 +63,8 @@ export function Typography(props: TypographyProps) {
             [styles.bold]: weight === "bold",
             [styles[variant]]: true,
             [styles.colorBrand]: color === "brand",
+            [styles.colorExcellent]: color === "excellent",
+            [styles.colorNegative]: color === "negative",
             [styles.uppercase]: uppercase,
             [styles.capitalize]: capitalize,
             [styles.truncate]: truncate,
