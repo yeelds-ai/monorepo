@@ -1,0 +1,22 @@
+@reference "../../theme.css";
+
+.root {
+    @apply flex items-center border-b stroke-divider;
+}
+
+.tab {
+    @apply flex items-center gap-2 border-b-2 border-transparent px-4 pb-3;
+    @apply -mb-px cursor-pointer transition-colors;
+}
+
+.label {
+    @apply text-16 font-semibold text-secondary transition-colors;
+}
+
+.tab.active {
+    @apply border-brand-primary;
+}
+
+.tab.active .label {
+    @apply font-semibold text-brand-primary;
+}

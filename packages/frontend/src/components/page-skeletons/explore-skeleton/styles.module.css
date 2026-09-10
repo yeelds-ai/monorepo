@@ -1,0 +1,43 @@
+@reference "../../../app.css";
+
+.root {
+    @apply flex min-h-full min-w-0 flex-col;
+}
+
+.header {
+    @apply flex flex-col px-4 pt-6 pb-4 sm:px-8;
+}
+
+.subtitleBar {
+    @apply mt-1;
+}
+
+.content {
+    @apply flex min-w-0 flex-1 flex-col gap-4 px-4 pb-8 sm:px-8;
+}
+
+.newsCard {
+    @apply flex min-w-0 flex-col rounded-2xl;
+    @apply background-raised;
+}
+
+.newsHeader {
+    @apply flex items-center justify-between gap-3 p-5 pb-2;
+}
+
+.hotPicks {
+    @apply flex min-w-0 flex-col gap-3;
+}
+
+.hotPicksHeader {
+    @apply flex items-center justify-between gap-3;
+}
+
+.hotPicksCard {
+    @apply flex min-h-[430px] flex-col overflow-hidden rounded-2xl pt-4 pb-2;
+    @apply background-raised;
+}
+
+.tabBar {
+    @apply flex items-center gap-8 border-b stroke-divider px-4 pb-1.5;
+}

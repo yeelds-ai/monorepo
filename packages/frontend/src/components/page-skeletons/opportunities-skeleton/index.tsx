@@ -3,7 +3,6 @@
 import { Pagination, Skeleton } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
-import { HotPicks } from "@/src/components/opportunities/hot-picks";
 import { OpportunitiesTable } from "@/src/components/opportunities/table";
 
 import styles from "./styles.module.css";
@@ -25,8 +24,6 @@ export function OpportunitiesSkeleton() {
                 </div>
                 <Skeleton height={24} width={64} />
             </div>
-
-            <HotPicks />
 
             <div className={styles.filterBar}>
                 <Skeleton height={32} width={114} />
