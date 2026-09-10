@@ -37,7 +37,7 @@
 }
 
 .cell.loading {
-    @apply h-[3.938rem];
+    @apply h-[3.813rem];
 }
 
 .strategy {
@@ -57,7 +57,7 @@
 }
 
 .row {
-    @apply border-t stroke-divider cursor-pointer transition-colors hover:background-raised;
+    @apply border-t stroke-divider cursor-pointer transition-colors hover:background-default;
 }
 
 .row:last-child {

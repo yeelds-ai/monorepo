@@ -6,6 +6,7 @@ import { type FunctionComponent, type SVGProps, useState } from "react";
 import {
     AgreementIcon,
     CloseIcon,
+    ExploreIcon,
     MenuIcon,
     NewsIcon,
     SpaceDashboardIcon,
@@ -33,6 +34,7 @@ interface CommunityItem {
 }
 
 const DISCOVER_ITEMS: NavItem[] = [
+    { label: "explore", href: "/explore", icon: ExploreIcon },
     {
         label: "opportunities",
         href: "/opportunities",
