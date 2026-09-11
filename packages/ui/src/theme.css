@@ -118,6 +118,10 @@
     @apply text-status-negative border-status-negative/20 bg-status-negative/4;
 }
 
+@utility banner-warning {
+    @apply text-status-caution border-status-caution/40 bg-status-caution/8;
+}
+
 h1,
 h2,
 h3,

@@ -1,4 +1,8 @@
 {
+    "disclaimer": {
+        "text": "Yeelds doesn't audit nor endorse any of the protocols listed. We just focus on providing accurate data. Ape at your own risk.",
+        "dismiss": "Dismiss"
+    },
     "navigation": {
         "openMenu": "Open navigation",
         "closeMenu": "Close navigation",
