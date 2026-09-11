@@ -1,12 +1,15 @@
 "use client";
 
 import type { WidgetConfig } from "@lifi/widget";
-import { LiFiWidget } from "@lifi/widget";
+import { LiFiWidget, WidgetEvent, useWidgetEvents } from "@lifi/widget";
 import { EthereumProvider } from "@lifi/widget-provider-ethereum";
 import { Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 
 import { ExternalLinkIcon } from "@/src/assets/external-link-icon";
+import { APP_NAME } from "@/src/commons";
+import { trackUmamiEvent } from "@/src/utils/umami";
 import type { LifiDepositWidgetProps } from ".";
 
 import styles from "./styles.module.css";
@@ -20,6 +23,51 @@ export function Widget({
     depositUrl,
 }: LifiDepositWidgetProps) {
     const t = useTranslations("opportunity");
+    const widgetEvents = useWidgetEvents();
+
+    useEffect(() => {
+        function handleOnRouteExecutionStarted() {
+            trackUmamiEvent("route-execution-started", {
+                opportunity: toToken,
+            });
+        }
+        function handleOnRouteExecutionUpdated() {
+            trackUmamiEvent("route-execution-updated", {
+                opportunity: toToken,
+            });
+        }
+        function handleOnRouteExecutionCompleted() {
+            trackUmamiEvent("route-execution-completed", {
+                opportunity: toToken,
+            });
+        }
+        function handleOnRouteExecutionFailed() {
+            trackUmamiEvent("route-execution-failed", {
+                opportunity: toToken,
+            });
+        }
+
+        widgetEvents.on(
+            WidgetEvent.RouteExecutionStarted,
+            handleOnRouteExecutionStarted,
+        );
+        widgetEvents.on(
+            WidgetEvent.RouteExecutionUpdated,
+            handleOnRouteExecutionUpdated,
+        );
+        widgetEvents.on(
+            WidgetEvent.RouteExecutionCompleted,
+            handleOnRouteExecutionCompleted,
+        );
+        widgetEvents.on(
+            WidgetEvent.RouteExecutionFailed,
+            handleOnRouteExecutionFailed,
+        );
+
+        return () => {
+            widgetEvents.removeAllListeners();
+        };
+    }, [widgetEvents, toToken]);
 
     const config = {
         appearance: "dark",
@@ -70,14 +118,14 @@ export function Widget({
         toToken,
         fromChain,
         toChain,
-        disabledUI: { toAddress: true },
+        disabledUI: { toToken: true, toAddress: true },
         hiddenUI: { appearance: true, language: true },
         showSingleRoute: true,
     } as Partial<WidgetConfig>;
 
     return (
         <div className={styles.root}>
-            <LiFiWidget config={config} integrator="Yeelds" />
+            <LiFiWidget config={config} integrator={APP_NAME} />
             {depositUrl && (
                 <a
                     href={depositUrl}
