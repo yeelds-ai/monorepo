@@ -75,11 +75,7 @@ export function OpportunitiesTableHeader({
                     if (!field)
                         return (
                             <th key={key} className={styles.header}>
-                                <Typography
-                                    size={14}
-                                    weight="bold"
-                                    variant="secondary"
-                                >
+                                <Typography size={14} variant="secondary">
                                     {t(key)}
                                 </Typography>
                             </th>
@@ -106,11 +102,7 @@ export function OpportunitiesTableHeader({
                                     styles.sortableHeader,
                                 )}
                             >
-                                <Typography
-                                    size={14}
-                                    weight="bold"
-                                    variant="secondary"
-                                >
+                                <Typography size={14} variant="secondary">
                                     {t(key)}
                                 </Typography>
                                 <span className={styles.sortIcons}>
