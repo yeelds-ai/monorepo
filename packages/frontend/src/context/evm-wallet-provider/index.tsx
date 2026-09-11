@@ -5,13 +5,9 @@ import type { EIP1193RequestFn, Transport } from "viem";
 import { WagmiProvider, createConfig, http } from "wagmi";
 import { injected, metaMask, walletConnect } from "wagmi/connectors";
 
-import { SITE_URL } from "@/src/commons";
+import { APP_DESCRIPTION, APP_ICON, APP_NAME, SITE_URL } from "@/src/commons";
 import { EVM_CHAINS } from "@/src/commons/chains";
 import { WALLETCONNECT_PROJECT_ID } from "@/src/commons/env";
-
-const APP_NAME = "Yeelds";
-const APP_DESCRIPTION = "The onchain yield intelligence layer";
-const APP_ICON = `${SITE_URL}/icon.svg`;
 
 const transports = EVM_CHAINS.reduce(
     (prev, chain) => {
