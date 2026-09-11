@@ -125,6 +125,7 @@
         "review": {
             "title": "Opportunity review",
             "depositOn": "Deposit on {protocol}",
+            "oneClickDeposit": "One click deposit",
             "yieldComposition": {
                 "title": "Yield composition",
                 "totalApy": "Total APY",

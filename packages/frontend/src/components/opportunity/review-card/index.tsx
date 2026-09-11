@@ -1,10 +1,10 @@
 import { isMorphoSourceData } from "@yeelds/sdk";
-import { Button, Typography } from "@yeelds/ui";
+import { Typography } from "@yeelds/ui";
 import { useTranslations } from "next-intl";
 
 import { ClipboardCheckIcon } from "@/src/assets/clipboard-check-icon";
-import { ExternalLinkIcon } from "@/src/assets/external-link-icon";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
+import { OneClickDeposit } from "./one-click-deposit";
 import { YieldComposition } from "./yield-composition";
 
 import styles from "./styles.module.css";
@@ -34,16 +34,13 @@ export function ReviewCard({ opportunity }: ReviewCardProps) {
                 </Typography>
             </div>
             <YieldComposition opportunity={opportunity} />
-            <Button
-                icon={ExternalLinkIcon}
-                href={depositUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                disabled={depositDisabled}
-                className={styles.depositButton}
-            >
-                {t("review.depositOn", { protocol: opportunity.protocol.name })}
-            </Button>
+            <div className={styles.actions}>
+                <OneClickDeposit
+                    opportunity={opportunity}
+                    protocolName={opportunity.protocol.name}
+                    depositUrl={depositDisabled ? null : depositUrl}
+                />
+            </div>
         </div>
     );
 }
