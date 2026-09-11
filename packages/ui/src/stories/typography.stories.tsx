@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Typography } from "../components/typography";
 
-const BRAND_SIZES = [28, 24, 20, 18, 16, 14] as const;
+const BRAND_SIZES = [36, 28, 24, 20, 18, 16, 14] as const;
 const SYSTEM_SIZES = [20, 18, 16, 14, 12, 10] as const;
 const SYSTEM_WEIGHTS = ["medium", "bold"] as const;
 

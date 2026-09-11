@@ -1,0 +1,46 @@
+@reference "../../theme.css";
+
+.root {
+    @apply flex items-center border-b stroke-divider;
+}
+
+.tab {
+    @apply flex items-center gap-2 border-b-2 border-transparent px-4 pb-3;
+    @apply -mb-px cursor-pointer transition-colors;
+}
+
+.label {
+    @apply text-16 font-semibold text-secondary transition-colors;
+}
+
+.tab.active {
+    @apply border-brand-primary;
+}
+
+.tab.active .label {
+    @apply font-semibold text-brand-primary;
+}
+
+.root.pill {
+    @apply w-fit gap-1 rounded-[10px] border-0 bg-bg-raised p-1;
+}
+
+.root.pill .tab {
+    @apply rounded-lg border-0 mb-0 px-2.5 py-[5.5px];
+}
+
+.root.pill .label {
+    @apply text-14 font-semibold text-secondary;
+}
+
+.root.pill .tab.active {
+    @apply bg-brand-primary;
+}
+
+.root.pill .tab.active .label {
+    @apply font-semibold text-on-brand-primary;
+}
+
+.root.pill .tab:disabled {
+    @apply cursor-not-allowed opacity-40;
+}

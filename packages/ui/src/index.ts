@@ -16,5 +16,6 @@ export * from "./components/popover";
 export * from "./components/remote-logo";
 export * from "./components/skeleton";
 export * from "./components/slider";
+export * from "./components/tabs";
 export * from "./components/tag";
 export * from "./components/typography";

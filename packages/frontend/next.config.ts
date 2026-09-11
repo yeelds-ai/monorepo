@@ -37,12 +37,8 @@ const nextConfig: NextConfig = {
     },
     async redirects() {
         return [
-            { source: "/", destination: "/en/opportunities", permanent: false },
-            {
-                source: "/en",
-                destination: "/en/opportunities",
-                permanent: false,
-            },
+            { source: "/", destination: "/en/explore", permanent: false },
+            { source: "/en", destination: "/en/explore", permanent: false },
             // Old asset-class/grade routes consolidate into /yields with the
             // matching filter preselected via its query vocabulary. Must precede
             // the generic locale-prefix rule below, which would otherwise match

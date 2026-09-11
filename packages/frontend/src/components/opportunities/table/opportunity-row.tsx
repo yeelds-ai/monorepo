@@ -45,21 +45,21 @@ export function OpportunityRow({ opportunity }: OpportunityRowProps) {
             </td>
             <td className={styles.cell}>
                 <div className={styles.strategy}>
-                    <Typography size={18} weight="bold" truncate>
+                    <Typography size={16} truncate>
                         {opportunity.name}
                     </Typography>
                 </div>
             </td>
             <td className={styles.cell}>
-                <Typography size={18} weight="bold" className={styles.tvlCell}>
+                <Typography size={16} className={styles.tvlCell}>
                     {opportunity.tvlUsd ? formatUsd(opportunity.tvlUsd) : "-"}
                 </Typography>
             </td>
             <td className={styles.cell}>
-                <GradeTag grade={opportunity.grade?.letter} />
+                <GradeTag grade={opportunity.grade?.letter} size="sm" />
             </td>
             <td className={styles.cell}>
-                <Typography size={18} font="brand">
+                <Typography size={16} font="brand">
                     {formatPercentage(opportunity.apy)}
                 </Typography>
             </td>

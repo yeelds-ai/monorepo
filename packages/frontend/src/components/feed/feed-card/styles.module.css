@@ -2,7 +2,7 @@
 
 .card {
     @apply flex flex-col gap-3 rounded-2xl p-5;
-    @apply background-raised;
+    @apply background-raised transition-colors hover:background-default;
 }
 
 .header {

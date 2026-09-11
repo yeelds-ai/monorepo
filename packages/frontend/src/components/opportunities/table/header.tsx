@@ -45,12 +45,14 @@ export const COL_WIDTHS: Record<(typeof HEADER_KEYS)[number], string> =
     ) as Record<(typeof HEADER_KEYS)[number], string>;
 
 interface OpportunitiesTableHeaderProps {
+    sortable?: boolean;
     sort?: SortField;
     direction?: SortDirection;
     onSortChange: (sort?: SortField, direction?: SortDirection) => void;
 }
 
 export function OpportunitiesTableHeader({
+    sortable = true,
     sort,
     direction,
     onSortChange,
@@ -69,15 +71,11 @@ export function OpportunitiesTableHeader({
         <thead>
             <tr>
                 {HEADER_KEYS.map((key) => {
-                    const field = SORT_FIELDS[key];
+                    const field = sortable ? SORT_FIELDS[key] : undefined;
                     if (!field)
                         return (
                             <th key={key} className={styles.header}>
-                                <Typography
-                                    size={14}
-                                    weight="bold"
-                                    variant="secondary"
-                                >
+                                <Typography size={14} variant="secondary">
                                     {t(key)}
                                 </Typography>
                             </th>
@@ -104,11 +102,7 @@ export function OpportunitiesTableHeader({
                                     styles.sortableHeader,
                                 )}
                             >
-                                <Typography
-                                    size={14}
-                                    weight="bold"
-                                    variant="secondary"
-                                >
+                                <Typography size={14} variant="secondary">
                                     {t(key)}
                                 </Typography>
                                 <span className={styles.sortIcons}>
