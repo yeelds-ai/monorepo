@@ -3,15 +3,24 @@
 import type { WidgetConfig } from "@lifi/widget";
 import { LiFiWidget } from "@lifi/widget";
 import { EthereumProvider } from "@lifi/widget-provider-ethereum";
+import { Typography } from "@yeelds/ui";
+import { useTranslations } from "next-intl";
 
+import { ExternalLinkIcon } from "@/src/assets/external-link-icon";
 import type { LifiDepositWidgetProps } from ".";
+
+import styles from "./styles.module.css";
 
 export function Widget({
     fromToken,
     toToken,
     fromChain,
     toChain,
+    protocolName,
+    depositUrl,
 }: LifiDepositWidgetProps) {
+    const t = useTranslations("opportunity");
+
     const config = {
         appearance: "dark",
         providers: [EthereumProvider()],
@@ -66,5 +75,22 @@ export function Widget({
         showSingleRoute: true,
     } as Partial<WidgetConfig>;
 
-    return <LiFiWidget config={config} integrator="Yeelds" />;
+    return (
+        <div className={styles.root}>
+            <LiFiWidget config={config} integrator="Yeelds" />
+            {depositUrl && (
+                <a
+                    href={depositUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.depositLink}
+                >
+                    <Typography as="span" size={12} variant="secondary">
+                        {t("review.depositOn", { protocol: protocolName })}
+                    </Typography>
+                    <ExternalLinkIcon className={styles.depositLinkIcon} />
+                </a>
+            )}
+        </div>
+    );
 }

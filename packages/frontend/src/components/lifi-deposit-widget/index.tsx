@@ -13,6 +13,8 @@ export interface LifiDepositWidgetProps {
     toToken: string;
     fromChain: number;
     toChain: number;
+    protocolName: string;
+    depositUrl?: string | null;
 }
 
 export function LifiDepositWidget(props: LifiDepositWidgetProps) {

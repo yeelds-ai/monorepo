@@ -14,9 +14,15 @@ import styles from "./styles.module.css";
 
 interface OneClickDepositProps {
     opportunity: EnrichedOpportunity;
+    protocolName: string;
+    depositUrl?: string | null;
 }
 
-export function OneClickDeposit({ opportunity }: OneClickDepositProps) {
+export function OneClickDeposit({
+    opportunity,
+    protocolName,
+    depositUrl,
+}: OneClickDepositProps) {
     const t = useTranslations("opportunity");
     const { isConnected } = useConnection();
     const [open, setOpen] = useState(false);
@@ -53,6 +59,8 @@ export function OneClickDeposit({ opportunity }: OneClickDepositProps) {
                         toToken={opportunity.address}
                         fromChain={chain.id}
                         toChain={chain.id}
+                        protocolName={protocolName}
+                        depositUrl={depositUrl}
                     />
                 </div>
             </Modal>

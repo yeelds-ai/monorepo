@@ -1,0 +1,14 @@
+@reference "../../app.css";
+
+.root {
+    @apply flex w-full flex-col;
+}
+
+.depositLink {
+    @apply flex items-center gap-1 self-center px-4 pb-3;
+    @apply transition-opacity hover:opacity-80;
+}
+
+.depositLinkIcon {
+    @apply size-3 shrink-0 text-secondary;
+}
