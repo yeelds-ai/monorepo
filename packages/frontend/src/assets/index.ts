@@ -1,4 +1,5 @@
 export * from "./agreement-icon";
+export * from "./alert-icon";
 export * from "./arrow-down-icon";
 export * from "./arrow-left-icon";
 export * from "./arrow-right-icon";
