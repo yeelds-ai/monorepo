@@ -55,7 +55,7 @@
 }
 
 .chart {
-    @apply w-full min-w-[36rem] transition-opacity;
+    @apply w-full min-w-lg transition-opacity;
 
     /* The built-in tooltip chrome reads these from the chart container. */
     --ts-chart-tooltip-background: var(--color-bg-surface);
