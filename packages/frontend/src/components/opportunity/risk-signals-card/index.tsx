@@ -4,16 +4,18 @@ import { useTranslations } from "next-intl";
 
 import {
     CalendarCheckIcon,
-    MethodologyIcon,
     PharosLogo,
     ShieldIcon,
     YeeldsCompactLogo,
 } from "@/src/assets";
 import type { EnrichedOpportunity } from "@/src/types/opportunity";
+import { isOlderThanDays } from "@/src/utils/date";
 import { formatOrdinalDate, formatOrdinalTime } from "@/src/utils/format";
 import { isTokenStablecoin } from "@/src/utils/token";
 
 import styles from "./styles.module.css";
+
+const GRADING_STALE_DAYS = 3;
 
 interface RiskSignalsCardProps {
     opportunity: EnrichedOpportunity;
@@ -33,6 +35,8 @@ export function RiskSignalsCard({ opportunity }: RiskSignalsCardProps) {
                 .map((token) => [token.address, token]),
         ).values(),
     ];
+
+    const datedGrading = isOlderThanDays(grade.gradedAt, GRADING_STALE_DAYS);
 
     return (
         <Card icon={ShieldIcon} title={t("title")} className={styles.root}>
@@ -133,19 +137,14 @@ export function RiskSignalsCard({ opportunity }: RiskSignalsCardProps) {
                         })}
                     </Typography>
                 </span>
-                <span className={styles.divider} />
-                <span className={styles.footerItem}>
-                    <MethodologyIcon className={styles.footerIcon} />
-                    <Typography as="span" size={12} variant="secondary">
-                        {t("methodology", {
-                            version: grade.methodologyVersion,
-                        })}
-                    </Typography>
-                </span>
-                <span className={styles.divider} />
-                <Typography as="span" size={12} variant="secondary">
-                    {t("disclaimer")}
-                </Typography>
+                {datedGrading && (
+                    <>
+                        <span className={styles.divider} />
+                        <Typography as="span" size={12} variant="secondary">
+                            {t("disclaimer")}
+                        </Typography>
+                    </>
+                )}
             </div>
         </Card>
     );

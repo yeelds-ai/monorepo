@@ -120,7 +120,6 @@
             "caption": "Higher number = safer",
             "stablecoinSafety": "Stablecoin safety",
             "graded": "Graded {date} at {time}",
-            "methodology": "Methodology v{version}",
             "disclaimer": "Dated opinion, not a guarantee"
         },
         "review": {
