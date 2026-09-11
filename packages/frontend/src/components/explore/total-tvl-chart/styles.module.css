@@ -38,21 +38,11 @@
 }
 
 .rangeTabs {
-    @apply flex shrink-0 items-center gap-1 rounded-[10px] p-1;
+    @apply shrink-0;
+}
+
+.rangeTabs:global(.root) {
     @apply bg-bg-surface;
-}
-
-.rangeTab {
-    @apply cursor-pointer rounded-lg px-2.5 py-1.5 transition-colors;
-    @apply text-14 font-semibold text-secondary;
-}
-
-.rangeTab.active {
-    @apply bg-brand-primary font-semibold text-on-brand-primary;
-}
-
-.rangeTab:disabled {
-    @apply cursor-not-allowed opacity-40;
 }
 
 .rangeTabsSkeleton {

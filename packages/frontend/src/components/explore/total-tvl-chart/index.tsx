@@ -5,7 +5,7 @@ import { whenFocused } from "@tanstack/charts/focus/mark";
 import { Chart } from "@tanstack/charts/react/tooltip";
 import { scaleLinear } from "@tanstack/charts/scales/linear";
 import { tooltip } from "@tanstack/charts/tooltip";
-import { Skeleton, Typography } from "@yeelds/ui";
+import { Skeleton, Tabs, Typography } from "@yeelds/ui";
 import classNames from "classnames";
 import { scaleUtc } from "d3-scale";
 import { useTranslations } from "next-intl";
@@ -210,10 +210,6 @@ export function TotalTvlChart() {
         [rows],
     );
 
-    function getHandleOnRangeSelect(value: TvlRange) {
-        return () => setRange(value);
-    }
-
     return (
         <div className={styles.root}>
             <div className={styles.header}>
@@ -270,25 +266,17 @@ export function TotalTvlChart() {
                         className={styles.rangeTabsSkeleton}
                     />
                 ) : (
-                    <div className={styles.rangeTabs} role="tablist">
-                        {TVL_RANGES.map((value) => (
-                            <button
-                                key={value}
-                                type="button"
-                                role="tab"
-                                disabled={rangeDisabled[value]}
-                                aria-selected={value === activeRange}
-                                onClick={getHandleOnRangeSelect(value)}
-                                className={classNames(
-                                    "rangeTab",
-                                    styles.rangeTab,
-                                    { [styles.active]: value === activeRange },
-                                )}
-                            >
-                                {t(`ranges.${value}`)}
-                            </button>
-                        ))}
-                    </div>
+                    <Tabs
+                        tabs={TVL_RANGES.map((value) => ({
+                            id: value,
+                            label: t(`ranges.${value}`),
+                            disabled: rangeDisabled[value],
+                        }))}
+                        activeTab={activeRange}
+                        onTabChange={setRange}
+                        variant="pill"
+                        className={styles.rangeTabs}
+                    />
                 )}
             </div>
 
