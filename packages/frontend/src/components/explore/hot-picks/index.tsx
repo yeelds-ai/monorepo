@@ -58,16 +58,17 @@ export function ExploreHotPicks() {
                 </Link>
             </div>
 
-            <div className={styles.card}>
-                <Tabs
-                    tabs={HOT_PICK_TABS.map((key) => ({
-                        id: key,
-                        label: t(`tabs.${key}`),
-                    }))}
-                    activeTab={activeTab}
-                    onTabChange={setActiveTab}
-                />
+            <Tabs
+                tabs={HOT_PICK_TABS.map((key) => ({
+                    id: key,
+                    label: t(`tabs.${key}`),
+                }))}
+                activeTab={activeTab}
+                onTabChange={setActiveTab}
+                variant="pill"
+            />
 
+            <div className={styles.card}>
                 <OpportunitiesTable
                     opportunities={opportunitiesByTab[activeTab]}
                     loading={loading}

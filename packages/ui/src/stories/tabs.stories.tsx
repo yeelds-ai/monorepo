@@ -28,14 +28,21 @@ const VIEW_TABS: TabItem[] = [
 function ControlledTabs({
     tabs,
     initialTab,
+    variant,
 }: {
     tabs: TabItem[];
     initialTab?: string;
+    variant?: "underline" | "pill";
 }) {
     const [activeTab, setActiveTab] = useState(initialTab ?? tabs[0].id);
 
     return (
-        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+        <Tabs
+            tabs={tabs}
+            activeTab={activeTab}
+            onTabChange={setActiveTab}
+            variant={variant}
+        />
     );
 }
 
@@ -49,4 +56,8 @@ export const Views: Story = {
 
 export const PreselectedTab: Story = {
     render: () => <ControlledTabs tabs={RANGE_TABS} initialTab="1y" />,
+};
+
+export const Pill: Story = {
+    render: () => <ControlledTabs tabs={RANGE_TABS} variant="pill" />,
 };
