@@ -11,5 +11,9 @@ export const YEELDS_API_CLIENT = new YeeldsApiClient(`${BROWSER_ORIGIN}/api/`);
 
 export const SITE_URL = "https://www.yeelds.ai";
 
+export const APP_NAME = "Yeelds";
+export const APP_DESCRIPTION = "The onchain yield intelligence layer";
+export const APP_ICON = `${SITE_URL}/icon.svg`;
+
 export const TOKEN_ICONS_URL =
     "https://raw.githubusercontent.com/metrom-xyz/token-icons/refs/heads/main/mainnet-icons.json";
