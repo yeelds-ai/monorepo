@@ -48,3 +48,27 @@
 .cardHeader {
     @apply flex items-center gap-2;
 }
+
+.spreadRow {
+    @apply flex items-center justify-between gap-3;
+}
+
+.reviewCard {
+    @apply h-fit w-full rounded-2xl background-raised p-4 flex flex-col gap-3;
+}
+
+.riskGradeRow {
+    @apply grid grid-cols-1 sm:grid-cols-3 gap-3;
+}
+
+.riskGrade {
+    @apply flex flex-col gap-3 rounded-xl background-default p-3;
+}
+
+.riskGradeContent {
+    @apply flex items-center gap-3;
+}
+
+.riskGradeScore {
+    @apply flex flex-col gap-1;
+}

@@ -10,6 +10,7 @@ import { NavigationButton } from "../navigation-button";
 import { ExposureCard } from "./exposure-card";
 import { ReviewCard } from "./review-card";
 import { RiskSignalsCard } from "./risk-signals-card";
+import { TotalTvlCard } from "./total-tvl-card";
 
 import styles from "./styles.module.css";
 
@@ -50,6 +51,7 @@ export function Opportunity({ chain, address }: OpportunityProps) {
             <div className={styles.content}>
                 <div className={styles.leftContent}>
                     <RiskSignalsCard opportunity={opportunity} />
+                    <TotalTvlCard chain={chain} address={address} />
                     <ExposureCard opportunity={opportunity} />
                 </div>
 

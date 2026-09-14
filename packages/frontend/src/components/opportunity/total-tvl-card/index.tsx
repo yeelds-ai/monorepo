@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 
 import { TvlChart, type TvlRow } from "@/src/components/tvl-chart";
-import { useOverview } from "@/src/hooks/useOverview";
+import { useOpportunityTvl } from "@/src/hooks/useOpportunityTvl";
 import {
     TVL_RANGES,
     TVL_STALE_TIME,
@@ -14,11 +14,20 @@ import {
     resolveActiveRange,
 } from "@/src/utils/tvl-range";
 
-export function TotalTvlChart() {
-    const t = useTranslations("explore.totalTvl");
+interface TotalTvlCardProps {
+    chain: string;
+    address: string;
+}
+
+export function TotalTvlCard({ chain, address }: TotalTvlCardProps) {
+    const t = useTranslations("opportunity.totalTvlCard");
     const [range, setRange] = useState<TvlRange>("1Y");
 
-    const { tvl: fullTvl } = useOverview({ staleTime: TVL_STALE_TIME });
+    const { tvl: fullTvl } = useOpportunityTvl({
+        chain,
+        address,
+        staleTime: TVL_STALE_TIME,
+    });
     const rangeDisabled = useMemo(
         () => computeRangeDisabled(fullTvl),
         [fullTvl],
@@ -26,8 +35,10 @@ export function TotalTvlChart() {
     const activeRange = resolveActiveRange(range, rangeDisabled);
 
     const tvlFrom = useMemo(() => computeTvlFrom(activeRange), [activeRange]);
-    const { tvl, loading, fetching } = useOverview({
-        tvlFrom,
+    const { tvl, loading, fetching } = useOpportunityTvl({
+        chain,
+        address,
+        from: tvlFrom,
         staleTime: TVL_STALE_TIME,
     });
 
@@ -35,7 +46,7 @@ export function TotalTvlChart() {
         () =>
             tvl.map((point) => ({
                 date: new Date(point.capturedAt),
-                value: point.netUsd,
+                value: point.tvlUsd,
             })),
         [tvl],
     );
@@ -63,6 +74,8 @@ export function TotalTvlChart() {
             range={activeRange}
             rangeDisabled={rangeDisabled}
             onRangeChange={setRange}
+            titleSize={12}
+            valueSize={24}
         />
     );
 }

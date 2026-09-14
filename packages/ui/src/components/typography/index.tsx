@@ -5,14 +5,14 @@ import { TruncateTooltip } from "./tooltip";
 
 import styles from "./styles.module.css";
 
-interface BrandTypographyProps {
+export interface BrandTypographyProps {
     font: "brand";
     size?: 14 | 16 | 18 | 20 | 24 | 28 | 36;
     variant?: "primary" | "secondary";
     color?: "brand" | "excellent" | "negative";
 }
 
-interface SystemTypographyProps {
+export interface SystemTypographyProps {
     font?: "system";
     size?: 10 | 12 | 14 | 16 | 18 | 20;
     weight?: "medium" | "bold";

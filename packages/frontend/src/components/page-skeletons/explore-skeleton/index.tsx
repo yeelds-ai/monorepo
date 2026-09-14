@@ -1,9 +1,16 @@
 "use client";
 
 import { Skeleton } from "@yeelds/ui";
+import { useTranslations } from "next-intl";
 
 import { NewsItemSkeleton } from "@/src/components/explore/news/news-item/news-item-skeleton";
 import { OpportunitiesTable } from "@/src/components/opportunities/table";
+import { TvlChart } from "@/src/components/tvl-chart";
+import {
+    TVL_RANGES,
+    type TvlRange,
+    computeRangeDisabled,
+} from "@/src/utils/tvl-range";
 
 import styles from "./styles.module.css";
 
@@ -11,6 +18,15 @@ const NEWS_ITEMS = 3;
 const HOT_PICK_ROWS = 5;
 
 export function ExploreSkeleton() {
+    const t = useTranslations("explore.totalTvl");
+    const rangeLabels = TVL_RANGES.reduce(
+        (acc, value) => {
+            acc[value] = t(`ranges.${value}`);
+            return acc;
+        },
+        {} as Record<TvlRange, string>,
+    );
+
     return (
         <div className={styles.root}>
             <div className={styles.header}>
@@ -24,16 +40,17 @@ export function ExploreSkeleton() {
 
             <div className={styles.content}>
                 <div className={styles.topRow}>
-                    <div className={styles.tvlCard}>
-                        <div className={styles.tvlHeader}>
-                            <div className={styles.tvlHeadline}>
-                                <Skeleton height={19} width={184} />
-                                <Skeleton height={44} width={140} />
-                            </div>
-                            <Skeleton height={36} width={174} />
-                        </div>
-                        <Skeleton height={300} className={styles.tvlChart} />
-                    </div>
+                    <TvlChart
+                        title={t("title")}
+                        emptyLabel={t("empty")}
+                        rangeLabels={rangeLabels}
+                        rows={[]}
+                        loading
+                        fetching={false}
+                        range="1Y"
+                        rangeDisabled={computeRangeDisabled([])}
+                        onRangeChange={() => {}}
+                    />
 
                     <div className={styles.newsCard}>
                         <div className={styles.newsHeader}>

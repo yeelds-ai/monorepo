@@ -55,7 +55,7 @@ export function NewsItem({ item }: NewsItemProps) {
                     </div>
                 </div>
             </div>
-            <Typography size={18} font="brand" truncate>
+            <Typography size={16} font="brand" truncate>
                 {item.title}
             </Typography>
             <Typography
