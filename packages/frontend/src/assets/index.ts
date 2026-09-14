@@ -34,6 +34,7 @@ export * from "./upload-circle";
 export * from "./wallet-icon";
 
 export * from "./logos/pharos";
+export * from "./logos/yeelds-beta";
 export * from "./logos/yeelds";
 export * from "./logos/yeelds-compact";
 export * from "./logos/socials/telegram";

@@ -117,6 +117,16 @@
             "description": "The opportunity you are looking for does not exist or has moved."
         },
         "backToOpportunities": "Back to opportunities",
+        "totalTvlCard": {
+            "title": "Total TVL",
+            "empty": "No TVL data available right now.",
+            "ranges": {
+                "1M": "1M",
+                "3M": "3M",
+                "6M": "6M",
+                "1Y": "1Y"
+            }
+        },
         "exposureCard": {
             "title": "Exposure",
             "category": "Category",

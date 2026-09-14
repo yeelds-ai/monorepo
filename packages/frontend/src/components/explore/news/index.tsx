@@ -22,11 +22,11 @@ export function WeeklyNews() {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
-                <Typography as="h2" font="brand" size={20}>
+                <Typography as="h2" font="brand" size={18}>
                     {t("title")}
                 </Typography>
                 <Link href="/feed" className={styles.seeAllLink}>
-                    <Typography as="span" size={14} weight="bold" color="brand">
+                    <Typography as="span" size={16} weight="bold" color="brand">
                         {t("seeAll")}
                     </Typography>
                     <ArrowRightIcon className={styles.seeAllIcon} />

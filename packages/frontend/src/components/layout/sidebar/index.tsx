@@ -12,7 +12,7 @@ import {
     SpaceDashboardIcon,
     TelegramLogo,
     XLogo,
-    YeeldsLogo,
+    YeeldsBetaLogo,
 } from "@/src/assets";
 import { usePathname } from "@/src/i18n/routing";
 import type { TranslationsKeys } from "@/src/types/utils";
@@ -69,7 +69,7 @@ export function Sidebar() {
     const content = (
         <div className={styles.inner}>
             <div className={styles.brand}>
-                <YeeldsLogo className={styles.logo} />
+                <YeeldsBetaLogo className={styles.logo} />
             </div>
             <nav aria-label={t("mainNavigation")} className={styles.nav}>
                 <div className={styles.sections}>
@@ -128,7 +128,7 @@ export function Sidebar() {
                     <MenuIcon className={styles.hamburgerIcon} />
                 </button>
 
-                <YeeldsLogo className={styles.topbarLogo} />
+                <YeeldsBetaLogo className={styles.topbarLogo} />
             </div>
 
             {mobileOpen && (
