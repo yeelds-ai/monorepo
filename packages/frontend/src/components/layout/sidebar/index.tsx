@@ -16,6 +16,7 @@ import {
 } from "@/src/assets";
 import { usePathname } from "@/src/i18n/routing";
 import type { TranslationsKeys } from "@/src/types/utils";
+import { ConnectWallet } from "../../connect-wallet";
 import { NavItem } from "./nav-item";
 import { NavSection } from "./nav-section";
 
@@ -111,8 +112,7 @@ export function Sidebar() {
                         ))}
                     </NavSection>
                 </div>
-                {/* TODO: enable once lifi integration is complete */}
-                {/* <ConnectWallet /> */}
+                <ConnectWallet />
             </nav>
         </div>
     );
